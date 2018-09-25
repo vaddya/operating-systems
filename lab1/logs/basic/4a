@@ -1,0 +1,12 @@
+user@SPOComp13:~/435013/vaddya/basic$ ls
+1  2  3  4  test
+user@SPOComp13:~/435013/vaddya/basic$ ls -l
+total 20
+-rw-rw-r-- 1 user user  456 сент. 13 13:31 1
+-rw-rw-r-- 1 user user  100 сент. 13 13:33 2
+-rw-rw-r-- 1 user user  140 сент. 13 13:34 3
+-rw-rw-r-- 1 user user  298 сент. 13 13:39 4
+drwxrwxr-x 2 user user 4096 сент. 13 13:40 test
+user@SPOComp13:~/435013/vaddya/basic$ ls test
+junk
+

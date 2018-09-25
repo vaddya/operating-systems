@@ -1,0 +1,36 @@
+user@SPOComp13:~/435013/vaddya/compile$ cat file_name.c 
+#include <stdio.h>
+main ()
+{
+	printf("res");
+}
+user@SPOComp13:~/435013/vaddya/compile$ cat my_open.c
+ #include <stdio.h>
+main ( argc, argv )
+int argc;
+char *argv [];
+{
+char str[20];
+scanf("%s", str);
+if (str != NULL) {
+  	if (fopen(str,"r") == NULL)
+		printf("%s: неудача при попытке открыть файл %s",argv[0],str);
+  	else
+		printf("%s: файл %s открыт",argv[0],str);
+} else
+     printf("открываемый файл не указан");
+}
+user@SPOComp13:~/435013/vaddya/compile$ cc file_name.c -o file_name
+user@SPOComp13:~/435013/vaddya/compile$ cc my_open.c -o my_open
+user@SPOComp13:~/435013/vaddya/compile$ ./file_name 
+resuser@SPOComp13:~/435013/vaddya/compile$ ./my_open 
+res
+./my_open: файл res открытuser@SPOComp13:~/435013/vaddya/compile$ 
+user@SPOComp13:~/435013/vaddya/compile$ ./file_name || ./my_open 
+res
+
+./my_open: неудача при попытке открыть файл �
+@user@SPOComp13:~/435013/vaddya/compile$ ./file_name ^C ./my_open 
+user@SPOComp13:~/435013/vaddya/compile$ ./file_name | ./my_open 
+./my_open: файл res открытuser@SPOComp13:~/435013/vaddya/compile$ 
+

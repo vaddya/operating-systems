@@ -1,0 +1,9 @@
+1user@SPOComp13:~/435013/vaddya/compile$ nano my_open.c 
+user@SPOComp13:~/435013/vaddya/compile$ cc my_open.c
+user@SPOComp13:~/435013/vaddya/compile$ ls
+1  a.out  hello  my_open.c  prog.c  prog.o  res
+user@SPOComp13:~/435013/vaddya/compile$ ./a.out res
+./a.out: файл res открытuser@SPOComp13:~/435013/vaddya/compile$ 
+user@SPOComp13:~/435013/vaddya/compile$ ./a.out not_exist
+./a.out: неудача при попытке открыть файл not_existuser@SPOComp13:~/435013/vaddya/compile$ 
+

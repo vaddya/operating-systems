@@ -1,0 +1,17 @@
+user@SPOComp13:~/435013/vaddya/compile$ cc -c prog.c
+user@SPOComp13:~/435013/vaddya/compile$ ls
+prog.c  prog.o
+user@SPOComp13:~/435013/vaddya/compile$ cc prog.o
+user@SPOComp13:~/435013/vaddya/compile$ ls
+a.out  prog.c  prog.o
+user@SPOComp13:~/435013/vaddya/compile$ ./a.out 
+Hello, everybody ! user@SPOComp13:~/435013/vaddya/compile$ 
+user@SPOComp13:~/435013/vaddya/compile$ cc prog.c -o hello
+user@SPOComp13:~/435013/vaddya/compile$ ls
+a.out  hello  prog.c  prog.o
+user@SPOComp13:~/435013/vaddya/compile$ ./hello 
+Hello, everybody ! user@SPOComp13:~/435013/vaddya/compile$ 
+user@SPOComp13:~/435013/vaddya/compile$ ./hello > res
+user@SPOComp13:~/435013/vaddya/compile$ cat res
+Hello, everybody ! user@SPOComp13:~/435013/vaddya/compile$ 
+

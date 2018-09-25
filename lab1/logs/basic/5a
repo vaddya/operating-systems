@@ -1,0 +1,80 @@
+user@SPOComp13:~/435013/vaddya/basic/test$ pwd
+/home/user/435013/vaddya/basic/test
+user@SPOComp13:~/435013/vaddya/basic/test$ ls
+aaa  temp
+user@SPOComp13:~/435013/vaddya/basic/test$ > prog.c
+user@SPOComp13:~/435013/vaddya/basic/test$ ls
+aaa  prog.c  temp
+user@SPOComp13:~/435013/vaddya/basic/test$ ls ~/435013/vaddya/basic/
+1  2  3  4a  4b  4c  test
+user@SPOComp13:~/435013/vaddya/basic/test$ ls ~/435013/vaddya/basic/test/
+aaa  prog.c  temp
+user@SPOComp13:~/435013/vaddya/basic/test$ ls /
+bin    dev   initrd.img  lost+found  opt   run   sys  var
+boot   etc   lib         media       proc  sbin  tmp  vmlinuz
+cdrom  home  lib64       mnt         root  srv   usr
+user@SPOComp13:~/435013/vaddya/basic/test$ ls -l /
+total 96
+drwxr-xr-x   2 root root  4096 апр.  29  2016 bin
+drwxr-xr-x   3 root root  4096 апр.  29  2016 boot
+drwxrwxr-x   2 root root  4096 апр.  29  2016 cdrom
+drwxr-xr-x  16 root root  4260 сент. 13 13:08 dev
+drwxr-xr-x 132 root root 12288 сент. 13 13:10 etc
+drwxr-xr-x   5 root root  4096 апр.  29  2016 home
+lrwxrwxrwx   1 root root    33 апр.  29  2016 initrd.img -> boot/initrd.img-3.13.0-24-generic
+drwxr-xr-x  23 root root  4096 апр.  29  2016 lib
+drwxr-xr-x   2 root root  4096 апр.  17  2014 lib64
+drwx------   2 root root 16384 апр.  29  2016 lost+found
+drwxr-xr-x   5 root root  4096 сент. 30  2016 media
+drwxr-xr-x   2 root root  4096 апр.  11  2014 mnt
+drwxr-xr-x   2 root root  4096 апр.  17  2014 opt
+dr-xr-xr-x 216 root root     0 сент. 13 13:07 proc
+drwx------   3 root root  4096 апр.  29  2016 root
+drwxr-xr-x  24 root root   920 сент. 13 13:27 run
+drwxr-xr-x   2 root root 12288 апр.  29  2016 sbin
+drwxr-xr-x   2 root root  4096 апр.  17  2014 srv
+dr-xr-xr-x  13 root root     0 сент. 13 13:07 sys
+drwxrwxrwt   8 root root  4096 сент. 13 13:49 tmp
+drwxr-xr-x  10 root root  4096 апр.  17  2014 usr
+drwxr-xr-x  13 root root  4096 апр.  17  2014 var
+lrwxrwxrwx   1 root root    30 апр.  29  2016 vmlinuz -> boot/vmlinuz-3.13.0-24-generic
+user@SPOComp13:~/435013/vaddya/basic/test$ ls /bin
+bash                  fgconsole   nc                       sed
+bunzip2               fgrep       nc.openbsd               setfacl
+busybox               findmnt     netcat                   setfont
+bzcat                 fuser       netstat                  setupcon
+bzcmp                 fusermount  nisdomainname            sh
+bzdiff                getfacl     ntfs-3g                  sh.distrib
+bzegrep               grep        ntfs-3g.probe            sleep
+bzexe                 gunzip      ntfs-3g.secaudit         ss
+bzfgrep               gzexe       ntfs-3g.usermap          static-sh
+bzgrep                gzip        ntfscat                  stty
+bzip2                 hostname    ntfsck                   su
+bzip2recover          ip          ntfscluster              sync
+bzless                kbd_mode    ntfscmp                  tailf
+bzmore                kill        ntfsdump_logfile         tar
+cat                   kmod        ntfsfix                  tempfile
+chacl                 less        ntfsinfo                 touch
+chgrp                 lessecho    ntfsls                   true
+chmod                 lessfile    ntfsmftalloc             udevadm
+chown                 lesskey     ntfsmove                 ulockmgr_server
+chvt                  lesspipe    ntfstruncate             umount
+cp                    ln          ntfswipe                 uname
+cpio                  loadkeys    open                     uncompress
+dash                  login       openvt                   unicode_start
+date                  loginctl    pidof                    vdir
+dbus-cleanup-sockets  lowntfs-3g  ping                     vmmouse_detect
+dbus-daemon           ls          ping6                    which
+dbus-uuidgen          lsblk       plymouth                 whiptail
+dd                    lsmod       plymouth-upstart-bridge  ypdomainname
+df                    mkdir       ps                       zcat
+dir                   mknod       pwd                      zcmp
+dmesg                 mktemp      rbash                    zdiff
+dnsdomainname         more        readlink                 zegrep
+domainname            mount       red                      zfgrep
+dumpkeys              mountpoint  rm                       zforce
+echo                  mt          rmdir                    zgrep
+ed                    mt-gnu      rnano                    zless
+egrep                 mv          running-in-container     zmore
+false                 nano        run-parts                znew
+

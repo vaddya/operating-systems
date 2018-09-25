@@ -1,0 +1,87 @@
+\documentclass[a4paper,14pt]{extarticle}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{here}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{chngcntr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{cmap}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes,arrows}
+
+\definecolor{green}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{purple}{rgb}{0.58,0,0.82}
+
+\lstset{
+	language={C},
+	inputpath={../code/},
+	backgroundcolor=\color{white},
+	commentstyle=\color{green},
+	keywordstyle=\color{blue},
+	numberstyle=\scriptsize\color{gray},
+	stringstyle=\color{purple},
+	basicstyle=\small,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=8,
+	frame=single,
+	morekeywords={cjne, subb, clr, anl, cpl, orl, lcall, movx, djnz, rr}
+}
+
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\def\code#1{\texttt{#1}}
+
+\titleformat*{\section}{\large\bfseries} 
+\titleformat*{\subsection}{\normalsize\bfseries} 
+\titleformat*{\subsubsection}{\normalsize\bfseries} 
+\titleformat*{\paragraph}{\normalsize\bfseries} 
+\titleformat*{\subparagraph}{\normalsize\bfseries} 
+
+\counterwithin{figure}{section}
+\counterwithin{equation}{section}
+\counterwithin{table}{section}
+\newcommand{\sign}[1][5cm]{\makebox[#1]{\hrulefill}}
+\newcommand{\equipollence}{\quad\Leftrightarrow\quad}
+\newcommand{\no}[1]{\overline{#1}}
+\graphicspath{{../pics/}{../screens/}}
+\captionsetup{justification=centering,margin=1cm}
+\def\arraystretch{1.3}
+\setlength\parindent{5ex}
+\titlelabel{\thetitle.\quad}
+
+\setitemize{topsep=0.5em, itemsep=0em}
+\setenumerate{topsep=0.5em, itemsep=0em}

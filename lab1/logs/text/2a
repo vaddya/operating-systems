@@ -1,0 +1,9 @@
+user@SPOComp13:~/435013/vaddya/text$ ps | cut -c2-5
+ PID
+4118
+5210
+5276
+5422
+6272
+6273
+

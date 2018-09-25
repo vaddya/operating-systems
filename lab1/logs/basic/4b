@@ -1,0 +1,8 @@
+user@SPOComp13:~/435013/vaddya/basic/test$ cat junk
+junk content
+user@SPOComp13:~/435013/vaddya/basic/test$ cat temp
+temp content
+user@SPOComp13:~/435013/vaddya/basic/test$ cat junk temp
+junk content
+temp content
+

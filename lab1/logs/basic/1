@@ -1,0 +1,13 @@
+user@SPOComp13:~/435013/vaddya/basic$ date
+Чт. сент. 13 13:30:46 MSK 2018
+user@SPOComp13:~/435013/vaddya/basic$ who
+user     :0           2018-09-13 13:10 (:0)
+user     pts/0        2018-09-13 13:19 (:0)
+user@SPOComp13:~/435013/vaddya/basic$ who am i
+user     pts/0        2018-09-13 13:19 (:0)
+user@SPOComp13:~/435013/vaddya/basic$ tty
+/dev/pts/0
+user@SPOComp13:~/435013/vaddya/basic$ logname
+user
+user@SPOComp13:~/435013/vaddya/basic$ uname
+Linux

@@ -1,0 +1,22 @@
+user@SPOComp13:~/435013/vaddya/basic/test$ mv junk aaa
+user@SPOComp13:~/435013/vaddya/basic/test$ ls
+aaa  temp
+user@SPOComp13:~/435013/vaddya/basic/test$ cat junk
+cat: junk: No such file or directory
+user@SPOComp13:~/435013/vaddya/basic/test$ cat aaa
+junk content
+user@SPOComp13:~/435013/vaddya/basic/test$ 
+user@SPOComp13:~/435013/vaddya/basic/test$ cp aaa bbb
+user@SPOComp13:~/435013/vaddya/basic/test$ ls
+aaa  bbb  temp
+user@SPOComp13:~/435013/vaddya/basic/test$ cat bbb
+junk content
+user@SPOComp13:~/435013/vaddya/basic/test$ 
+user@SPOComp13:~/435013/vaddya/basic/test$ rm junk bbb
+rm: cannot remove ‘junk’: No such file or directory
+user@SPOComp13:~/435013/vaddya/basic/test$ ls
+aaa  temp
+user@SPOComp13:~/435013/vaddya/basic/test$ man mv
+user@SPOComp13:~/435013/vaddya/basic/test$ man cp
+user@SPOComp13:~/435013/vaddya/basic/test$ man rm
+
