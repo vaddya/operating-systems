@@ -1,0 +1,10 @@
+user@SPOComp13:~/435013/vaddya/text$ ls -l /tmp | grep ^.............root
+drwx------ 2 root root 4096 сент. 13 13:08 pulse-PKdhtXMmr18n
+drwxrwxrwt 2 root root 4096 сент. 13 13:08 VMwareDnD
+drwx------ 2 root root 4096 сент. 13 13:08 vmware-root
+user@SPOComp13:~/435013/vaddya/text$ ls -l /tmp | grep ^.............root -v
+total 16
+-rwxrwxrwx 1 user user    0 сент. 13 14:58 my_file
+drwx------ 2 user user 4096 сент. 13 13:10 ssh-dzNcxsAeIx32
+-rw-rw-r-- 1 user user    0 сент. 13 13:08 unity_support_test.0
+

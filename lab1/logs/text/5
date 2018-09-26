@@ -1,0 +1,19 @@
+vaddya@turing:~/Git/os/lab1/logs/compile$ diff -e prog.c my_open.c > eqv
+vaddya@turing:~/Git/os/lab1/logs/compile$ cat eqv
+4c
+char str[20];
+scanf("%s", str);
+if (str != NULL) {
+  	if (fopen(str,"r") == NULL)
+		printf("%s: неудача при попытке открыть файл %s",argv[0],str);
+  	else
+		printf("%s: файл %s открыт",argv[0],str);
+} else
+     printf("открываемый файл не указан");
+.
+1,2c
+ #include <stdio.h>
+main ( argc, argv )
+int argc;
+char *argv [];
+.

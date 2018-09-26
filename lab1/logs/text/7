@@ -1,0 +1,6 @@
+user@SPOComp13:~/435013/vaddya/text$ ls -l /usr/bin | cut -c29-36 | sort -n | uniq -d
+2
+3
+...
+576440
+814856

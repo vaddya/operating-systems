@@ -1,0 +1,4 @@
+vaddya@turing:~/Git/os/lab1/logs/compile$ cmp prog.c my_open.c
+prog.c my_open.c differ: byte 26, line 2
+vaddya@turing:~/Git/os/lab1/logs/compile$ cmp hello my_open
+hello my_open differ: byte 25, line 1

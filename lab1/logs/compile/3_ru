@@ -10,10 +10,10 @@ user@SPOComp13:~/435013/vaddya/compile$ ./file_name
 res
 user@SPOComp13:~/435013/vaddya/compile$ ./my_open
 res
-./my_open: С„Р°Р№Р» res РѕС‚РєСЂС‹С‚
+./my_open: файл res открыт
 user@SPOComp13:~/435013/vaddya/compile$
 user@SPOComp13:~/435013/vaddya/compile$ ./file_name || ./my_open
 res
-./my_open: РЅРµСѓРґР°С‡Р° РїСЂРё РїРѕРїС‹С‚РєРµ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р»
+./my_open: неудача при попытке открыть файл
 user@SPOComp13:~/435013/vaddya/compile$ ./file_name | ./my_open
-./my_open: С„Р°Р№Р» res РѕС‚РєСЂС‹С‚
+./my_open: файл res открыт

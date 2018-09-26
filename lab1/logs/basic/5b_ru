@@ -7,15 +7,15 @@ user@SPOComp13:~/435013/vaddya/basic$ cd ..
 user@SPOComp13:~/435013/vaddya$ pwd
 /home/user/435013/vaddya
 user@SPOComp13:~/435013/vaddya$ ls -ld
-drwxrwxr-x 3 user user 4096 ÑĞµĞ½Ñ‚. 13 13:38 .
+drwxrwxr-x 3 user user 4096 ñåíò. 13 13:38 .
 user@SPOComp13:~/435013/vaddya$ ls -ld /
-drwxr-xr-x 23 root root 4096 Ğ°Ğ¿Ñ€.  29  2016 /
+drwxr-xr-x 23 root root 4096 àïğ.  29  2016 /
 user@SPOComp13:~/435013/vaddya$ ls -ld /bin
-drwxr-xr-x 2 root root 4096 Ğ°Ğ¿Ñ€.  29  2016 /bin
+drwxr-xr-x 2 root root 4096 àïğ.  29  2016 /bin
 user@SPOComp13:~/435013/vaddya$ ls -ld ~/
-drwxr-xr-x 26 user user 4096 ÑĞµĞ½Ñ‚. 13 13:21 /home/user/
+drwxr-xr-x 26 user user 4096 ñåíò. 13 13:21 /home/user/
 user@SPOComp13:~/435013/vaddya$ mv /bin/cp /bin/cpp
-mv: cannot move â€˜/bin/cpâ€™ to â€˜/bin/cppâ€™: Permission denied
+mv: cannot move ‘/bin/cp’ to ‘/bin/cpp’: Permission denied
 user@SPOComp13:~/435013/vaddya$ cd
 user@SPOComp13:~$ pwd
 /home/user
@@ -34,7 +34,7 @@ user@SPOComp13:~/435013/vaddya/basic/test$ cd ..
 user@SPOComp13:~/435013/vaddya/basic$ ls
 1  2  3  4a  4b  4c  5a  test
 user@SPOComp13:~/435013/vaddya/basic$ rmdir test/
-rmdir: failed to remove â€˜test/â€™: Directory not empty
+rmdir: failed to remove ‘test/’: Directory not empty
 user@SPOComp13:~/435013/vaddya/basic$ rm test/*
 user@SPOComp13:~/435013/vaddya/basic$ rmdir test/
 user@SPOComp13:~/435013/vaddya/basic$ ls

@@ -2,4 +2,3 @@ user@SPOComp13:~/435013/vaddya/text$ who am i
 user     pts/0        2018-09-13 13:19 (:0)
 user@SPOComp13:~/435013/vaddya/text$ who am i | cut -d' ' -f1
 user
-

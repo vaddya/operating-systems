@@ -1,9 +1,11 @@
-1user@SPOComp13:~/435013/vaddya/compile$ nano my_open.c 
 user@SPOComp13:~/435013/vaddya/compile$ cc my_open.c
 user@SPOComp13:~/435013/vaddya/compile$ ls
 1  a.out  hello  my_open.c  prog.c  prog.o  res
 user@SPOComp13:~/435013/vaddya/compile$ ./a.out res
-./a.out: С„Р°Р№Р» res РѕС‚РєСЂС‹С‚user@SPOComp13:~/435013/vaddya/compile$ 
+./a.out: файл res открыт
+user@SPOComp13:~/435013/vaddya/compile$
 user@SPOComp13:~/435013/vaddya/compile$ ./a.out not_exist
-./a.out: РЅРµСѓРґР°С‡Р° РїСЂРё РїРѕРїС‹С‚РєРµ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р» not_existuser@SPOComp13:~/435013/vaddya/compile$ 
-
+./a.out: неудача при попытке открыть файл not_exist
+user@SPOComp13:~/435013/vaddya/compile$
+user@SPOComp13:~/435013/vaddya/compile$ ./a.out
+открываемый файл не указан

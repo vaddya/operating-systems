@@ -15,29 +15,29 @@ boot   etc   lib         media       proc  sbin  tmp  vmlinuz
 cdrom  home  lib64       mnt         root  srv   usr
 user@SPOComp13:~/435013/vaddya/basic/test$ ls -l /
 total 96
-drwxr-xr-x   2 root root  4096 Р°РїСЂ.  29  2016 bin
-drwxr-xr-x   3 root root  4096 Р°РїСЂ.  29  2016 boot
-drwxrwxr-x   2 root root  4096 Р°РїСЂ.  29  2016 cdrom
-drwxr-xr-x  16 root root  4260 СЃРµРЅС‚. 13 13:08 dev
-drwxr-xr-x 132 root root 12288 СЃРµРЅС‚. 13 13:10 etc
-drwxr-xr-x   5 root root  4096 Р°РїСЂ.  29  2016 home
-lrwxrwxrwx   1 root root    33 Р°РїСЂ.  29  2016 initrd.img -> boot/initrd.img-3.13.0-24-generic
-drwxr-xr-x  23 root root  4096 Р°РїСЂ.  29  2016 lib
-drwxr-xr-x   2 root root  4096 Р°РїСЂ.  17  2014 lib64
-drwx------   2 root root 16384 Р°РїСЂ.  29  2016 lost+found
-drwxr-xr-x   5 root root  4096 СЃРµРЅС‚. 30  2016 media
-drwxr-xr-x   2 root root  4096 Р°РїСЂ.  11  2014 mnt
-drwxr-xr-x   2 root root  4096 Р°РїСЂ.  17  2014 opt
-dr-xr-xr-x 216 root root     0 СЃРµРЅС‚. 13 13:07 proc
-drwx------   3 root root  4096 Р°РїСЂ.  29  2016 root
-drwxr-xr-x  24 root root   920 СЃРµРЅС‚. 13 13:27 run
-drwxr-xr-x   2 root root 12288 Р°РїСЂ.  29  2016 sbin
-drwxr-xr-x   2 root root  4096 Р°РїСЂ.  17  2014 srv
-dr-xr-xr-x  13 root root     0 СЃРµРЅС‚. 13 13:07 sys
-drwxrwxrwt   8 root root  4096 СЃРµРЅС‚. 13 13:49 tmp
-drwxr-xr-x  10 root root  4096 Р°РїСЂ.  17  2014 usr
-drwxr-xr-x  13 root root  4096 Р°РїСЂ.  17  2014 var
-lrwxrwxrwx   1 root root    30 Р°РїСЂ.  29  2016 vmlinuz -> boot/vmlinuz-3.13.0-24-generic
+drwxr-xr-x   2 root root  4096 апр.  29  2016 bin
+drwxr-xr-x   3 root root  4096 апр.  29  2016 boot
+drwxrwxr-x   2 root root  4096 апр.  29  2016 cdrom
+drwxr-xr-x  16 root root  4260 сент. 13 13:08 dev
+drwxr-xr-x 132 root root 12288 сент. 13 13:10 etc
+drwxr-xr-x   5 root root  4096 апр.  29  2016 home
+lrwxrwxrwx   1 root root    33 апр.  29  2016 initrd.img -> boot/initrd.img-3.13.0-24-generic
+drwxr-xr-x  23 root root  4096 апр.  29  2016 lib
+drwxr-xr-x   2 root root  4096 апр.  17  2014 lib64
+drwx------   2 root root 16384 апр.  29  2016 lost+found
+drwxr-xr-x   5 root root  4096 сент. 30  2016 media
+drwxr-xr-x   2 root root  4096 апр.  11  2014 mnt
+drwxr-xr-x   2 root root  4096 апр.  17  2014 opt
+dr-xr-xr-x 216 root root     0 сент. 13 13:07 proc
+drwx------   3 root root  4096 апр.  29  2016 root
+drwxr-xr-x  24 root root   920 сент. 13 13:27 run
+drwxr-xr-x   2 root root 12288 апр.  29  2016 sbin
+drwxr-xr-x   2 root root  4096 апр.  17  2014 srv
+dr-xr-xr-x  13 root root     0 сент. 13 13:07 sys
+drwxrwxrwt   8 root root  4096 сент. 13 13:49 tmp
+drwxr-xr-x  10 root root  4096 апр.  17  2014 usr
+drwxr-xr-x  13 root root  4096 апр.  17  2014 var
+lrwxrwxrwx   1 root root    30 апр.  29  2016 vmlinuz -> boot/vmlinuz-3.13.0-24-generic
 user@SPOComp13:~/435013/vaddya/basic/test$ ls /bin
 bash                  fgconsole   nc                       sed
 bunzip2               fgrep       nc.openbsd               setfacl

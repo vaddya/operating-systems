@@ -1,0 +1,20 @@
+user@SPOComp13:~/435013/vaddya/text$ ls | sort
+1a
+1b
+1c
+2a
+2b
+3
+user@SPOComp13:~/435013/vaddya/text$ ls -l
+total 24
+-rw-rw-r-- 1 user user 1028 сент. 13 15:05 1a
+-rw-rw-r-- 1 user user  788 сент. 13 15:08 1b
+-rw-rw-r-- 1 user user  530 сент. 13 15:23 1c
+-rw-rw-r-- 1 user user   88 сент. 13 15:34 2a
+-rw-rw-r-- 1 user user  158 сент. 13 15:35 2b
+-rw-rw-r-- 1 user user  131 сент. 13 15:37 3
+user@SPOComp13:~/435013/vaddya/text$ ls --sort=size
+1a  1b  1c  2b  3  2a
+user@SPOComp13:~/435013/vaddya/text$ ls --sort=size -r
+2a  3  2b  1c  1b  1a
+
