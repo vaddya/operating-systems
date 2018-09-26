@@ -1,4 +1,4 @@
 user@SPOComp13:~/435013/vaddya/basic$ man date
 user@SPOComp13:~/435013/vaddya/basic$ man who
 user@SPOComp13:~/435013/vaddya/basic$ man tty
-
+user@SPOComp13:~/435013/vaddya/basic$ man 3 pthread_create

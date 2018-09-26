@@ -34,8 +34,8 @@
 \definecolor{purple}{rgb}{0.58,0,0.82}
 
 \lstset{
-	language={C},
-	inputpath={../code/},
+	language={bash},
+	inputpath={../logs/},
 	backgroundcolor=\color{white},
 	commentstyle=\color{green},
 	keywordstyle=\color{blue},
@@ -52,8 +52,10 @@
 	showstringspaces=false,
 	showtabs=false,
 	tabsize=8,
+	texcl=true,
 	frame=single,
-	morekeywords={cjne, subb, clr, anl, cpl, orl, lcall, movx, djnz, rr}
+	morekeywords={date, who, tty, logname, uname, sleep, man, ls},
+	deletekeywords={test}
 }
 
 \renewcommand{\le}{\ensuremath{\leqslant}}
@@ -64,6 +66,7 @@
 \renewcommand{\phi}{\ensuremath{\varphi}}
 \renewcommand{\thefigure}{\arabic{figure}}
 \def\code#1{\texttt{#1}}
+\newcommand{\caret}{\^{}}
 
 \titleformat*{\section}{\large\bfseries} 
 \titleformat*{\subsection}{\normalsize\bfseries} 

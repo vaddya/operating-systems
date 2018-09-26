@@ -19,21 +19,58 @@
 
 \subsection{\code{date}}
 
+Вывод текущей даты:
+\lstinputlisting[firstline=1, lastline=2]{basic/1}
+
 \subsection{\code{who}}
+
+Пользователи, находящиеся в системе:
+\lstinputlisting[firstline=3, lastline=5]{basic/1}
+
+Имя текущего пользователя:
+\lstinputlisting[firstline=6, lastline=7]{basic/1}
 
 \subsection{\code{tty}}
 
+Полное имя файла-терминала, подключенного к стандартному вводу:
+\lstinputlisting[firstline=8, lastline=10]{basic/1}
+
 \subsection{\code{logname}}
+
+Входное имя пользователя:
+\lstinputlisting[firstline=10, lastline=11]{basic/1}
 
 \subsection{\code{uname}}
 
+Имя ядра (kernel):
+\lstinputlisting[firstline=12, lastline=13]{basic/1}
+
 \subsection{\code{sleep}}
 
+Команда \code{sleep} приостанавливает выполнение на число секунд, указанное первым аргументом. Например, первый вызов привел к 5-секундной задержке, а второй вызов задерживает на 10000 секунд. Чтобы продолжить выполнение был послан сигнал \code{SIGINT} при помощи сочетания клавиш \code{<\caret C>}, сразу после этого появилось приглашение к вводу.
+\lstinputlisting{basic/2}
+
 \subsection{\code{man}}
+
+Команда \code{man} используется для получения справочной информации  о различных программах, утилитах или функциях. Дополнительным аргументом команды является номер раздела (по умолчанию поиск проводится во всех разделах):
+\begin{enumerate}
+	\item Выполняемые программы или \code{shell} команды;
+	\item Системные вызовы (функции, предоставляемые ядром);
+	\item Библиотечные вызовы (функции внутри библиотек);
+	\item Специальные файлы (обычно \code{/dev});
+	\item Конвенции и форматы файлов (например, \code{/etc/passwd});
+	\item Игры;
+	\item Разное;
+	\item Команды системного администрирования (обычно для \code{root});
+	\item Подпрограммы ядра (не стандартизован).
+\end{enumerate}
+\lstinputlisting[deletekeywords={date, who, tty}]{basic/3}
 
 \section{Утилиты работы с файлами (каталогами) и процессами}
 
 \subsection{\code{ls}}
+
+\lstinputlisting[inputencoding=cp1251]{basic/4a_ru}
 
 \subsection{\code{cat}}
 
