@@ -1,0 +1,8 @@
+# Regular file
+vaddya@turing:~/Git/os/lab2/logs$ ls -l file_types/ | grep ^-
+-rw-rw-r-- 1 vaddya vaddya   972 Sep 27 12:39 block
+-rw-rw-r-- 1 vaddya vaddya 10390 Sep 27 12:38 character
+-rw-rw-r-- 1 vaddya vaddya     0 Sep 27 12:46 file
+-rw-rw-r-- 1 vaddya vaddya   672 Sep 27 12:49 pipe
+-rw-rw-r-- 1 vaddya vaddya   140 Sep 27 12:46 socket
+-rw-rw-r-- 1 vaddya vaddya   941 Sep 27 12:43 symbolic

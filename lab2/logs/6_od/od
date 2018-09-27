@@ -1,0 +1,6 @@
+vaddya@turing:~/Git/os/lab2/logs/test$ od -c buzz
+0000000   b   u   z   z  \n
+0000005
+vaddya@turing:~/Git/os/lab2/logs/test$ od -c .
+od: .: read error: Is a directory
+0000000

@@ -1,0 +1,12 @@
+# Pipe files
+vaddya@turing:~/Git/os/lab2/logs$ sudo ls -l /run/systemd/inhibit/ | grep ^p
+prw------- 1 root root   0 Sep 27 12:13 10.ref
+prw------- 1 root root   0 Sep 27 12:13 12.ref
+prw------- 1 root root   0 Sep 27 12:12 1.ref
+prw------- 1 root root   0 Sep 27 12:12 2.ref
+prw------- 1 root root   0 Sep 27 12:12 3.ref
+prw------- 1 root root   0 Sep 27 12:12 4.ref
+prw------- 1 root root   0 Sep 27 12:12 5.ref
+prw------- 1 root root   0 Sep 27 12:12 7.ref
+prw------- 1 root root   0 Sep 27 12:13 8.ref
+prw------- 1 root root   0 Sep 27 12:13 9.ref

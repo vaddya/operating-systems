@@ -1,0 +1,18 @@
+# Block files
+vaddya@turing:~/Git/os/lab2/logs$ ls -l /dev | grep ^b
+brw-rw----  1 root   disk      7,   0 Sep 27 12:12 loop0
+brw-rw----  1 root   disk      7,   1 Sep 27 12:12 loop1
+brw-rw----  1 root   disk      7,   2 Sep 27 12:12 loop2
+brw-rw----  1 root   disk      7,   3 Sep 27 12:12 loop3
+brw-rw----  1 root   disk      7,   4 Sep 27 12:12 loop4
+brw-rw----  1 root   disk      7,   5 Sep 27 12:12 loop5
+brw-rw----  1 root   disk      7,   6 Sep 27 12:12 loop6
+brw-rw----  1 root   disk      7,   7 Sep 27 12:12 loop7
+brw-rw----  1 root   disk      8,   0 Sep 27 12:12 sda
+brw-rw----  1 root   disk      8,   1 Sep 27 12:12 sda1
+brw-rw----  1 root   disk      8,   2 Sep 27 12:12 sda2
+brw-rw----  1 root   disk      8,   3 Sep 27 12:12 sda3
+brw-rw----  1 root   disk      8,   4 Sep 27 12:12 sda4
+brw-rw----  1 root   disk      8,   5 Sep 27 12:12 sda5
+brw-rw----  1 root   disk      8,   6 Sep 27 12:12 sda6
+brw-rw----+ 1 root   cdrom    11,   0 Sep 27 12:12 sr0

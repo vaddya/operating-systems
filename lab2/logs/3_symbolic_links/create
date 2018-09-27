@@ -1,0 +1,23 @@
+# Creating links
+vaddya@turing:~/Git/os/lab2/logs/test$ ls -li
+total 8
+11700138 -rw-r--r-- 1 vaddya vaddya 5 Sep 27 13:18 buzz
+11667361 -rw-r--r-- 1 vaddya vaddya 4 Sep 27 12:31 foo
+vaddya@turing:~/Git/os/lab2/logs/test$ ln -s buzz buzz_ln
+vaddya@turing:~/Git/os/lab2/logs/test$ link buzz buzz_link
+vaddya@turing:~/Git/os/lab2/logs/test$ cp buzz buzz_cp
+vaddya@turing:~/Git/os/lab2/logs/test$ ls -li
+total 16
+11700138 -rw-r--r-- 2 vaddya vaddya 5 Sep 27 13:18 buzz
+11701093 -rw-r--r-- 1 vaddya vaddya 5 Sep 27 13:24 buzz_cp
+11700138 -rw-r--r-- 2 vaddya vaddya 5 Sep 27 13:18 buzz_link
+11700660 lrwxrwxrwx 1 vaddya vaddya 4 Sep 27 13:23 buzz_ln -> buzz
+11667361 -rw-r--r-- 1 vaddya vaddya 4 Sep 27 12:31 foo
+vaddya@turing:~/Git/os/lab2/logs/test$ cat buzz
+buzz
+vaddya@turing:~/Git/os/lab2/logs/test$ cat buzz_cp
+buzz
+vaddya@turing:~/Git/os/lab2/logs/test$ cat buzz_link
+buzz
+vaddya@turing:~/Git/os/lab2/logs/test$ cat buzz_ln
+buzz

@@ -1,0 +1,3 @@
+vaddya@turing:~/Git/os/lab2/logs/test$ ls -Rli | grep "\-> buzz"
+11700660 lrwxrwxrwx 1 vaddya vaddya    4 Sep 27 13:23 buzz_ln -> buzz
+11701360 lrwxrwxrwx 1 vaddya vaddya 4 Sep 27 13:27 buzz_ln_in_fold -> buzz

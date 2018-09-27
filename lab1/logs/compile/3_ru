@@ -15,5 +15,8 @@ user@SPOComp13:~/435013/vaddya/compile$
 user@SPOComp13:~/435013/vaddya/compile$ ./file_name || ./my_open
 res
 ./my_open: неудача при попытке открыть файл
+user@SPOComp13:~/435013/vaddya/compile$ ./file_name && ./my_open
+res
+./my_open: неудача при попытке открыть файл
 user@SPOComp13:~/435013/vaddya/compile$ ./file_name | ./my_open
 ./my_open: файл res открыт
