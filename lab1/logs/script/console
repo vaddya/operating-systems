@@ -1,0 +1,14 @@
+vaddya@turing:~/Git/os/lab1/logs/script$ ./logger.sh
+
+Thu Oct 18 11:16:08 MSK 2018
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ date
+Thu Oct 18 11:16:10 MSK 2018
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ pwd
+/home/vaddya/Git/os/lab1/logs/script
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ whoami
+vaddya
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ hostname
+turing
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ ^C
+
