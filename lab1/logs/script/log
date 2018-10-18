@@ -1,10 +1,14 @@
 
-Thu Oct 18 11:16:08 MSK 2018
+Thu Oct 18 11:33:57 MSK 2018
 
-vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ date
-Thu Oct 18 11:16:10 MSK 2018
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ ls
+console
+log
+logger.sh
 vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ pwd
 /home/vaddya/Git/os/lab1/logs/script
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ date
+Thu Oct 18 11:34:04 MSK 2018
 vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ whoami
 vaddya
 vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ hostname

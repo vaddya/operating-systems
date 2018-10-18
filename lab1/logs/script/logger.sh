@@ -1,15 +1,15 @@
 #!/bin/bash
 touch log
-now=`eval date`
+now=`date`
 echo -e "\n$now\n" | tee -a log
-who=`eval whoami`
-host=`eval hostname`
+who=`whoami`
+host=`hostname`
 while true
 do
-	dir=`eval pwd`
+	dir=`pwd`
 	echo -n "$who@$host:$dir$ " | tee -a log
 	read command
-	result=`eval $command`
+	result=`$command`
 	echo "$command" >> log
 	echo "$result" | tee -a log
 done
