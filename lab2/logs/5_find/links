@@ -1,0 +1,6 @@
+vaddya@turing:~/Git/os/lab2/logs/test$ find -type l
+./fold/buzz_ln_in_fold
+./buzz_ln
+vaddya@turing:~/Git/os/lab2/logs/test$ find -type l -exec file {} \;
+./fold/buzz_ln_in_fold: broken symbolic link to buzz
+./buzz_ln: symbolic link to buzz

@@ -1,0 +1,8 @@
+vaddya@turing:~/Git/os/lab2/logs/test$ ls -l
+total 20
+-rw-r--r-- 2 vaddya vaddya    5 Sep 27 13:18 buzz
+-rw-r--r-- 1 vaddya vaddya    5 Sep 27 13:24 buzz_cp
+-rw-r--r-- 2 vaddya vaddya    5 Sep 27 13:18 buzz_link
+lrwxrwxrwx 1 vaddya vaddya    4 Sep 27 13:23 buzz_ln -> buzz
+drwxr-xr-x 2 vaddya vaddya 4096 Sep 27 13:27 fold
+-rw-r--r-- 1 vaddya vaddya    4 Sep 27 12:31 foo

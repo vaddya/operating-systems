@@ -1,3 +1,6 @@
+vaddya@turing:~/Git/os/lab2/logs/test$ od buzz
+0000000 072542 075172 000012
+0000005
 vaddya@turing:~/Git/os/lab2/logs/test$ od -c buzz
 0000000   b   u   z   z  \n
 0000005

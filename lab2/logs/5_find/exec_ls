@@ -1,0 +1,10 @@
+vaddya@turing:~/Git/os/lab2/logs/test$ find -exec ls -i {} \;
+11700138 buzz	  11700138 buzz_link  11706754 fold
+11701093 buzz_cp  11700660 buzz_ln    11667361 foo
+11700138 ./buzz_link
+11700138 ./buzz
+11701093 ./buzz_cp
+11701360 buzz_ln_in_fold
+11701360 ./fold/buzz_ln_in_fold
+11700660 ./buzz_ln
+11667361 ./foo
