@@ -1,0 +1,5 @@
+vaddya@turing:~$ cat /etc/fstab
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+UUID=3d3b986b-bb23-419b-9825-89494f155e66 / ext4 errors=remount 0 1
+UUID=0A7A-167F /boot/efi vfat umask=0077 0 1
+/swapfile none swap sw 0 0
