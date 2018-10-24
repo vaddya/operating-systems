@@ -1,10 +1,4 @@
-vaddya@turing:~$ df -h -x tmpfs
-Filesystem      Size  Used Avail Use% Mounted on
-udev            7.8G     0  7.8G   0% /dev
-/dev/sda6       197G  129G   58G  69% /
-/dev/loop0      196M  196M     0 100% /snap/vlc/555
-/dev/loop1       88M   88M     0 100% /snap/core/5328
-/dev/loop2       88M   88M     0 100% /snap/core/5662
-/dev/loop4      198M  198M     0 100% /snap/vlc/365
-/dev/loop3       88M   88M     0 100% /snap/core/5548
-/dev/sda2        96M   29M   68M  30% /boot/efi
+vaddya@turing:~$ df -hT -x tmpfs -x squashfs -x devtmpfs
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/sda6      ext4  197G  170G   17G  92% /
+/dev/sda2      vfat   96M   29M   68M  30% /boot/efi

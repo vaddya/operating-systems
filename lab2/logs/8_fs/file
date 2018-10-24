@@ -1,0 +1,10 @@
+vaddya@turing:~$ file .
+.: directory
+vaddya@turing:~$ file svg.svg
+svg.svg: SVG Scalable Vector Graphics image
+vaddya@turing:~$ file FTP/Server/hotel.png
+FTP/Server/hotel.png: PNG image data, 1721 x 941, 8-bit/color RGBA, non-interlaced
+vaddya@turing:~$ file FTP/Server/example1.zip
+FTP/Server/example1.zip: Zip archive data, at least v2.0 to extract
+vaddya@turing:~$ file Downloads/lab1
+Downloads/lab1: PDF document, version 1.5

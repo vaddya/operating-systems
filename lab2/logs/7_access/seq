@@ -1,0 +1,11 @@
+vaddya@turing:~/Git/os/lab2/logs/test/access$ ls -l
+total 4
+-rw-r--r-- 1 vaddya vaddya 4 Oct 24 10:39 bar
+vaddya@turing:~/Git/os/lab2/logs/test/access$ cat bar
+bar
+vaddya@turing:~/Git/os/lab2/logs/test/access$ chmod u-rw bar
+vaddya@turing:~/Git/os/lab2/logs/test/access$ ls -l
+total 4
+----r--r-- 1 vaddya vaddya 4 Oct 24 10:39 bar
+vaddya@turing:~/Git/os/lab2/logs/test/access$ cat bar
+cat: bar: Permission denied

@@ -1,16 +1,16 @@
-vaddya@turing:~$ df -h
-Filesystem      Size  Used Avail Use% Mounted on
-udev            7.8G     0  7.8G   0% /dev
-tmpfs           1.6G  2.1M  1.6G   1% /run
-/dev/sda6       197G  129G   58G  69% /
-tmpfs           7.8G   80M  7.8G   1% /dev/shm
-tmpfs           5.0M  4.0K  5.0M   1% /run/lock
-tmpfs           7.8G     0  7.8G   0% /sys/fs/cgroup
-/dev/loop0      196M  196M     0 100% /snap/vlc/555
-/dev/loop1       88M   88M     0 100% /snap/core/5328
-/dev/loop2       88M   88M     0 100% /snap/core/5662
-/dev/loop4      198M  198M     0 100% /snap/vlc/365
-/dev/loop3       88M   88M     0 100% /snap/core/5548
-/dev/sda2        96M   29M   68M  30% /boot/efi
-tmpfs           1.6G   16K  1.6G   1% /run/user/121
-tmpfs           1.6G   64K  1.6G   1% /run/user/1000
+vaddya@turing:~$ df -hT
+Filesystem     Type      Size  Used Avail Use% Mounted on
+udev           devtmpfs  7.8G     0  7.8G   0% /dev
+tmpfs          tmpfs     1.6G  2.1M  1.6G   1% /run
+/dev/sda6      ext4      197G  170G   17G  92% /
+tmpfs          tmpfs     7.8G  138M  7.7G   2% /dev/shm
+tmpfs          tmpfs     5.0M  4.0K  5.0M   1% /run/lock
+tmpfs          tmpfs     7.8G     0  7.8G   0% /sys/fs/cgroup
+/dev/loop1     squashfs   88M   88M     0 100% /snap/core/5328
+/dev/loop0     squashfs  196M  196M     0 100% /snap/vlc/555
+/dev/loop2     squashfs  198M  198M     0 100% /snap/vlc/365
+/dev/loop3     squashfs   88M   88M     0 100% /snap/core/5548
+/dev/loop4     squashfs   88M   88M     0 100% /snap/core/5662
+/dev/sda2      vfat       96M   29M   68M  30% /boot/efi
+tmpfs          tmpfs     1.6G   16K  1.6G   1% /run/user/121
+tmpfs          tmpfs     1.6G   56K  1.6G   1% /run/user/1000
