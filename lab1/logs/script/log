@@ -1,16 +1,25 @@
 
-Thu Oct 18 11:33:57 MSK 2018
+Thu Oct 25 14:39:39 MSK 2018
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ pwd
+/home/vaddya/Git/os/lab1/logs/script
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ ls
+console
+log
+logger.sh
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ uname
+Linux
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ uname -a
+Linux turing 4.15.0-36-generic #39-Ubuntu SMP Mon Sep 24 16:19:09 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ 
+Thu Oct 25 14:40:06 MSK 2018
 
 vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ ls
 console
 log
 logger.sh
+vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ cd ..
+
 vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ pwd
 /home/vaddya/Git/os/lab1/logs/script
-vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ date
-Thu Oct 18 11:34:04 MSK 2018
-vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ whoami
-vaddya
-vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ hostname
-turing
 vaddya@turing:/home/vaddya/Git/os/lab1/logs/script$ 

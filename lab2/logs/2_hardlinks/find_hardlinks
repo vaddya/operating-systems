@@ -1,0 +1,3 @@
+vaddya@turing:~/Git/os/lab2/logs/test$ ./find_hardlinks.sh buzz .
+11700138 -rw-r--r-- 2 vaddya vaddya    5 Sep 27 13:18 buzz
+11700138 -rw-r--r-- 2 vaddya vaddya    5 Sep 27 13:18 buzz_link

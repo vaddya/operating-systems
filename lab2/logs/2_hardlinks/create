@@ -1,4 +1,3 @@
-# Hardlink creating
 vaddya@turing:~/Git/os/lab2/logs/test$ ls
 buzz  foo
 vaddya@turing:~/Git/os/lab2/logs/test$ ln foo bar
@@ -6,13 +5,4 @@ vaddya@turing:~/Git/os/lab2/logs/test$ ls -li
 total 12
 11667361 -rw-r--r-- 2 vaddya vaddya 4 Sep 27 12:31 bar
 11675247 -rw-r--r-- 1 vaddya vaddya 5 Sep 27 12:31 buzz
-11667361 -rw-r--r-- 2 vaddya vaddya 4 Sep 27 12:31 foo
-
-# Get Inode
-vaddya@turing:~/Git/os/lab2/logs/test$ stat foo | grep "Inode:" | cut -f2 | cut -c8-15
-11667361
-
-# Files with same Inode
-vaddya@turing:~/Git/os/lab2/logs/test$ ls -li | grep ^11667361
-11667361 -rw-r--r-- 2 vaddya vaddya 4 Sep 27 12:31 bar
 11667361 -rw-r--r-- 2 vaddya vaddya 4 Sep 27 12:31 foo

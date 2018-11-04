@@ -1,0 +1,7 @@
+vaddya@turing:~/Git/os/lab2/logs/9_gateway$ ls -l
+total 24
+-rwsr-sr-x 1 root   root   8576 Nov  4 22:35 gateway
+-rw-r--r-- 1 vaddya vaddya  277 Nov  4 22:40 gateway.c
+-rw------- 1 root   root     20 Nov  4 17:13 root_file
+vaddya@turing:~/Git/os/lab2/logs/9_gateway$ ./gateway
+This is content of root_file

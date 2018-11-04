@@ -1,0 +1,7 @@
+-rw-------   1 root root 2147483648 Apr  7  2018 swapfile
+drwxr-xr-x   2 root root       4096 Sep 24 18:07 bin
+lrwxrwxrwx   1 root root         33 Oct 22 13:42 initrd.img -> boot/initrd.img-4.15.0-36-generic
+crw-r--r--  1 root   root     10, 235 Nov  4 11:57 autofs
+brw-rw----  1 root   disk      7,   0 Nov  4 11:57 loop0
+p--------- 1 root root    0 Nov  4 11:57 fifo
+srw-rw-rw-  1 root     root        0 Nov  4 11:57 acpid.socket

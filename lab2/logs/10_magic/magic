@@ -1,0 +1,8 @@
+vaddya@turing:~/Git/os/lab2/logs/10_magic$ cat /etc/magic
+# Magic local data for file(1) command.
+# Insert here your local magic data. Format is described in magic(5).
+1 string VADIM Vadim magic format
+vaddya@turing:~/Git/os/lab2/logs/10_magic$ cat test
+ VADIM Hello there
+vaddya@turing:~/Git/os/lab2/logs/10_magic$ file test
+test: Vadim magic format

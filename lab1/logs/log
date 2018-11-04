@@ -826,3 +826,33 @@ user@SPOComp13:~/435013/vaddya/basic$ ps -A
 420000
 576440
 814856
+
+Thu Oct 25 14:31:02 MSK 2018
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ cd script
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ 
+Thu Oct 25 14:32:24 MSK 2018
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ cd script
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ pwd
+/home/vaddya/Git/os/lab1/logs
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ cd script
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ 
+Thu Oct 25 14:33:02 MSK 2018
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ cd script
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ 
+Thu Oct 25 14:33:48 MSK 2018
+
+
+Thu Oct 25 14:34:51 MSK 2018
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ cd script
+
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ pwd
+/home/vaddya/Git/os/lab1/logs
+vaddya@turing:/home/vaddya/Git/os/lab1/logs$ 
