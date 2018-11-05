@@ -1,0 +1,11 @@
+vaddya@turing:~/Git/os/lab3/logs/9$ ./father_wait
+father params: PID = 8489, PPID = 2323
+son params: PID = 8490, PPID = 8489
+son params: PID = 8491, PPID = 8489
+son params: PID = 8492, PPID = 8489
+1) child process with pid = 0 is finished with status 32555
+2) child process with pid = 8491 is finished with status 256
+3) child process with pid = 8492 is finished with status 65280
+process pid = 8490 was failed.
+process pid = 8491 was success, code = 1
+process pid = 8492 was success, code = 255

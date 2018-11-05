@@ -1,0 +1,16 @@
+vaddya@turing:~/Git/os/lab3/logs/5$ ./father &
+[1] 32229
+vaddya@turing:~/Git/os/lab3/logs/5$
+father params: PID = 32229, PPID = 16668
+son params: PID = 32230, PPID = 32229
+ps -xf
+  PID TTY      STAT   TIME COMMAND
+...
+16668 pts/0    Ss     0:00  |   \_ bash
+32229 pts/0    S      0:00  |       \_ ./father
+32230 pts/0    S      0:00  |       |   \_ son
+32239 pts/0    R+     0:00  |       \_ ps -xf
+...
+vaddya@turing:~/Git/os/lab3/logs/5$
+child process is finished with status 0
+[1]+  Done                    ./father

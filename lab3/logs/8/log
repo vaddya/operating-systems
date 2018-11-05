@@ -1,0 +1,5 @@
+vaddya@turing:~/Git/os/lab3/logs/8$ ./exec 1
+vaddya@turing:~/Git/os/lab3/logs/8$ total 20
+-rwxr-xr-x 1 vaddya vaddya 8608 Nov  5 22:43 exec
+-rw-r--r-- 1 vaddya vaddya  938 Nov  5 22:43 exec.c
+-rw-r--r-- 1 vaddya vaddya   50 Nov  5 22:34 Makefile

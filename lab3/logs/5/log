@@ -1,0 +1,4 @@
+vaddya@turing:~/Git/os/lab3/logs/5$ ./father
+father params: PID = 31009, PPID = 16668
+son params: PID = 31010, PPID = 31009
+child process is finished with status 0

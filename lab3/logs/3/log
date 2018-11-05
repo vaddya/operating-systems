@@ -1,0 +1,5 @@
+vaddya@turing:~/Git/os/lab3/logs/3$ ./fight
+pid = 29690
+parent end: 4000
+pid = 0
+child end: 1001

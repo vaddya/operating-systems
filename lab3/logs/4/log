@@ -1,0 +1,10 @@
+vaddya@turing:~/Git/os/lab3/logs/4$ ./fight_sleep
+pid = 29909
+pid = 0
+child end: 1001
+parent end: 4000
+vaddya@turing:~/Git/os/lab3/logs/4$ ./fight_sleep
+pid = 30045
+pid = 0
+parent end: 4000
+child end: 1001

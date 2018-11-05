@@ -1,0 +1,8 @@
+  PID TTY      STAT   TIME COMMAND
+...
+16668 pts/0    Ss     0:00  |   \_ bash
+31082 pts/0    S+     0:00  |       \_ ./father
+31083 pts/0    S+     0:00  |           \_ son
+31084 pts/0    S+     0:00  |           \_ sh -c ps xf > dump.txt
+31085 pts/0    R+     0:00  |               \_ ps xf
+...

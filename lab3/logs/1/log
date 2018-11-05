@@ -1,0 +1,5 @@
+vaddya@turing:~/Git/os/lab3/logs/1$ ./fork
+old PID = 23622, PPID = 16668
+Process end
+new PID = 23623, PPID = 23622
+Process end

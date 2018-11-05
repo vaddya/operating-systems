@@ -1,0 +1,132 @@
+  PID TTY      STAT   TIME COMMAND
+ 2233 tty2     Ssl+   0:00 /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+ 2235 tty2     Sl+   18:20  \_ /usr/lib/xorg/Xorg vt2 -displayfd 3 -auth /run/user/1000/gdm/Xauthority -background none -noreset -keeptty -verbose 3
+ 2266 tty2     Sl+    0:00  \_ /usr/lib/gnome-session/gnome-session-binary --session=ubuntu
+ 2362 ?        Ss     0:00      \_ /usr/bin/ssh-agent /usr/bin/im-launch env GNOME_SHELL_SESSION_MODE=ubuntu gnome-session --session=ubuntu
+ 2409 tty2     Sl+   38:11      \_ /usr/bin/gnome-shell
+ 2437 tty2     Sl     1:08      |   \_ ibus-daemon --xim --panel disable
+ 2441 tty2     Sl     0:00      |   |   \_ /usr/lib/ibus/ibus-dconf
+ 2689 tty2     Sl     0:20      |   |   \_ /usr/lib/ibus/ibus-engine-simple
+24238 tty2     Sl+    0:15      |   \_ telegram-desktop --
+ 4688 tty2     Sl+    0:02      |   \_ /usr/bin/perl /usr/bin/shutter
+ 2521 tty2     Sl+    0:01      \_ /usr/lib/gnome-settings-daemon/gsd-power
+ 2522 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-print-notifications
+ 2523 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-rfkill
+ 2524 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-screensaver-proxy
+ 2525 tty2     Sl+    0:03      \_ /usr/lib/gnome-settings-daemon/gsd-sharing
+ 2540 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-xsettings
+ 2541 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-sound
+ 2543 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-wacom
+ 2544 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-smartcard
+ 2553 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-clipboard
+ 2555 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-a11y-settings
+ 2558 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-datetime
+ 2559 tty2     Sl+    0:03      \_ /usr/lib/gnome-settings-daemon/gsd-color
+ 2562 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-keyboard
+ 2563 tty2     Sl+    0:01      \_ /usr/lib/gnome-settings-daemon/gsd-housekeeping
+ 2566 tty2     Sl+    0:00      \_ /usr/lib/gnome-settings-daemon/gsd-mouse
+ 2570 tty2     Sl+    0:01      \_ /usr/lib/gnome-settings-daemon/gsd-media-keys
+ 2635 tty2     S+     0:00      \_ kerneloops-applet
+ 2641 tty2     Sl+    0:12      \_ nautilus-desktop
+ 2643 tty2     Sl+    0:00      \_ /usr/lib/gnome-disk-utility/gsd-disk-utility-notify
+ 2647 tty2     SLl+   0:05      \_ /usr/bin/gnome-software --gapplication-service
+ 2651 tty2     Sl+    0:22      \_ /usr/share/mailspring/mailspring --background
+ 2696 tty2     S+     0:00      |   \_ /usr/share/mailspring/mailspring --type=zygote --no-sandbox
+ 2810 tty2     Sl+    0:02      |       \_ Mailspring emptyWindow
+ 2813 tty2     SLl+   0:31      |       \_ Mailspring default
+ 3364 tty2     S+     0:00      |           \_ /bin/bash /usr/share/mailspring/resources/app.asar.unpacked/mailsync --mode sync --info vadik.dyachkov@gmail.com
+ 3373 tty2     Sl+    0:17      |           |   \_ /usr/share/mailspring/resources/app.asar.unpacked/mailsync.bin --mode sync --info vadik.dyachkov@gmail.com
+ 3369 tty2     S+     0:00      |           \_ /bin/bash /usr/share/mailspring/resources/app.asar.unpacked/mailsync --mode sync --info vadim.dyachkov@spbpu.com
+ 3381 tty2     Sl+    0:20      |               \_ /usr/share/mailspring/resources/app.asar.unpacked/mailsync.bin --mode sync --info vadim.dyachkov@spbpu.com
+ 4255 tty2     Sl+    0:01      \_ update-notifier
+ 4400 tty2     Sl+    0:00      \_ /usr/lib/deja-dup/deja-dup-monitor
+15301 tty2     SLl+  19:13 /opt/google/chrome/chrome
+15307 tty2     S+     0:00  \_ cat
+15308 tty2     S+     0:00  \_ cat
+15311 tty2     S+     0:00  \_ /opt/google/chrome/chrome --type=zygote --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900,
+15314 tty2     S+     0:00  |   \_ /opt/google/chrome/nacl_helper
+15317 tty2     S+     0:00  |   \_ /opt/google/chrome/chrome --type=zygote --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900,
+15412 tty2     Sl+    1:06  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=15238589971397861276 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=15238589971397861276 --renderer-client-id=3 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+15496 tty2     Sl+    0:00  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=2569737663323344447 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=2569737663323344447 --renderer-client-id=4 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+15567 tty2     Sl+    0:08  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=2904570128328191009 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=2904570128328191009 --renderer-client-id=5 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+15574 tty2     Sl+    0:28  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=15452037941956665295 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=15452037941956665295 --renderer-client-id=6 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+15588 tty2     Sl+    0:07  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=6143958081442189631 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=6143958081442189631 --renderer-client-id=7 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+15598 tty2     Sl+    2:48  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=14448331196611384491 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=14448331196611384491 --renderer-client-id=8 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+15599 tty2     Sl+    0:09  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=10869713662367220237 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=10869713662367220237 --renderer-client-id=9 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+15616 tty2     Sl+    0:02  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=9570466800143745661 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=9570466800143745661 --renderer-client-id=10 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+15629 tty2     Sl+    0:00  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=5320597268951472888 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=5320597268951472888 --renderer-client-id=11 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+15643 tty2     Sl+    0:00  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=255210432538249655 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=255210432538249655 --renderer-client-id=13 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+20198 tty2     Sl+    0:02  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=6401022315700653535 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=6401022315700653535 --renderer-client-id=161 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+20439 tty2     Sl+    2:13  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=311986375133610962 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=311986375133610962 --renderer-client-id=163 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+20461 tty2     Sl+    0:38  |       \_ /opt/google/chrome/chrome --type=ppapi --field-trial-handle=13028782171726156543,13680173430660389872,131072 --ppapi-flash-args --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --service-request-channel-token=14599490623774744542
+ 3706 tty2     Sl+    3:38  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=11540436728720655286 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=11540436728720655286 --renderer-client-id=353 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 3719 tty2     Sl+    0:42  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=10650451005616270509 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=10650451005616270509 --renderer-client-id=354 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 3877 tty2     Sl+    0:00  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=4343780160449703572 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=4343780160449703572 --renderer-client-id=355 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 3890 tty2     Sl+    0:00  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=11568318422502045034 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=11568318422502045034 --renderer-client-id=356 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 3906 tty2     Sl+    0:00  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=3299221879069777278 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=3299221879069777278 --renderer-client-id=357 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 6492 tty2     Sl+    0:03  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=5948551853795034930 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=5948551853795034930 --renderer-client-id=395 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 7660 tty2     Sl+    0:04  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=3454784512041323206 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=3454784512041323206 --renderer-client-id=405 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 7715 tty2     Sl+    0:02  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=5227868935240897290 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=5227868935240897290 --renderer-client-id=407 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 7731 tty2     Sl+    0:02  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=8658191900539080578 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=8658191900539080578 --renderer-client-id=408 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 7749 tty2     Sl+    0:02  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=3940444621486024743 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=3940444621486024743 --renderer-client-id=409 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 7764 tty2     Sl+    0:02  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=3535761366689086111 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=3535761366689086111 --renderer-client-id=410 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 7801 tty2     Sl+    0:01  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=15239755177330417242 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=15239755177330417242 --renderer-client-id=411 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 9109 tty2     Sl+    0:03  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=12717667011194782956 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=12717667011194782956 --renderer-client-id=421 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 9176 tty2     Sl+    0:04  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=3528655679263024674 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=3528655679263024674 --renderer-client-id=423 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+ 9245 tty2     Sl+    0:00  |       \_ /opt/google/chrome/chrome --type=renderer --field-trial-handle=13028782171726156543,13680173430660389872,131072 --service-pipe-token=5418459670329125072 --lang=en-US --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --num-raster-threads=4 --enable-main-frame-before-activation --service-request-channel-token=5418459670329125072 --renderer-client-id=424 --shared-files=v8_context_snapshot_data:100,v8_natives_data:101
+15342 tty2     Sl+   10:44  \_ /opt/google/chrome/chrome --type=gpu-process --field-trial-handle=13028782171726156543,13680173430660389872,131072 --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --gpu-preferences=KAAAAAAAAACAAABAAQAAAAAAAAAAAGAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA --enable-crash-reporter=acde1cd3-88b7-4bf7-b84d-6412b0189900, --service-request-channel-token=10158241629134320253
+ 2680 ?        Ssl    0:26 /home/vaddya/.dropbox-dist/dropbox-lnx.x86_64-60.4.107/dropbox
+ 2599 tty2     Sl+    0:00 /usr/lib/gnome-settings-daemon/gsd-printer
+ 2443 tty2     Sl     0:04 /usr/lib/ibus/ibus-x11 --kill-daemon
+ 2419 ?        Sl    10:12 /usr/bin/pulseaudio --start --log-target=syslog
+ 2229 ?        SLl    0:21 /usr/bin/gnome-keyring-daemon --daemonize --login
+ 2215 ?        Ss     0:00 /lib/systemd/systemd --user
+ 2216 ?        S      0:00  \_ (sd-pam)
+ 2263 ?        Ss     0:10  \_ /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+ 2365 ?        Ssl    0:00  \_ /usr/lib/at-spi2-core/at-spi-bus-launcher
+ 2370 ?        S      0:01  |   \_ /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+ 2372 ?        Sl     0:09  \_ /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+ 2386 ?        Ssl    0:00  \_ /usr/lib/gvfs/gvfsd
+ 2672 ?        Sl     0:00  |   \_ /usr/lib/gvfs/gvfsd-trash --spawner :1.22 /org/gtk/gvfs/exec_spaw/0
+ 5162 ?        Sl     0:00  |   \_ /usr/lib/gvfs/gvfsd-network --spawner :1.22 /org/gtk/gvfs/exec_spaw/2
+ 5209 ?        Sl     0:00  |   \_ /usr/lib/gvfs/gvfsd-dnssd --spawner :1.22 /org/gtk/gvfs/exec_spaw/7
+ 5436 ?        Sl     0:00  |   \_ /usr/lib/gvfs/gvfsd-http --spawner :1.22 /org/gtk/gvfs/exec_spaw/8
+ 2391 ?        Sl     0:00  \_ /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+ 2447 ?        Sl     0:00  \_ /usr/lib/ibus/ibus-portal
+ 2457 ?        Sl     0:00  \_ /usr/lib/gnome-shell/gnome-shell-calendar-server
+ 2475 ?        Ssl    0:00  \_ /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+ 2482 ?        Ssl    0:00  \_ /usr/lib/evolution/evolution-source-registry
+ 2484 ?        Ssl    0:00  \_ /usr/lib/gvfs/gvfs-goa-volume-monitor
+ 2488 ?        Sl     0:00  \_ /usr/lib/gnome-online-accounts/goa-daemon
+ 2501 ?        Sl     0:00  \_ /usr/lib/gnome-online-accounts/goa-identity-service
+ 2506 ?        Ssl    0:00  \_ /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+ 2510 ?        Ssl    0:00  \_ /usr/lib/gvfs/gvfs-mtp-volume-monitor
+ 2514 ?        Ssl    0:00  \_ /usr/lib/gvfs/gvfs-afc-volume-monitor
+ 2677 ?        Ssl    0:00  \_ /usr/lib/evolution/evolution-calendar-factory
+ 2722 ?        Sl     0:00  |   \_ /usr/lib/evolution/evolution-calendar-factory-subprocess --factory all --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.Calendarx2677x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/Calendar/2677/2
+ 2728 ?        Sl     0:00  \_ /usr/lib/dconf/dconf-service
+ 2739 ?        Ssl    0:00  \_ /usr/lib/evolution/evolution-addressbook-factory
+ 2754 ?        Sl     0:00  |   \_ /usr/lib/evolution/evolution-addressbook-factory-subprocess --factory all --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.AddressBookx2739x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/AddressBook/2739/2
+ 2770 ?        S      0:00  \_ /usr/lib/x86_64-linux-gnu/gconf/gconfd-2
+ 5126 ?        Ssl    0:00  \_ /usr/lib/gvfs/gvfsd-metadata
+ 6097 ?        Ssl    0:00  \_ /usr/bin/zeitgeist-daemon
+ 6105 ?        Ssl    0:00  \_ /usr/lib/zeitgeist/zeitgeist/zeitgeist-fts
+16626 ?        Sl     0:18  \_ /usr/bin/nautilus --gapplication-service
+16855 ?        S      0:00  \_ /bin/bash /usr/bin/atom logs
+16857 ?        Sl     3:39  |   \_ /usr/share/atom/atom --executed-from=/home/vaddya/Git/os/lab3 --pid=16 44 logs
+16859 ?        S      0:00  |       \_ /usr/share/atom/atom --type=zygote --no-sandbox
+16893 ?        Sl     2:48  |           \_ /usr/share/atom/atom --type=renderer --enable-experimental-web-platform-features --no-sandbox
+16944 ?        Sl     0:01  |           \_ /usr/share/atom/atom --type=renderer --enable-experimental-web-platform-features --no-sandbox
+17990 ?        Sl     1:36  \_ evince /home/vaddya/Git/os/lab3/Душутина Е. В. - Системное программное обеспечение. Практические вопросы разработки системных приложений (2016).pdf
+17995 ?        Ssl    0:00  \_ /usr/lib/evince/evinced
+19226 ?        Sl     3:52  \_ texstudio /home/vaddya/Git/os/lab3/report/lab3.tex
+ 1093 ?        S      0:00  \_ /bin/sh /opt/clion-2018.1/bin/clion.sh /home/vaddya/Git/os/lab3/logs/8/exec.c
+ 1164 ?        Sl     4:40  |   \_ /opt/clion-2018.1/jre64/bin/java -classpath /opt/clion-2018.1/lib/bootstrap.jar:/opt/clion-2018.1/lib/extensions.jar:/opt/clion-2018.1/lib/util.jar:/opt/clion-2018.1/lib/jdom.jar:/opt/clion-2018.1/lib/log4j.jar:/opt/clion-2018.1/lib/trove4j.jar:/opt/clion-2018.1/lib/jna.jar -Xss2m -Xms256m -Xmx2000m -XX:NewSize=128m -XX:MaxNewSize=128m -XX:ReservedCodeCacheSize=240m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -XX:+HeapDumpOnOutOfMemoryError -XX:-OmitStackTraceInFastThrow -Dawt.useSystemAAFontSettings=lcd -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine -XX:ErrorFile=/home/vaddya/java_error_in_CL_%p.log -XX:HeapDumpPath=/home/vaddya/java_error_in_CL.hprof -Didea.paths.selector=CLion2018.1 -Djb.vmOptionsFile=/opt/clion-2018.1/bin/clion64.vmoptions -Didea.platform.prefix=CLion com.intellij.idea.Main /home/vaddya/Git/os/lab3/logs/8/exec.c
+ 1207 ?        S      0:00  |       \_ /opt/clion-2018.1/bin/fsnotifier64
+ 2313 ?        Ssl    0:11  \_ /usr/lib/gnome-terminal/gnome-terminal-server
+ 2323 pts/1    Ss     0:00  |   \_ bash
+ 9444 pts/1    S+     0:00  |       \_ ./father
+ 9445 pts/1    S+     0:00  |           \_ son
+ 9446 pts/1    S+     0:00  |           \_ sh -c ps xf > dump.txt
+ 9447 pts/1    R+     0:00  |               \_ ps xf
+ 9319 ?        Sl     1:26  \_ evince /home/vaddya/Dropbox/Apps/Dropbox PocketBook/Operating Systems/Робачевский А. - Операционная система UNIX. 2 издание (2010).pdf
