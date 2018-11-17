@@ -1,4 +1,4 @@
-vaddya@turing:~/Git/os/lab3/logs/9$ ./father_wait
+vaddya@turing:~/Git/os/lab3/logs/9$ ./father
 father params: PID = 8489, PPID = 2323
 son params: PID = 8490, PPID = 8489
 son params: PID = 8491, PPID = 8489

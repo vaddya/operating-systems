@@ -1,6 +1,6 @@
 PID  TTY      STAT   TIME COMMAND
 2323 pts/1    Ss     0:00      \_ bash
-8489 pts/1    S+     0:00          \_ ./father_wait
+8489 pts/1    S+     0:00          \_ ./father
 8490 pts/1    S+     0:00              \_ son1
 8491 pts/1    S+     0:00              \_ son2
 8492 pts/1    S+     0:00              \_ son3

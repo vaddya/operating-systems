@@ -101,7 +101,7 @@
 
 Для демонстрации использования функции \code{waitpid} используем программы \code{father\_wait.c}, \code{son1.c}, \code{son2.c} и \code{son3.c}. Родительский процесс порождает 3 потомков, после чего ожидает их завершения (вызывая функцию \code{waitpid} с различными флагами). Дочерние процессы завершаются с кодом \code{0}, \code{1} и \code{-1} соответственно. После завершения всех порожденных процессов предок выводит информацию о завершении каждого процесса.
 
-\lstinputlisting[caption=\code{father\_wait.c}]{9/father_wait.c}
+\lstinputlisting[caption=\code{father.c}]{9/father.c}
 
 \lstinputlisting[caption=\code{son1.c}]{9/son1.c}
 
@@ -113,6 +113,42 @@
 
 \lstinputlisting{9/log1}
  
+\subsection{Изменение политики планирования}
+
+В системах, следующих стандарту POSIX поддерживается три базовые политики планирования:
+\begin{itemize}
+	\item \code{SCHED\_FIFO} -- планировщик FIFO;
+	\item \code{SCHED\_RR} -- циклический алгоритм планирования;
+	\item \code{SCHED\_OTHER} -- стандартный алгоритм планировщика с	разделением времени.
+\end{itemize}
+
+Для анализа очередности исполнения процессов используем программу \code{father.c}, \code{son1.c} и \code{son2.c}
+
+\lstinputlisting[caption=\code{father.c}]{10/father.c}
+
+\lstinputlisting[caption=\code{son1.c}]{10/son1.c}
+
+\lstinputlisting[caption=\code{son2.c}]{10/son2.c}
+
+Для удобства создадим файлы \code{utils.h} и \code{utils.c}, содержащие декларацию и определение функции \code{print\_current\_priority}, печатающий приоритет выполняемого процесса. 
+
+\lstinputlisting[caption=\code{utils.h}]{10/utils.h}
+
+\lstinputlisting[caption=\code{utils.c}]{10/utils.c}
+
+При попытке исполнения программы от имени обычного пользователя, появляется сообщение об ошибке – о том, что операция изменения приоритета запрещена. При выполнении от имени суперпользователя программа работает корректно.
+
+\lstinputlisting{10/log1}
+
+Из результатов видно, что потомки наследуют политику планирования и приоритет родительского процесса.
+
+Используя файлы \code{son1.c} и \code{son2.c}, проанализируем очередность исполнения процессов, порожденных вложенными вызовами \code{fork}. Для этого создадим файл \code{nesting.c}, который порождает процесс (\code{son1}), внутри которого порождается еще один процесс (\code{son2}).
+
+\lstinputlisting[caption=\code{nesting.c}]{10/nesting.c}
+
+\lstinputlisting{10/log2}
+
+Из результатов видно, что порядок выполнения порожденных процессов варьируется от запуска к запуска. 
 
 \section{Взаимодействие родственных процессов}
 

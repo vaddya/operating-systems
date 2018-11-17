@@ -123,7 +123,7 @@
  1207 ?        S      0:00  |       \_ /opt/clion-2018.1/bin/fsnotifier64
  2313 ?        Ssl    0:10  \_ /usr/lib/gnome-terminal/gnome-terminal-server
  2323 pts/1    Ss     0:00      \_ bash
- 8933 pts/1    S+     0:00          \_ ./father_wait
+ 8933 pts/1    S+     0:00          \_ ./father
  8934 pts/1    S+     0:00              \_ son1
  8935 pts/1    S+     0:00              \_ son2
  8936 pts/1    S+     0:00              \_ son3

@@ -1,0 +1,17 @@
+vaddya@turing:~/Git/os/lab2/logs/test/hard$ ls -li
+total 4
+11946338 drwxr-xr-x 2 vaddya vaddya 4096 Nov 17 15:20 folder
+vaddya@turing:~/Git/os/lab2/logs/test/hard$ ls -lia folder/
+total 8
+11946338 drwxr-xr-x 2 vaddya vaddya 4096 Nov 17 15:20 .
+11946246 drwxr-xr-x 3 vaddya vaddya 4096 Nov 17 15:13 ..
+
+vaddya@turing:~/Git/os/lab2/logs/test/hard$ ls -l
+total 4
+drwxr-xr-x 2 vaddya vaddya 4096 Nov 17 15:15 folder
+vaddya@turing:~/Git/os/lab2/logs/test/hard$ mkdir folder/subfolder
+vaddya@turing:~/Git/os/lab2/logs/test/hard$ ls -l
+total 4
+drwxr-xr-x 3 vaddya vaddya 4096 Nov 17 15:15 folder
+
+

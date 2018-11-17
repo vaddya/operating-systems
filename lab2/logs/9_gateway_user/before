@@ -1,0 +1,5 @@
+vaddya@turing:~/Git/os/lab2/logs/9_gateway$ ls -l
+total 20
+-rw------- 1 root   root     20 Nov  4 17:13 root_file
+vaddya@turing:~/Git/os/lab2/logs/9_gateway$ cat root_file
+cat: root_file: Permission denied
