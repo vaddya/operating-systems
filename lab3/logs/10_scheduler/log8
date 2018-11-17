@@ -1,0 +1,19 @@
+vaddya@turing:~/Git/os/lab3/logs/10_scheduler$ sudo ./interval RR
+father: PID = 27193, PPID = 27192
+father: interval 0.1 sec
+son: interval 0.1 sec
+son: PID = 27194, PPID = 27193
+son: SCHED_RR [50]
+vaddya@turing:~/Git/os/lab3/logs/10_scheduler$ sudo ./interval FIFO
+father: PID = 27199, PPID = 27198
+father: interval 0 sec
+son: interval 0 sec
+son: PID = 27200, PPID = 27199
+son: SCHED_FIFO [50]
+vaddya@turing:~/Git/os/lab3/logs/10_scheduler$ sudo ./interval OTHER
+father: PID = 27204, PPID = 27203
+SCHED_SETSCHEDULER: Invalid argument
+father: interval 0.02 sec
+son: interval 0.02 sec
+son: PID = 27205, PPID = 27204
+son: SCHED_OTHER [0]

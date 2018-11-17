@@ -1,0 +1,9 @@
+vaddya@turing:~/Git/os/lab3/logs/10_scheduler$ sudo taskset -c 1 ./nesting
+father: PID = 20989, PPID = 20988
+father: SCHED_RR [50]
+son1: PID = 20990, PPID = 20989
+son1: SCHED_RR [50]
+son2: PID = 20991, PPID = 1859
+son2: SCHED_RR [50]
+son3: PID = 20992, PPID = 1859
+son3: SCHED_RR [50]

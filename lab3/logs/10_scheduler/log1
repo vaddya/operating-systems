@@ -1,0 +1,15 @@
+vaddya@turing:~/Git/os/lab3/logs/10_scheduler$ ./father
+father: PID = 7431, PPID = 4595
+SCHED_SETSCHEDULER: Operation not permitted
+father: SCHED_OTHER [0]
+son1: PID = 7432, PPID = 1859
+son1: SCHED_OTHER [0]
+son2: PID = 7433, PPID = 1859
+son2: SCHED_OTHER [0]
+vaddya@turing:~/Git/os/lab3/logs/10_scheduler$ sudo ./father
+father: PID = 7438, PPID = 7437
+father: SCHED_RR [50]
+son1: PID = 7439, PPID = 1859
+son1: SCHED_RR [50]
+son2: PID = 7440, PPID = 1859
+son2: SCHED_RR [50]

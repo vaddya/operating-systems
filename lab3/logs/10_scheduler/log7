@@ -1,0 +1,27 @@
+vaddya@turing:~/Git/os/lab3/logs/10_scheduler$ sudo taskset -c 1 ./father_priority RR 10 10 10
+father: PID = 25347, PPID = 25346
+father: SCHED_RR [50]
+son3: PID = 25350, PPID = 25347
+son3: SCHED_RR [10]
+son2: PID = 25349, PPID = 25347
+son2: SCHED_RR [10]
+son1: PID = 25348, PPID = 25347
+son1: SCHED_FIFO [10]
+son1: [0] Sat Nov 17 22:40:15 2018
+son1: [1] Sat Nov 17 22:40:17 2018
+son1: [2] Sat Nov 17 22:40:18 2018
+son1: [3] Sat Nov 17 22:40:19 2018
+son1: [4] Sat Nov 17 22:40:21 2018
+son1: done
+son3: [0] Sat Nov 17 22:40:15 2018
+son3: [1] Sat Nov 17 22:40:23 2018
+son3: [2] Sat Nov 17 22:40:25 2018
+son3: [3] Sat Nov 17 22:40:28 2018
+son3: [4] Sat Nov 17 22:40:31 2018
+son3: done
+son2: [0] Sat Nov 17 22:40:15 2018
+son2: [1] Sat Nov 17 22:40:23 2018
+son2: [2] Sat Nov 17 22:40:26 2018
+son2: [3] Sat Nov 17 22:40:28 2018
+son2: [4] Sat Nov 17 22:40:31 2018
+son2: done
