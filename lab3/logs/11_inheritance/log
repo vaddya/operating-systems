@@ -1,0 +1,22 @@
+vaddya@turing:~/Git/os/lab3/logs/11_inheritance$ cat input.txt
+Hello World!
+vaddya@turing:~/Git/os/lab3/logs/11_inheritance$ sudo taskset -c 1 ./father
+son2 fdrd = 3, fdwr = 4
+son2 params: PID = 22002 PPID = 22000
+son2: H
+son1 fdrd = 3, fdwr = 4
+son1 params: PID = 22001 PPID = 22000
+son1: e
+son2: l
+son1: l
+son2: o
+son1:
+son2: W
+son1: o
+son2: r
+son1: l
+son2: d
+son1: !
+son2:
+vaddya@turing:~/Git/os/lab3/logs/11_inheritance$ cat output.txt
+Hello World!

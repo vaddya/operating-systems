@@ -1,0 +1,10 @@
+vaddya@turing:~/Git/os/lab3/logs/13_signals$ ./father
+son1: PID = 6205, PPID = 6204
+son1: sleep(3)
+son2: PID = 6206, PPID = 6204
+son2: sleep(3)
+son3: PID = 6207, PPID = 6204
+son3: sleep(3)
+son3: ^C - signal received
+son3: done
+son2: done

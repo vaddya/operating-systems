@@ -1,0 +1,14 @@
+vaddya@turing:~/Git/os/lab3/logs/13_signals$ ./father_active_passive
+son_active: PID = 11058, PPID = 11057
+son_active: while(1)
+son_passive: PID = 11059, PPID = 11057
+son_passive: sleep(3)
+father: [0] sending SIGINT at Sun Nov 18 19:47:51 2018
+son_active: [0] ^C - signal received at Sun Nov 18 19:47:51 2018
+son_passive: [0] ^C - signal received at Sun Nov 18 19:47:51 2018
+son_passive: done
+father: [1] sending SIGINT at Sun Nov 18 19:47:52 2018
+son_active: [1] ^C - signal received at Sun Nov 18 19:47:52 2018
+father: [2] sending SIGINT at Sun Nov 18 19:47:53 2018
+son_active: [2] ^C - signal received at Sun Nov 18 19:47:53 2018
+father: [3] sending SIGINT at Sun Nov 18 19:47:54 2018

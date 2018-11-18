@@ -1,0 +1,10 @@
+vaddya@turing:~/Git/os/lab3/logs/14_util$ ./lim
+Lower bound = 0
+Asked 0, got 0
+Upper bound = 19
+Asked 20, got 19
+vaddya@turing:~/Git/os/lab3/logs/14_util$ sudo ./lim
+Lower bound = -20
+Asked -20, got -20
+Upper bound = 19
+Asked 20, got 19

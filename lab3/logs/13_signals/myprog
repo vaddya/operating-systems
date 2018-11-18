@@ -1,0 +1,150 @@
+#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <wait.h>
+#include <signal.h>
+#include <time.h>
+
+int main(int argc, char **argv) {
+    int pid = getpid();
+    int ppid = getppid();
+    int pid1;
+    if ((pid1 = fork()) == 0) {
+        execl("son_active", "son_active", NULL);
+    }
+    int pid2;
+    if ((pid2 = fork()) == 0) {
+        execl("son_passive", "son_passive", NULL);
+    }
+    sleep(1);
+    for (int i = 0; i < 4; ++i) {
+        time_t t = time(0);
+        printf("father: [%d] sending SIGINT at %s", i, ctime(&t));
+        kill(pid1, SIGINT);
+        kill(pid2, SIGINT);
+        sleep(1);
+    }
+    wait(0);
+    wait(0);
+    return 0;
+}#include <stdlib.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <wait.h>
+#include <signal.h>
+
+int main(int argc, char **argv) {
+    int pid = getpid();
+    int ppid = getppid();
+    int pid1;
+    if ((pid1 = fork()) == 0) {
+        execl("son1", "son1", NULL);
+    }
+    int pid2;
+    if ((pid2 = fork()) == 0) {
+        execl("son2", "son2", NULL);
+    }
+    int pid3;
+    if ((pid3 = fork()) == 0) {
+        execl("son3", "son3", NULL);
+    }
+    sleep(1);
+    system("ps -s > signals");
+    kill(pid1, SIGINT);
+    kill(pid2, SIGINT);
+    kill(pid3, SIGINT);
+    wait(0);
+    wait(0);
+    wait(0);
+    return 0;
+}#include <unistd.h>
+#include <stdio.h>
+#include <signal.h>
+
+int main(int argc, char *argv[]) {
+    signal(SIGINT, SIG_DFL);
+    int pid = getpid();
+    int ppid = getppid();
+    printf("%s: PID = %d, PPID = %d\n", argv[0], pid, ppid);
+    printf("%s: sleep(3)\n", argv[0]);
+    sleep(3);
+    printf("%s: done\n", argv[0]);
+    return 0;
+}#include <unistd.h>
+#include <stdio.h>
+#include <signal.h>
+
+int main(int argc, char *argv[]) {
+    signal(SIGINT, SIG_IGN);
+    int pid = getpid();
+    int ppid = getppid();
+    printf("%s: PID = %d, PPID = %d\n", argv[0], pid, ppid);
+    printf("%s: sleep(3)\n", argv[0]);
+    sleep(3);
+    printf("%s: done\n", argv[0]);
+    return 0;
+}#include <unistd.h>
+#include <stdio.h>
+#include <signal.h>
+
+void handler() {
+    printf("son3: ^C - signal received\n");
+    signal(SIGINT, SIG_DFL);
+}
+
+int main(int argc, char *argv[]) {
+    signal(SIGINT, handler);
+    int pid = getpid();
+    int ppid = getppid();
+    printf("%s: PID = %d, PPID = %d\n", argv[0], pid, ppid);
+    printf("%s: sleep(3)\n", argv[0]);
+    sleep(3);
+    printf("%s: done\n", argv[0]);
+    return 0;
+}#include <unistd.h>
+#include <stdio.h>
+#include <signal.h>
+#include <time.h>
+
+void handler() {
+    static int i = 0;
+    time_t t = time(0);
+    printf("son_active: [%d] ^C - signal received at %s", i, ctime(&t));
+    if (++i == 3) {
+        signal(SIGINT, SIG_DFL);
+    }
+}
+
+int main(int argc, char *argv[]) {
+    signal(SIGINT, handler);
+    int pid = getpid();
+    int ppid = getppid();
+    printf("%s: PID = %d, PPID = %d\n", argv[0], pid, ppid);
+    printf("%s: while(1)\n", argv[0]);
+    while (1);
+    printf("%s: done\n", argv[0]);
+    return 0;
+}#include <unistd.h>
+#include <stdio.h>
+#include <signal.h>
+#include <time.h>
+
+void handler() {
+    static int i = 0;
+    time_t t = time(0);
+    printf("son_passive: [%d] ^C - signal received at %s", i, ctime(&t));
+    if (++i == 3) {
+        signal(SIGINT, SIG_DFL);
+    }
+}
+
+int main(int argc, char *argv[]) {
+    signal(SIGINT, handler);
+    int pid = getpid();
+    int ppid = getppid();
+    printf("%s: PID = %d, PPID = %d\n", argv[0], pid, ppid);
+    printf("%s: sleep(3)\n", argv[0]);
+    sleep(3);
+    printf("%s: done\n", argv[0]);
+    return 0;
+}

@@ -1,0 +1,19 @@
+vaddya@turing:~/Git/os/lab3/logs/13_signals$ sleep 100 & sleep 200 & sleep 300 &[1] 16350
+[2] 16351
+[3] 16352
+vaddya@turing:~/Git/os/lab3/logs/13_signals$ jobs -l
+[1]  16350 Running                 sleep 100 &
+[2]- 16351 Running                 sleep 200 &
+[3]+ 16352 Running                 sleep 300 &
+vaddya@turing:~/Git/os/lab3/logs/13_signals$ jobs -l %%
+[3]+ 16352 Running                 sleep 300 &
+vaddya@turing:~/Git/os/lab3/logs/13_signals$ kill 16351
+vaddya@turing:~/Git/os/lab3/logs/13_signals$ jobs -l
+[1]  16350 Running                 sleep 100 &
+[2]- 16351 Terminated              sleep 200
+[3]+ 16352 Running                 sleep 300 &
+vaddya@turing:~/Git/os/lab3/logs/13_signals$ jobs -l
+[1]- 16350 Running                 sleep 100 &
+[3]+ 16352 Running                 sleep 300 &
+vaddya@turing:~/Git/os/lab3/logs/13_signals$ fg %1
+sleep 100

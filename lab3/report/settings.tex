@@ -38,7 +38,7 @@
 	keywordstyle=\color{blue},
 	numberstyle=\scriptsize\color{gray},
 	stringstyle=\color{purple},
-	basicstyle=\small,
+	basicstyle=\footnotesize	,
 	breakatwhitespace=false,
 	breaklines=true,
 	captionpos=b,
@@ -66,7 +66,8 @@
 \renewcommand{\epsilon}{\ensuremath{\varepsilon}}
 \renewcommand{\phi}{\ensuremath{\varphi}}
 \renewcommand{\thefigure}{\arabic{figure}}
-\def\code#1{\texttt{#1}}
+\def\code#1{\texttt{\small #1}}
+\def\tcode#1{\texttt{#1}}
 \newcommand{\caret}{\^{}}
 
 \titleformat*{\section}{\large\bfseries}
@@ -89,5 +90,5 @@
 \setlength\parindent{5ex}
 \titlelabel{\thetitle.\quad}
 
-\setitemize{topsep=0.5em, itemsep=0em}
-\setenumerate{topsep=0.5em, itemsep=0em}
+\setitemize{topsep=0em, itemsep=0em}
+\setenumerate{topsep=0em, itemsep=0em}

@@ -1,0 +1,8 @@
+vaddya@turing:~/Git/os/lab3/logs/14_util$ ps -o uid,euid,suid,gid,pid,ppid,tty,stat,command
+  UID  EUID  SUID   GID   PID  PPID TT       STAT COMMAND
+ 1000  1000  1000  1000 21143 20799 pts/2    Ss   bash
+ 1000  1000  1000  1000 26713 21143 pts/2    R+   ps -o uid,euid,suid,gid,pid,p
+vaddya@turing:~/Git/os/lab3/logs/14_util$ sudo ps -o uid,euid,suid,gid,pid,ppid,tty,stat,command
+  UID  EUID  SUID   GID   PID  PPID TT       STAT COMMAND
+    0     0     0     0 26720 21143 pts/2    S+   sudo ps -o uid,euid,suid,gid,
+    0     0     0     0 26721 26720 pts/2    R+   ps -o uid,euid,suid,gid,pid,p

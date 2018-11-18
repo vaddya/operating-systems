@@ -1,0 +1,2 @@
+vaddya@turing:~/Git/os/lab3/logs/14_util$ cat /proc/sys/kernel/pid_max
+32768

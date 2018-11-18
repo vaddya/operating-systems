@@ -1,0 +1,7 @@
+  UID   GID  RUID   PID  PPID  PGID TT          VSZ STAT COMMAND
+ ...
+    0     0     0 23682 14164 23682 pts/0     73220 S    sudo taskset -c 1 ./father
+    0     0     0 23683 23682 23682 pts/0      4376 SL   ./father
+    0     0     0 23684 23683 23682 pts/0      4508 SL   son1 3 4
+    0     0     0 23685 23683 23682 pts/0      4508 SL   son2 3 4
+ 1000  1000  1000 23690 14164 23690 pts/0     30128 R+   ps -e -o uid,gid,ruid,pid,ppid,pgid,tty,vsz,stat,command

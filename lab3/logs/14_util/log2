@@ -1,0 +1,8 @@
+vaddya@turing:~/Git/os/lab3/logs/14_util$ ./priority 20
+PID: 20002, priority: 0
+PID: 3, priority: -1
+PID: 4, priority: -20
+PID: 5, priority: -1
+PID: 6, priority: -20
+PID: 17, priority: -1
+PID: 18, priority: -20

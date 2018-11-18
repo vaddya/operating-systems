@@ -1,0 +1,10 @@
+vaddya@turing:~/Git/os/lab3/logs/12_interaction$ ./father
+father: SID = 14164, PID = 26338, PPID = 14164
+son1: PID = 26339, PPID = 26338
+son1: Father creates and waits, sleep(3)
+son2: PID = 26340, PPID = 26338
+son2: Father finished before son termination without waiting for it
+son3: PID = 26341, PPID = 26338
+son3: terminated zombie
+son3: PID = 26341, PPID = 26338
+vaddya@turing:~/Git/os/lab3/logs/12_interaction$ son2: PID = 26340, PPID = 2015

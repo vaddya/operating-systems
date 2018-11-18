@@ -1,0 +1,3 @@
+vaddya@turing:~/Git/os/lab3/logs/14_util$ cat /etc/login.defs | grep "UID"
+UID_MIN			 1000
+UID_MAX			60000

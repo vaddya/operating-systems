@@ -1,0 +1,22 @@
+vaddya@turing:~/Git/os/lab3/logs/14_util$ echo 1 & echo 2
+[1] 17347
+2
+1
+vaddya@turing:~/Git/os/lab3/logs/14_util$ nice -n 1 echo 1 & nice -n 10 echo 2
+[2] 17349
+1
+2
+[1]   Done                    echo 1
+[2]+  Done                    nice -n 1 echo 1
+vaddya@turing:~/Git/os/lab3/logs/14_util$ nice -n -10 echo 1 & nice -n 10 echo 2
+[4] 18076
+nice: cannot set niceness: Permission denied
+2
+1
+[4]   Done                    nice -n -10 echo 1
+vaddya@turing:~/Git/os/lab3/logs/14_util$ sudo -i
+root@turing:~# nice -n -10 echo 1 & nice -n 10 echo 2
+[1] 18063
+1
+2
+[1]+  Done                    nice -n -10 echo 1

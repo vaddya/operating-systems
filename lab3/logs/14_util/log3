@@ -1,0 +1,18 @@
+vaddya@turing:~/Git/os/lab3/logs/14_util$ nohup ./loop &
+[1] 21440s
+vaddya@turing:~/Git/os/lab3/logs/14_util$ nohup: ignoring input and appending output to 'nohup.out'
+
+vaddya@turing:~/Git/os/lab3/logs/14_util$ ps ax | grep ./loop
+21440 ?        S      0:00 ./loop
+21447 pts/2    S+     0:00 grep --color=auto ./loop
+vaddya@turing:~/Git/os/lab3/logs/14_util$ cat nohup.out
+0
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
