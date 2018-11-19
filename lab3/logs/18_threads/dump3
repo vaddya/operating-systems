@@ -1,0 +1,5 @@
+UID        PID  PPID   LWP  C NLWP STIME TTY          TIME CMD
+...
+vaddya   16592 14343 16592  0    1 22:45 pts/0    00:00:00 ./threads
+vaddya   16610 16592 16610  0    1 22:46 pts/0    00:00:00 sh -c ps -ALf > dump3
+vaddya   16611 16610 16611  0    1 22:46 pts/0    00:00:00 ps -ALf

@@ -1,0 +1,4 @@
+vaddya@turing:~/Git/os/lab3/logs/15_threads$ ./threads_kill
+thread1: system(kill -9 17962)
+threadn: [0] sleep(1)
+Killed

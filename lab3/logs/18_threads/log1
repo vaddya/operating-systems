@@ -1,0 +1,13 @@
+vaddya@turing:~/Git/os/lab3/logs/15_threads$ ./threads
+thread1: [0] sleep(5)
+threadn: [0] sleep(1)
+threadn: [1] sleep(1)
+threadn: [2] sleep(1)
+threadn: [3] sleep(1)
+threadn: [4] sleep(1)
+thread1: [1] sleep(5)
+threadn: [5] sleep(1)
+threadn: [6] sleep(1)
+threadn: [7] sleep(1)
+threadn: [8] sleep(1)
+threadn: [9] sleep(1)
