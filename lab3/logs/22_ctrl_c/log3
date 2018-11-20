@@ -1,0 +1,35 @@
+vaddya@turing:~/Git/os/lab3/logs/22_ctrl_c$ ./process_ctrl_z
+main: [0] sleep(1)
+main: [1] sleep(1)
+^Z
+handler: signal "Stopped = 20" is received for 1-th time
+handler: setting default handler
+main: [2] sleep(1)
+main: [3] sleep(1)
+main: [4] sleep(1)
+^Z
+[1]+  Stopped                 ./process_ctrl_z
+vaddya@turing:~/Git/os/lab3/logs/22_ctrl_c$ fg
+./process_ctrl_z
+main: [5] sleep(1)
+main: [6] sleep(1)
+^C
+vaddya@turing:~/Git/os/lab3/logs/22_ctrl_c$ ./process_ctrl_z 2
+main: [0] sleep(1)
+main: [1] sleep(1)
+^Z
+handler: signal "Stopped = 20" is received for 1-th time
+main: [2] sleep(1)
+main: [3] sleep(1)
+^Z
+handler: signal "Stopped = 20" is received for 2-th time
+handler: setting default handler
+main: [4] sleep(1)
+main: [5] sleep(1)
+^Z
+[1]+  Stopped                 ./process_ctrl_z 2
+vaddya@turing:~/Git/os/lab3/logs/22_ctrl_c$ fg
+./process_ctrl_z 2
+main: [6] sleep(1)
+clemain: [7] sleep(1)
+^C

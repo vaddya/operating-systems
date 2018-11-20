@@ -1,0 +1,27 @@
+vaddya@turing:~/Git/os/lab3/logs/22_ctrl_c$ ./process_ctrl_c
+main: [0] sleep(1)
+main: [1] sleep(1)
+^C
+handler: signal "Interrupt = 2" is received for 1-th time
+handler: setting default handler
+main: [2] sleep(1)
+main: [3] sleep(1)
+main: [4] sleep(1)
+^C
+vaddya@turing:~/Git/os/lab3/logs/22_ctrl_c$ ./process_ctrl_c 3
+main: [0] sleep(1)
+main: [1] sleep(1)
+^C
+handler: signal "Interrupt = 2" is received for 1-th time
+main: [2] sleep(1)
+main: [3] sleep(1)
+^C
+handler: signal "Interrupt = 2" is received for 2-th time
+main: [4] sleep(1)
+main: [5] sleep(1)
+^C
+handler: signal "Interrupt = 2" is received for 3-th time
+handler: setting default handler
+main: [6] sleep(1)
+main: [7] sleep(1)
+^C

@@ -1,0 +1,8 @@
+vaddya@turing:~/Git/os/lab3/logs/20_threads_signal$ ./threads_signal
+thread1: [0] sleep(5)
+threadn: [0] sleep(1)
+threadn: [1] sleep(1)
+threadn: [2] sleep(1)
+threadn: [3] sleep(1)
+threadn: [4] sleep(1)
+User defined signal 1

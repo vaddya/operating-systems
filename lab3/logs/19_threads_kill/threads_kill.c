@@ -23,14 +23,15 @@ void *threadn() {
     }
 }
 
-void main() {
+int main(int argc, char **argv) {
     pthread_t t1;
     pthread_t tn;
     system("ps -ALf > dump1");
     pthread_create(&t1, NULL, thread1, NULL);
     pthread_create(&tn, NULL, threadn, NULL);
-    system("ps -ALf > dump2_2");
+    system("ps -ALf > dump2");
     pthread_join(t1, NULL);
     pthread_join(tn, NULL);
     system("ps -ALf > dump3");
+    return 0;
 }

@@ -1,0 +1,23 @@
+vaddya@turing:~/Git/os/lab3/logs/22_ctrl_c$ ./threads_ctrl_c
+thread: [0] sleep(1)
+thread: [1] sleep(1)
+thread: [2] sleep(1)
+^C
+handler: signal "Interrupt = 2" is received for 1-th time
+handler: setting default handler
+thread: [3] sleep(1)
+thread: [4] sleep(1)
+^C
+vaddya@turing:~/Git/os/lab3/logs/22_ctrl_c$ ./threads_ctrl_c 2
+thread: [0] sleep(1)
+thread: [1] sleep(1)
+^C
+handler: signal "Interrupt = 2" is received for 1-th time
+thread: [2] sleep(1)
+thread: [3] sleep(1)
+^C
+handler: signal "Interrupt = 2" is received for 2-th time
+handler: setting default handler
+thread: [4] sleep(1)
+thread: [5] sleep(1)
+^C

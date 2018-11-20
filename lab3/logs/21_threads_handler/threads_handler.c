@@ -2,15 +2,27 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <sys/syscall.h>
+#include <signal.h>
+
+pthread_t t1;
+pthread_t tn;
+
+void handler() {
+    printf("handler: signal is received\n");
+    pthread_exit(NULL);
+}
 
 void *thread1() {
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         printf("thread1: [%d] sleep(5)\n", i);
         sleep(5);
+        pthread_kill(tn, SIGUSR1);
     }
 }
 
 void *threadn() {
+    signal(SIGUSR1, handler);
     for (int n = 0; n < 10; n++) {
         printf("threadn: [%d] sleep(1)\n", n);
         sleep(1);
@@ -18,14 +30,9 @@ void *threadn() {
 }
 
 int main(int argc, char **argv) {
-    pthread_t t1;
-    pthread_t tn;
-    system("ps -ALf > dump1");
     pthread_create(&t1, NULL, thread1, NULL);
     pthread_create(&tn, NULL, threadn, NULL);
-    system("ps -ALf > dump2");
     pthread_join(t1, NULL);
     pthread_join(tn, NULL);
-    system("ps -ALf > dump3");
     return 0;
 }
