@@ -3,6 +3,7 @@ if [ -z $1 ]; then
 	exit 1
 fi
 
+rm */*.idea
 cd $1
 zip -r $1.zip logs report/*.tex
 cd report

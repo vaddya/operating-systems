@@ -12,7 +12,7 @@ void handler(int sig) {
     static int i = 0;
     printf("\nhandler: signal \"%s = %d\" is received for %d-th time\n", strsignal(sig), sig, i + 1);
     if (++i == handling_count) {
-        printf("handler: setting default handler\n");
+        printf("handler: pthread_exit\n");
         signal(SIGINT, SIG_DFL);
     }
 }

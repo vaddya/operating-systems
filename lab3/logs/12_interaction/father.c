@@ -5,12 +5,7 @@
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-    char *save;
-    if (argc < 2) {
-        save = "tree";
-    } else {
-        save = argv[1];
-    }
+    char *save = argc > 1 ? argv[1] : "tree";
     int pid = getpid();
     int ppid = getppid();
     int sid = getsid(pid);

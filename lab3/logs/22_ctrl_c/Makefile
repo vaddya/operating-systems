@@ -1,4 +1,4 @@
-all: threads_ctrl_c process_ctrl_c process_ctrl_z
+all: threads_ctrl_c process_ctrl_c process_ctrl_z ctrl_c
 
 threads_ctrl_c: threads_ctrl_c.c
 	gcc -o threads_ctrl_c threads_ctrl_c.c -pthread
@@ -8,6 +8,9 @@ process_ctrl_c: process_ctrl_c.c
 
 process_ctrl_z: process_ctrl_z.c
 	gcc -o process_ctrl_z process_ctrl_z.c -pthread
+
+ctrl_c: ctrl_c.c
+	gcc -o ctrl_c ctrl_c.c -pthread
 
 clean:
 	rm threads_ctrl_c process_ctrl_c process_ctrl_z

@@ -1,0 +1,16 @@
+vaddya@turing:~/Git/os/lab3/logs/24_inheritance$ sudo taskset -c 1 ./inheritance
+main: SCHED_RR [30]
+thread1: SCHED_RR [50]
+thread1: [0] Thu Nov 22 01:13:46 2018
+thread1: [1] Thu Nov 22 01:13:48 2018
+thread1: [2] Thu Nov 22 01:13:49 2018
+thread1: [3] Thu Nov 22 01:13:50 2018
+thread1: [4] Thu Nov 22 01:13:51 2018
+thread1: done
+threadn: SCHED_RR [30]
+threadn: [0] Thu Nov 22 01:13:51 2018
+threadn: [1] Thu Nov 22 01:13:53 2018
+threadn: [2] Thu Nov 22 01:13:54 2018
+threadn: [3] Thu Nov 22 01:13:55 2018
+threadn: [4] Thu Nov 22 01:13:57 2018
+threadn: done

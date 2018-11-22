@@ -36,9 +36,9 @@
 	backgroundcolor=\color{white},
 	commentstyle=\color{green},
 	keywordstyle=\color{blue},
-	numberstyle=\scriptsize\color{gray},
+	numberstyle=\color{gray}\scriptsize\ttfamily,
 	stringstyle=\color{purple},
-	basicstyle=\footnotesize	,
+	basicstyle=\footnotesize\ttfamily,
 	breakatwhitespace=false,
 	breaklines=true,
 	captionpos=b,
@@ -49,15 +49,19 @@
 	showstringspaces=false,
 	showtabs=false,
 	tabsize=4,
-	texcl=true,
 	frame=single,
 	morekeywords={vaddya@turing},
 	deletekeywords={error},
 	extendedchars=false,
+	columns=fullflexible,
 	literate=%
 		{~}{{\raise.25ex\hbox{$\mathtt{\sim}$}}}{1}%
 		{-}{-}{1}
 }
+
+\makeatletter
+\def\lst@outputspace{{\ }}
+\makeatother
 
 \renewcommand{\le}{\ensuremath{\leqslant}}
 \renewcommand{\leq}{\ensuremath{\leqslant}}

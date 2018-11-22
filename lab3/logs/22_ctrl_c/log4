@@ -1,0 +1,20 @@
+vaddya@turing:~/Git/os/lab3/logs/22_ctrl_c$ ./ctrl_c
+main (tid = 9277): [0] sleep(1)
+thread1 (tid = 9278): [0] sleep(1)
+threadn (tid = 9279): [0] sleep(1)
+main (tid = 9277): [1] sleep(1)
+thread1 (tid = 9278): [1] sleep(1)
+threadn (tid = 9279): [1] sleep(1)
+^C
+handler (tid = 9277): signal "Interrupt = 2" is received
+thread1 (tid = 9278): [2] sleep(1)
+threadn (tid = 9279): [2] sleep(1)
+thread1 (tid = 9278): [3] sleep(1)
+threadn (tid = 9279): [3] sleep(1)
+^C
+handler (tid = 9278): signal "Interrupt = 2" is received
+threadn (tid = 9279): [4] sleep(1)
+threadn (tid = 9279): [5] sleep(1)
+threadn (tid = 9279): [6] sleep(1)
+^C
+handler (tid = 9279): signal "Interrupt = 2" is received
