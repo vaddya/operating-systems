@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Git/operating-systems/lab4/logs/task_1/task_1.cpp
+iostream
+-
+windows.h
+-
+cstdio
+-
+cstring
+-
+

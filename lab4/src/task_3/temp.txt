@@ -1,0 +1,2 @@
+C:\Windows\System32\CALC.EXE
+C:\Windows\System32\NOTEPAD.EXE D:\Git\os\lab4\src\task_3\temp.txt
