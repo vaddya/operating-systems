@@ -1,5 +1,8 @@
-#include <cstdio>
 #include <windows.h>
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 DWORD WINAPI Thread1(LPVOID);
 
@@ -12,7 +15,7 @@ struct Params {
 void printTime() {
     SYSTEMTIME now;
     GetSystemTime(&now);
-    printf("System Time %d %d %d\n", now.wHour, now.wMinute, now.wSecond);
+    cout << "System Time " << now.wHour << ":" << now.wMinute << ":" << now.wSecond << endl;
 }
 
 int main(int argc, char *argv[]) {
@@ -45,9 +48,10 @@ DWORD WINAPI Thread1(LPVOID arg) {
     while (true) {
         Params params = *((Params *) arg);
         Sleep(1000);
-        printf("%d\n", params.num);
-        if (!*(params.runflg))
+        cout << params.num << endl;
+        if (!*(params.runflg)) {
             break;
+        }
     }
     return 0;
 } 

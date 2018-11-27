@@ -3,4 +3,5 @@ project(parent_son)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(parent_son parent.cpp son.cpp)
+add_subdirectory(parent)
+add_subdirectory(son)
