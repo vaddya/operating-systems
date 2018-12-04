@@ -1,0 +1,6 @@
+D:\Git\os\lab4\src\cmake-build-debug\task2\task2.exe
+C:\Windows\System32\CALC.EXE
+Process successfully created!
+
+C:\Windows\System32\NOTEPAD.EXE D:\Git\os\lab4\src\task2\temp.txt
+Process successfully created!

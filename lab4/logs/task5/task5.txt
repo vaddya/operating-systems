@@ -1,0 +1,4 @@
+D:\Git\os\lab4\src\cmake-build-debug\task5\task5.exe 3 5
+System Time 21:39:50
+2 1 0 1 2 0 1 2 0 1 2 0 
+System Time 21:39:55

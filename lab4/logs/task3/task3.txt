@@ -1,0 +1,14 @@
+D:\Git\os\lab4\src\cmake-build-debug\task3\task3.exe
+Program started
+Input name of configuration file
+
+D:\Git\os\lab4\src\cmake-build-debug\task3\task3.exe temp.txt
+Program started
+Try to create new process with command line 'C:\Windows\System32\CALC.EXE'
+New process handle: 9472
+Handle of thread: 2532
+Try to create new process with command line 'C:\Windows\System32\NOTEPAD.EXE D:\Git\os\lab4\src\task3\temp.txt'
+New process handle: 4860
+Handle of thread: 14292
+Skipping empty string
+Program finished

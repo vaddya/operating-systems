@@ -1,0 +1,6 @@
+D:\Git\os\lab4\src\cmake-build-debug\task1\task1.exe
+Program started
+New process handle: 7792
+Handle of thread: 14924
+Successfully created new process!
+Program finished

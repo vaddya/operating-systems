@@ -1,0 +1,12 @@
+D:\Git\os\lab4\src\cmake-build-debug\task7\task7.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: NORMAL
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            2
+   LOWEST             YES               NO            2
+    BELOW             YES               NO            2
+   NORMAL             YES               NO            2
+    ABOVE             YES               NO            2
+  HIGHEST             YES               NO      2581740
+TIME_CRIT             YES               NO      2581824

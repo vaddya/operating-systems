@@ -32,7 +32,7 @@
 
 \lstset{
 	language={C++},
-	inputpath={../logs/},
+	inputpath={../},
 	backgroundcolor=\color{white},
 	commentstyle=\color{green},
 	keywordstyle=\color{blue},
@@ -74,6 +74,11 @@
 \def\tcode#1{\texttt{#1}}
 \newcommand{\caret}{\^{}}
 \newcommand{\ctrl}[1]{\^{}{#1}}
+\newcommand{\listingwithoutput}[1]{
+	\lstinputlisting[caption=\code{#1.cpp}]{src/#1/#1.cpp}
+	Выполним программу \code{#1.exe}:
+	\lstinputlisting[language=none]{logs/#1/#1.txt}
+}
 
 \titleformat*{\section}{\large\bfseries}
 \titleformat*{\subsection}{\normalsize\bfseries}

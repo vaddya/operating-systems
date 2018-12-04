@@ -1,0 +1,22 @@
+D:\Git\os\lab4\src\cmake-build-debug\task8\task8.exe
+0 - dynamic enabled, 1 - disabled.
+
+Default values:
+Process dynamically default is 0
+Main thread dynamic default is 0
+Second thread dynamic default is 0
+
+Change thread dynamic priority:
+Process dynamically default is 0
+Main thread dynamic default is 0
+Second thread dynamic default is 1
+
+Change process dynamic priority:
+Process dynamically default is 1
+Main thread dynamic default is 1
+Second thread dynamic default is 1
+
+Change thread dynamic priority:
+Process dynamically default is 1
+Main thread dynamic default is 1
+Second thread dynamic default is 0

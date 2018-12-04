@@ -1,0 +1,7 @@
+D:\Git\os\lab4\src\cmake-build-debug\task4\task4.exe
+Program started
+Press any key to continue . . . 12121212
+
+D:\Git\os\lab4\src\cmake-build-debug\task4\task4.exe exit
+Program started
+121221122121212121

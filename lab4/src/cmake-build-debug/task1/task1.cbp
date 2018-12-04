@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="task1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\parent_son\;CMake Files\parent_son\parent\;CMake Files\parent_son\son\;CMake Files\task1\;CMake Files\task2\;CMake Files\task3\;CMake Files\task4\;CMake Files\task5\;CMake Files\task6\;CMake Files\task7\;CMake Files\task8\;CMake Files\task9\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Git/os/lab4/src/cmake-build-debug/task1"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="task1">
+				<Option output="D:/Git/os/lab4/src/cmake-build-debug/task1/task1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Git/os/lab4/src/cmake-build-debug/task1"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Qt/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/include"/>
+					<Add directory="C:/Qt/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/include-fixed"/>
+					<Add directory="C:/Qt/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="C:/Qt/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++"/>
+					<Add directory="C:/Qt/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Qt/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 task1"/>
+					<CompileFile command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="task1/fast">
+				<Option output="D:/Git/os/lab4/src/cmake-build-debug/task1/task1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Git/os/lab4/src/cmake-build-debug/task1"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Qt/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/include"/>
+					<Add directory="C:/Qt/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/include-fixed"/>
+					<Add directory="C:/Qt/Tools/mingw530_32/bin/../lib/gcc/i686-w64-mingw32/5.3.0/../../../../i686-w64-mingw32/include"/>
+					<Add directory="C:/Qt/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++"/>
+					<Add directory="C:/Qt/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/Qt/Tools/mingw530_32/lib/gcc/../../i686-w64-mingw32/include/c++/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 task1/fast"/>
+					<CompileFile command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Qt/Tools/mingw530_32/bin/mingw32-make.exe -f &quot;D:/Git/os/lab4/src/cmake-build-debug/task1/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Git/os/lab4/src/task1/task1.cpp">
+			<Option target="task1"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/parent_son/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\parent_son\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/parent_son/parent/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\parent_son\parent\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/parent_son/son/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\parent_son\son\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/task1/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\task1\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/task2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\task2\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/task3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\task3\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/task4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\task4\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/task5/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\task5\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/task6/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\task6\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/task7/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\task7\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/task8/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\task8\"/>
+		</Unit>
+		<Unit filename="D:/Git/os/lab4/src/task9/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\task9\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
