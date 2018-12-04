@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2018.1\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\task3.dir/objects.a
-C:\Qt\Tools\mingw530_32\bin\ar.exe cr CMakeFiles\task3.dir/objects.a @CMakeFiles\task3.dir\objects1.rsp
-C:\Qt\Tools\mingw530_32\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\task3.dir/objects.a -Wl,--no-whole-archive  -o task3.exe -Wl,--out-implib,libtask3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\task3.dir\linklibs.rsp
