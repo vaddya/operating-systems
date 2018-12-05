@@ -1,1 +1,77 @@
-123
+D:\Git\os\lab4\src\cmake-build-debug\task9\task9.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: IDLE
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            1
+   LOWEST             YES               NO            1
+    BELOW             YES               NO            1
+   NORMAL             YES               NO            1
+    ABOVE             YES               NO            8
+  HIGHEST             YES               NO           15
+TIME_CRIT             YES               NO            8
+
+D:\Git\os\lab4\src\cmake-build-debug\task9\task9.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: BELOW
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            1
+   LOWEST             YES               NO            1
+    BELOW             YES               NO            1
+   NORMAL             YES               NO            1
+    ABOVE             YES               NO            9
+  HIGHEST             YES               NO           15
+TIME_CRIT             YES               NO            7
+
+D:\Git\os\lab4\src\cmake-build-debug\task9\task9.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: NORMAL
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            1
+   LOWEST             YES               NO            1
+    BELOW             YES               NO            1
+   NORMAL             YES               NO            1
+    ABOVE             YES               NO            1
+  HIGHEST             YES               NO           15
+TIME_CRIT             YES               NO           15
+
+D:\Git\os\lab4\src\cmake-build-debug\task9\task9.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: ABOVE
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            1
+   LOWEST             YES               NO            1
+    BELOW             YES               NO            1
+   NORMAL             YES               NO            1
+    ABOVE             YES               NO            7
+  HIGHEST             YES               NO           15
+TIME_CRIT             YES               NO            9
+
+D:\Git\os\lab4\src\cmake-build-debug\task9\task9.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: HIGH
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            1
+   LOWEST             YES               NO            1
+    BELOW             YES               NO            1
+   NORMAL             YES               NO            1
+    ABOVE             YES               NO            9
+  HIGHEST             YES               NO           15
+TIME_CRIT             YES               NO            7
+
+D:\Git\os\lab4\src\cmake-build-debug\task9\task9.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: HIGH
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            1
+   LOWEST             YES               NO            1
+    BELOW             YES               NO            1
+   NORMAL             YES               NO            1
+    ABOVE             YES               NO            8
+  HIGHEST             YES               NO           15
+TIME_CRIT             YES               NO            8

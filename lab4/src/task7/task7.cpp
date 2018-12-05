@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
     useSingleCore();
     int numThreads = DEF_THREADS;
     int threadLive = DEF_TTL;
-    if (argc < 2) {
+    if (argc < 3) {
         printf("Using default numThreads = %d and default time to live = %d\n", numThreads, threadLive);
     } else {
         numThreads = atoi(argv[1]);
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
     }
     HANDLE t = initTimer(threadLive);
     HANDLE t1;
-    SetPriorityClass(GetCurrentProcess(), procPriorities[2]);
+    SetPriorityClass(GetCurrentProcess(), procPriorities[4]);
     for (int i = 0; i < numThreads; i++) {
         t1 = CreateThread(NULL, 0, threadHandler, (LPVOID) i, 0, NULL);
         SetThreadPriority(t1, priorities[i]);

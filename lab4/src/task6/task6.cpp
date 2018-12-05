@@ -6,17 +6,19 @@ using std::endl;
 
 DWORD WINAPI threadHandler(LPVOID);
 
+void useSingleCore();
+
 struct Params {
     int num;
     bool *runFlag;
 };
+
 long long counters[7] = {0, 0, 0, 0, 0, 0, 0};
+
 int priority[7] = {THREAD_PRIORITY_IDLE, THREAD_PRIORITY_LOWEST,
                    THREAD_PRIORITY_BELOW_NORMAL, THREAD_PRIORITY_NORMAL,
                    THREAD_PRIORITY_ABOVE_NORMAL, THREAD_PRIORITY_HIGHEST,
                    THREAD_PRIORITY_TIME_CRITICAL};
-
-void useSingleCore();
 
 int main(int argc, char *argv[]) {
     int stop = argc > 1 ? atoi(argv[1]) : 5000;
@@ -43,7 +45,8 @@ int main(int argc, char *argv[]) {
     runFlag = false;
     CloseHandle(tm1);
     for (int i = 0; i < 7; i++) {
-        cout << i << ": counter = " << counters[i] << endl;
+        cout << i << ": counter = "
+             << counters[i] << endl;
     }
     return 0;
 }

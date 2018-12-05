@@ -11,4 +11,4 @@
 .idea
 build
 *.zip
-*/cmake-build-debug
+*cmake-build-debug

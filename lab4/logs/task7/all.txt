@@ -1,0 +1,77 @@
+D:\Git\os\lab4\src\cmake-build-debug\task7\task7.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: IDLE
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            3
+   LOWEST             YES               NO            3
+    BELOW             YES               NO            3
+   NORMAL             YES               NO            3
+    ABOVE             YES               NO      1230279
+  HIGHEST             YES               NO      2602627
+TIME_CRIT             YES               NO      1372349
+
+D:\Git\os\lab4\src\cmake-build-debug\task7\task7.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: BELOW
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            3
+   LOWEST             YES               NO            3
+    BELOW             YES               NO            3
+   NORMAL             YES               NO            3
+    ABOVE             YES               NO      1310870
+  HIGHEST             YES               NO      2622270
+TIME_CRIT             YES               NO      1311213
+
+D:\Git\os\lab4\src\cmake-build-debug\task7\task7.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: NORMAL
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            3
+   LOWEST             YES               NO            3
+    BELOW             YES               NO            3
+   NORMAL             YES               NO            4
+    ABOVE             YES               NO            4
+  HIGHEST             YES               NO      3892063
+TIME_CRIT             YES               NO      3892553
+
+D:\Git\os\lab4\src\cmake-build-debug\task7\task7.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: ABOVE
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            2
+   LOWEST             YES               NO            2
+    BELOW             YES               NO            2
+   NORMAL             YES               NO            2
+    ABOVE             YES               NO      1390225
+  HIGHEST             YES               NO      2619412
+TIME_CRIT             YES               NO      1229249
+
+D:\Git\os\lab4\src\cmake-build-debug\task7\task7.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: HIGH
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            2
+   LOWEST             YES               NO            2
+    BELOW             YES               NO            2
+   NORMAL             YES               NO            2
+    ABOVE             YES               NO      1467519
+  HIGHEST             YES               NO      2631990
+TIME_CRIT             YES               NO      1164385
+
+D:\Git\os\lab4\src\cmake-build-debug\task7\task7.exe
+Using default numThreads = 7 and default time to live = 10
+Result of work:
+Process priority: HIGH
+Priority        Has Boost       Was changed     Counter
+     IDLE             YES               NO            3
+   LOWEST             YES               NO            3
+    BELOW             YES               NO            3
+   NORMAL             YES               NO            3
+    ABOVE             YES               NO      1348512
+  HIGHEST             YES               NO      2641099
+TIME_CRIT             YES               NO      1292555
