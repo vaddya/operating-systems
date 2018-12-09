@@ -100,7 +100,14 @@
 
 \listingwithoutput{task8}
 
-Из результатов видно, что по умолчанию для процессов и потоков разрешено динамическое изменение приоритетов. Затем для второго потока было запрещено изменение динамического приоритета с помощью вызова функции \code{SetThreadPriorityBoost}. Если запретить динамическое изменение приоритетов для процесса (\code{SetProcessPriorityBoost}), то изменение также будет запрещено и для всех потоков. Тем не менее, возможно разрешить отдельному потоку в процессе динамически изменять приоритет, несмотря на то, что для процесса это запрещено.
+Проанализируем вывод программы:
+
+\begin{itemize}
+	\item По умолчанию для процесса и потоков разрешено динамическое изменение приоритета (строки \code{4} -- \code{7});
+	\item С помощью вызова функции \code{SetThreadPriorityBoost} можно запретить потоку динамическое изменение, при этом оно запрещается только для этого потока (строки \code{10} -- \code{12});
+	\item Если запретить динамическое изменение приоритетов для конкретного процесса (\code{SetProcessPriorityBoost}), то изменение также будет запрещено и для всех его потоков (строки \code{15} -- \code{17});
+	\item С помощью вызова функции \code{SetThreadPriorityBoost} возможно разрешить отдельному потоку в процессе динамически изменять приоритет, несмотря на то, что для процесса это запрещено (строки \code{20} -- \code{22}).
+\end{itemize}
 
 \newpage
 
@@ -167,7 +174,7 @@
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\linewidth]{dynamic.png}
+	\includegraphics[width=0.8\linewidth]{dynamic.png}
 	\caption{Динамическое изменение приоритета}
 \end{figure}
 
@@ -188,7 +195,7 @@
 	\item сделать дескрипторы наследуемыми.
 \end{itemize}
 
-Для того, чтобы сделать дескриптор файла наследуемым, необходимо внутри программы \code{parent.exe} передать функции \code{CreateFile()} структуру \code{SECURITY\_ATTRIBUTES} с установленным флагом \code{bInheritHandle}. Для того, чтобы разрешить потомку наследовать дескрипторы, передадим пятым параметром функции \code{CreateProcess()} значение \code{TRUE}. Сам дескриптор при этом передается через аргументы командной строки \code{char *argv[]} программы \code{son.exe}.
+Для того, чтобы сделать дескриптор файла наследуемым, внутри программы \code{parent.exe} функции \code{CreateFile()} передается структура \code{SECURITY\_ATTRIBUTES} с установленным флагом \code{bInheritHandle}. Для того, чтобы разрешить потомку наследовать дескрипторы пятым параметром функции \code{CreateProcess()} передается значение \code{TRUE}. Сам дескриптор при этом передается через аргументы командной строки \code{char *argv[]} программы \code{son.exe}.
 
 \lstinputlisting[caption=\code{parent.cpp}]{src/parent_son/parent/parent.cpp}
 \lstinputlisting[caption=\code{son.cpp}]{src/parent_son/son/son.cpp}
@@ -219,5 +226,92 @@
 	\item Handle Inheritance / Microsoft Docs [Электронный ресурс]:\\
 		{\small\url{https://docs.microsoft.com/en-us/windows/desktop/sysinfo/handle-inheritance}} 
 \end{enumerate}
+
+\section*{Дополнения к отчету}
+
+\subsection*{Компиляция и сборка проекта}
+
+Компиляция проекта в данной работе производилась с помощью утилиты CMake и набора утилит MinGW. CMake -- кроcсплатформенная утилита для автоматической сборки программы из исходного кода.  Написав однажды небольшой и понятный всем скрипт, можно обеспечить одинаковую сборку проекта на любых платформах, где доступен CMake (Windows, Linux, MacOS и др.). Скрипт, написанный на языке CMake, транслируется в нативные файлы сборки, например \code{Makefile}. MinGW -- набор портированных на Windows утилит GCC, среди которых компиляторы \code{gcc}, \code{g++} и \code{make}. 
+
+Для каждой программы в отчете был создан свой \code{CMakeLists.txt} файл, который содержит описание проекта, например:
+
+\lstinputlisting[language=none, caption=\code{task2/CMakeLists.txt}]{src/task2/CMakeLists.txt}
+
+Разберем построчно \code{CMakeLists.txt}:
+
+\begin{itemize}
+	\item Команда \code{cmake\_minimum\_required} проверяет запущенную версию CMake: если она меньше указанного минимума (в данном случае 3.10), то CMake завершает свою работу фатальной ошибкой;
+	\item Команда \code{project} задает характеристики проекта (в данном случае только имя);
+	\item Команда \code{set} позволяет задавать переменные, в том числе параметры компиляторы (в данном случае устанавливается стандарт языка \code{C++11});
+	\item Команда \code{add\_executable} добавляет к проекту исполняемый файл с заданным именем (\code{task2}), который будет скомпилирован из списка исходников (\code{task2.cpp});
+	\item Команда \code{file} копирует файл \code{temp.txt} в папку сборки проекта.
+\end{itemize}
+
+Проделаем действия в PowerShell, необходимые для того, чтобы скомпилировать исходный файл имея \code{CMakeLists.txt} файл:
+\lstinputlisting[language=none, caption=\code{task1/CMakeLists.txt}]{logs/cmake/cmake.txt}
+
+Сначала запускается утилита \code{cmake} с флагом \code{-G "MinGW Makefiles"} (задает генератор, т.е. форму генерируемого проекта). Она генерирует Makefile, который можно запустить с помощью утилиты \code{mingw32-make.exe} (аналог утилиты \code{make} из Linux). Утилита \code{mingw-make.exe} создает исполняемый файл \code{task2.exe}, который после этого запускается.
+
+Альтернативным вариантом компиляции является запуск компилятора MinGW:
+\lstinputlisting[language=none, caption=\code{task1/CMakeLists.txt}]{logs/cmake/g++.txt}
+
+Аргументы утилиты \code{mingw32-g++.exe}, входящей в набор MinGW, аналогичны компилятору \code{g++} на Linux.
+
+\newpage
+
+\subsection*{Приоритеты потоков в планировщике Windows 10}
+
+Согласно документации на сайте Microsoft \footnote{\url{https://docs.microsoft.com/en-us/windows/desktop/procthread/scheduling-priorities}}, потоки в Windows 10 планируются на основе их приоритета планирования (от 0 -- низший приоритет, до 31 -- наивысший). ОС выделяет временные интервалы по кругу (Round Robin) всем потокам с наивысшим приоритетом и переходит к менее приоритетным потокам при отсутствии более приоритетных потоков, готовых к выполнению. Приоритет потока определяется:
+
+\begin{itemize}
+	\item классом приоритета процесса (6 классов);
+	\item уровнем приоритета потока внутри процесса (7 уровней).
+\end{itemize}
+
+Эти два значения формируют базовый приоритет потока:
+
+\begin{table}[H]
+	\centering
+	\def\tabcolsep{10pt}
+	\caption{Приоритеты потоков в Windows 10}
+	\begin{tabular}{|c|c|c|c|c|c|c|}
+		\hline
+		Thread/Process & \code{IDLE} & \code{BELOW} & \code{NORMAL} & \code{ABOVE} & \code{HIGH} & \code{REALTIME} \\ \hline
+		\code{IDLE} & 1 & 1 & 1 & 1 & 1 & 16 \\ \hline
+		\code{LOWEST} & 2 & 4 & 6 & 8 & 11 & 22 \\ \hline
+		\code{BELOW} & 3 & 5 & 7 & 9 & 12 & 23 \\ \hline
+		\code{NORMAL} & 4 & 6 & 8 & 10 & 13 & 24 \\ \hline
+		\code{ABOVE} & 5 & 7 & 9 & 11 & 14 & 25 \\ \hline
+		\code{HIGHEST} & 6 & 8 & 10 & 12 & 15 & 26 \\ \hline
+		\code{TIME\_CRIT} & 15 & 15 & 15 & 15 & 15 & 31 \\ \hline
+	\end{tabular}
+\end{table}
+
+От приведенной в пособии таблицы приоритетов данная таблица отличается только двумя значениям:
+
+\begin{itemize}
+	\item поток \code{ABOVE} в процессе \code{HIGH} имеет приоритет 14 (было 15);
+	\item поток \code{ABOVE} в процессе \code{REALTIME} имеет приоритет 25 (было 26).
+\end{itemize}
+
+Таким образом параметры планировщика в Windows 10 претерпели небольшие изменения.
+
+\newpage
+
+\subsection*{Список открытых процессом файловых дескрипторов}
+
+Для того, чтобы в задании с наследованием файлового дескриптора порожденным процессом (\code{parent\_son}), получить список открытых файловых дескрипторов воспользуемся утилитой Process Explorer. Добавим в обоих программа вызов \code{system("pause")} и зафиксируем список открытых ими файловых дескрипторов.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{\linewidth}
+		\includegraphics[width=\linewidth]{parent_handles.png}
+		\vspace{0.5em}
+	\end{subfigure}
+	\begin{subfigure}{\linewidth}
+		\includegraphics[width=\linewidth]{son_handles.png}
+	\end{subfigure}
+	\caption{Открытые файловые дескрипторы}
+\end{figure}
+Видно, что в списке открытых файловых дескрипторов как родительского, так и порожденного процесса содержится дескриптор файл \code{file.txt}, при этом в порожденном процессе он не создавался с помощью \code{CreateFile()}, а был был унаследован от родительского процесса.
 
 \end{document}

@@ -1,5 +1,7 @@
 #include <windows.h>
 #include <iostream>
+#include <tchar.h>
+#include <stdio.h>
 
 using namespace std;
 
@@ -20,7 +22,7 @@ int main(int argc, char *argv[]) {
         system("pause");
         return -1;
     }
-    CloseHandle(fileHandle);
     system("pause");
+    CloseHandle(fileHandle);
     return 0;
 }

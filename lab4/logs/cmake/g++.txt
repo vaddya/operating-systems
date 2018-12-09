@@ -1,0 +1,9 @@
+PS D:\Git\os\lab4\src\task2> mingw32-g++.exe -o task2.exe .\task2.cpp
+
+PS D:\Git\os\lab4\src\task2> .\task2.exe
+executing: C:\Windows\System32\CALC.EXE
+Process successfully created!
+executing: C:\Windows\System32\NOTEPAD.EXE D:\Git\os\lab4\src\task2\temp.txt
+Process successfully created!
+
+PS D:\Git\os\lab4\src\task2>

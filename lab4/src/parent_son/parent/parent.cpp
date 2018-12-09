@@ -34,6 +34,7 @@ int main(int argc, char *argv[]) {
         cerr << "create process error: " << GetLastError() << endl;
         return -1;
     }
+    system("pause");
     CloseHandle(processInfo.hThread);
     CloseHandle(processInfo.hProcess);
     CloseHandle(fileHandle);
