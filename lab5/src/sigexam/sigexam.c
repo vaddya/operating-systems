@@ -1,24 +1,22 @@
-#include <stdio.h>
-#include <signal.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 #include <wait.h>
 
-static void sigHandler(int sig) {
-    printf("Catched signal %s\n", sig == SIGUSR1 ? "SIGUSR1" : "SIGUSR2");
+void handler(int sig) {
+    printf("Caught signal %s\n", sig == SIGUSR1 ? "SIGUSR1" : "SIGUSR2");
     printf("Parent = %d\n", getppid());
-    signal(sig, SIG_DFL); // востанавливаем старую диспозицию
+    signal(sig, SIG_DFL);
 }
 
-int main() {
-    printf("\nFather started: pid = %i,ppid = %i\n", getpid(), getppid());
-    signal(SIGUSR1, sigHandler);
-    signal(SIGUSR2, sigHandler);
+int main(int argc, char **argv) {
+    printf("Father started: PID = %i, PPID = %i\n", getpid(), getppid());
+    signal(SIGUSR1, handler);
+    signal(SIGUSR2, handler);
     signal(SIGINT, SIG_DFL);
     signal(SIGCHLD, SIG_IGN);
-    int forkRes = fork();
-    if (forkRes == 0) { // программа-потомок
-        printf("\nSon started: pid = %i,ppid = %i\n", getpid(), getppid()); // отправляем сигналы родителю
+    if (fork() == 0) {
+        printf("Son started: PID = %i, PPID = %i\n", getpid(), getppid());
         if (kill(getppid(), SIGUSR1) != 0) {
             printf("Error while sending SIGUSR1\n");
             exit(1);
@@ -26,10 +24,8 @@ int main() {
         printf("Successfully sent SIGUSR1\n");
         return 0;
     }
-    // программа-родитель
     wait(NULL);
-    // ждем сигналов
-    for (;;) {
+    while (1) {
         pause();
     }
     return 0;
