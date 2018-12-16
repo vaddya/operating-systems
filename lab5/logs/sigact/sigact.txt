@@ -1,0 +1,10 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact$ ./sigact &
+[1] 15882
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact$ kill -SIGUSR1 %1
+Caught signal User defined signal 1
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact$ kill -SIGINT %1
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact$ jobs
+[1]+  Running                 ./sigact &
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact$
+[1]+  Interrupt               ./sigact
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact$ jobs

@@ -1,0 +1,7 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/queue/client$ ./queue_client
+Using default key file ../key
+request from clinet 1
+Server's response: OK
+IPC!
+Server's response: OK
+^C

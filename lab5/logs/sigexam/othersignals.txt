@@ -1,0 +1,11 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigexam$ ./sigexam &
+[1] 10784
+Father started: PID = 10784, PPID = 7736
+Son started: PID = 10786, PPID = 10784
+Successfully sent SIGUSR1
+Caught signal SIGUSR1
+Parent = 7736
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigexam$ kill -SIGHUP 10784
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigexam$ jobs
+[1]+  Hangup                  ./sigexam
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigexam$ jobs

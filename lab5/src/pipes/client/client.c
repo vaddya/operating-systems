@@ -1,42 +1,42 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
 #include <fcntl.h>
 
+const char *CHANNEL1 = "../channel1";
+const char *CHANNEL2 = "../channel2";
+const int BUFFER_SIZE = 100;
+
 int main() {
-// каналы сервер уже создал, открываем их
-    int chan1 = open("channel1", O_RDONLY);
+    int chan1 = open(CHANNEL1, O_RDONLY);
     if (chan1 == -1) {
-        printf("Can't open channel1 for reading\n");
-        exit(0);
+        perror("Can't open channel1 for reading");
+        return 1;
     }
-    int chan2 = open("channel2", O_WRONLY);
+    int chan2 = open(CHANNEL2, O_WRONLY);
     if (chan2 == -1) {
-        printf("Can't open channel2 for reading\n");
-        exit(0);
+        perror("Can't open channel2 for reading");
+        return 1;
     }
-// читаем имя файла из первого канала
-    char fileName[100];
-    bzero(fileName, 100);
-    int res = read(chan1, fileName, 100);
+    char fileName[BUFFER_SIZE];
+    bzero(fileName, BUFFER_SIZE);
+    ssize_t res = read(chan1, fileName, BUFFER_SIZE);
     if (res <= 0) {
-        printf("Can't read fileName from channel1\n");
-        exit(0);
+        perror("Can't read file name from channel1");
+        return 1;
     }
-// открываем файл на чтение
+    printf("Read file name: %s\n", fileName);
     FILE *f = fopen(fileName, "r");
     if (!f) {
-        printf("Can't open file %s\n", fileName);
-        exit(0);
+        perror("Can't open file");
+        return 1;
     }
-// читаем из файла и пишем во второй канал
     char buf[100];
     while (!feof(f)) {
-// читаем данные из файла
-        res = fread(buf, sizeof(char), 100, f);
-// пишем их в канал
+        bzero(buf, BUFFER_SIZE);
+        res = fread(buf, sizeof(char), BUFFER_SIZE, f);
         write(chan2, buf, res);
+        printf("Write: %s\n", buf);
     }
     fclose(f);
     close(chan1);

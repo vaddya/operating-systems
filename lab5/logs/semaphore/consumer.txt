@@ -1,0 +1,6 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/semaphore/consumer$ ./semaphore_consumer
+Using default key file ../key
+Client's message: Client's message: hello
+Client's message: world
+Client's message: bye
+^Cexecution complete

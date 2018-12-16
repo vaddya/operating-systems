@@ -1,74 +1,64 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/ipc.h>
 #include <sys/sem.h>
 #include <sys/shm.h>
 #include <strings.h>
 #include <string.h>
 #include "../shm.h"
 
-int *buf;
-
 int main(int argc, char **argv) {
-    char keyFile[100];
-    bzero(keyFile, 100);
+    char keyFile[BUFFER_SIZE];
+    bzero(keyFile, BUFFER_SIZE);
     if (argc < 2) {
         printf("Using default key file %s\n", DEF_KEY_FILE);
         strcpy(keyFile, DEF_KEY_FILE);
-    } else
+    } else {
         strcpy(keyFile, argv[1]);
+    }
     key_t key;
-    int shmemory;
-    int semaphore;
-//будем использовать 1 и тот же ключ для семафора и для shm
     if ((key = ftok(keyFile, 'Q')) < 0) {
         printf("Can't get key for key file %s and id 'Q'\n", keyFile);
-        exit(1);
+        return 1;
     }
-//создаем shm
+    int shmemory;
     if ((shmemory = shmget(key, (BUF_SIZE + 1) * sizeof(int), 0666)) < 0) {
-        printf("Can't create shm\n");
-        exit(1);
+        perror("Can't create shm");
+        return 1;
     }
-//присоединяем shm в наше адресное пространство
+    int *buf;
     if ((buf = (int *) shmat(shmemory, 0, 0)) < 0) {
-        printf("Error while attaching shm\n");
-        exit(1);
+        perror("Error while attaching shm");
+        return 1;
     }
+    int semaphore;
     if ((semaphore = semget(key, 2, 0666)) < 0) {
-        printf("Error while creating semaphore\n");
-        exit(1);
+        perror("Error while creating semaphore");
+        return 1;
     }
     printf("Press enter to start working\n");
     getchar();
     int send = 0;
-    char tb[10];
-    int i = 0;
-    for (i = 0; i < 10; ++i) {
-//ждем, пока будет хоть одна свободная ячейка
+    for (int i = 0; i < 10; i++) {
         if (semop(semaphore, waitNotFull, 1) < 0) {
-            printf("Can't execute a operation\n");
-            exit(1);
+            perror("Can't execute a operation");
+            return 1;
         }
-// ждем доступа к разделяемой памяти
-        if (semop(semaphore, mem_lock, 1) < 0) {
-            printf("Can't execute a operation\n");
-            exit(1);
+        if (semop(semaphore, memLock, 1) < 0) {
+            perror("Can't execute a operation");
+            return 1;
         }
         printf("Add %d to cell %d\n", send, buf[BUF_SIZE] + 1);
         ++buf[BUF_SIZE];
         buf[buf[BUF_SIZE]] = send++;
-//освобождаем доступ к памяти
-        if (semop(semaphore, mem_unlock, 1) < 0) {
-            printf("Can't execute a operation\n");
-            exit(11);
+        if (semop(semaphore, memUnlock, 1) < 0) {
+            perror("Can't execute a operation");
+            return 1;
         }
-//увеличиваем число занятых ячеек
         if (semop(semaphore, releaseFull, 1) < 0) {
-            printf("Can't execute a operation\n");
-            exit(11);
+            perror("Can't execute a operation");
+            return 1;
         }
     }
-//отключение от области разделяемой памяти
     shmdt(buf);
+    return 0;
 }

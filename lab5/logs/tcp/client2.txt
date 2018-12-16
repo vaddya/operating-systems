@@ -1,0 +1,12 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/tcp/client$ ./tcp_client
+Using default port 8888
+Using default addr 127.0.0.1
+Input request (empty to exit):
+hello 2
+Server's response: hello 2
+Input request (empty to exit):
+bye 2
+Server's response: bye 2
+Input request (empty to exit):
+
+Bye-bye

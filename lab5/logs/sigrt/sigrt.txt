@@ -1,0 +1,11 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigrt$ ./sigrt
+thread: [0] sleep(1)
+handler: signal "Real-time signal 30 = 64" is received
+handler: signal "Real-time signal 2 = 36" is received
+handler: signal "Real-time signal 1 = 35" is received
+handler: signal "Real-time signal 1 = 35" is received
+handler: signal "Real-time signal 0 = 34" is received
+handler: signal "User defined signal 2 = 12" is received
+handler: signal "User defined signal 1 = 10" is received
+thread: [1] sleep(1)
+Killed

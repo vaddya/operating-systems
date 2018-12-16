@@ -1,0 +1,19 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/semaphores/consumer$ ./semaphores_consumer
+Using default key file ../key
+Press enter to start working
+
+Remove 4 from cell 4
+Remove 3 from cell 3
+Remove 2 from cell 2
+Remove 1 from cell 1
+Remove 0 from cell 0
+Remove 9 from cell 4
+Remove 8 from cell 3
+Remove 7 from cell 2
+Remove 6 from cell 1
+Remove 5 from cell 0
+Remove 4 from cell 4
+Remove 3 from cell 3
+Remove 2 from cell 2
+Remove 1 from cell 1
+Remove 0 from cell 0

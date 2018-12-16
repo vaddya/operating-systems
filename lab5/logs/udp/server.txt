@@ -1,0 +1,7 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/udp/server$ ./udp_server
+Using default port 8888
+Server received from port = 11164: request from 1 client
+Server received from port = 32435: request from 2 client
+Server received from port = 11164: bye
+Server received from port = 32435: bye
+^C

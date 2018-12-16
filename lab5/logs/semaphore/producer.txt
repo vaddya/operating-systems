@@ -1,0 +1,11 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/semaphore/producer$ ./semaphore_producer
+Using default key file ../key
+Type message to server. Empty string to finish:
+hello
+Type message to server. Empty string to finish:
+world
+Type message to server. Empty string to finish:
+bye
+Type message to server. Empty string to finish:
+
+bye-bye

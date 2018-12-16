@@ -1,0 +1,10 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigexam/sigthread$ ./sigthread
+thread1: [0] sleep(5)
+thread2: [0] sleep(1)
+thread2: [1] sleep(1)
+thread2: [2] sleep(1)
+thread2: [3] sleep(1)
+thread2: [4] sleep(1)
+thread1: [1] sleep(5)
+Caught signal User defined signal 1
+thread1: done

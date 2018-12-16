@@ -1,0 +1,14 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/semaphores/producer$ ./semaphores_producer
+Using default key file ../key
+Press enter to start working
+
+Add 0 to cell 0
+Add 1 to cell 1
+Add 2 to cell 2
+Add 3 to cell 3
+Add 4 to cell 4
+Add 5 to cell 0
+Add 6 to cell 1
+Add 7 to cell 2
+Add 8 to cell 3
+Add 9 to cell 4

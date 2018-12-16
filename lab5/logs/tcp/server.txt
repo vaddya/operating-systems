@@ -1,0 +1,9 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/tcp/server$ ./tcp_server
+Using default port 8888
+Some client sent: hello 1
+Some client sent: hello 2
+Some client sent: bye 1
+Can't recv data from client, ending thread: Success
+Some client sent: bye 2
+Can't recv data from client, ending thread: Success
+^C

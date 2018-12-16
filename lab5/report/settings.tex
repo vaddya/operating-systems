@@ -19,6 +19,7 @@
 \usepackage{multirow}
 \usepackage{titlesec}
 \usepackage{listings}
+\usepackage{listingsutf8}
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{cmap}
@@ -38,7 +39,7 @@
 	keywordstyle=\color{blue},
 	numberstyle=\color{gray}\scriptsize\ttfamily,
 	stringstyle=\color{purple},
-	basicstyle=\footnotesize\ttfamily,
+	basicstyle=\lst@ifdisplaystyle\footnotesize\fi\ttfamily,
 	breakatwhitespace=false,
 	breaklines=true,
 	captionpos=b,
@@ -51,9 +52,10 @@
 	tabsize=4,
 	frame=single,
 	morekeywords={vaddya@turing},
-	deletekeywords={error},
+	deletekeywords={},
 	extendedchars=false,
 	columns=fullflexible,
+	inputencoding=utf8/cp1251,
 	literate=%
 		{~}{{\raise.25ex\hbox{$\mathtt{\sim}$}}}{1}%
 		{-}{-}{1}
@@ -70,10 +72,18 @@
 \renewcommand{\epsilon}{\ensuremath{\varepsilon}}
 \renewcommand{\phi}{\ensuremath{\varphi}}
 \renewcommand{\thefigure}{\arabic{figure}}
-\def\code#1{\texttt{\small #1}}
-\def\tcode#1{\texttt{#1}}
+\newcommand{\code}[1]{\lstinline{#1}}
 \newcommand{\caret}{\^{}}
 \newcommand{\ctrl}[1]{\^{}{#1}}
+\newcommand{\lstheader}[1]{
+	\lstinputlisting[caption=\code{#1.h}]{src/#1.h}
+}
+\newcommand{\lstsrc}[1]{
+	\lstinputlisting[caption=\code{#1.c}]{src/#1.c}
+}
+\newcommand{\lstlogs}[1]{
+	\lstinputlisting[language=none]{logs/#1.txt}
+}
 
 \titleformat*{\section}{\large\bfseries}
 \titleformat*{\subsection}{\normalsize\bfseries}

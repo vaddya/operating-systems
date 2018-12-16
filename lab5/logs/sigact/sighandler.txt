@@ -1,0 +1,9 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact/sighandler$ ./sighandler &
+[1] 19173
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact/sighandler$ kill -SIGUSR1 %1
+Caught signal User defined signal 1
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact/sighandler$ jobs
+[1]+  Running                 ./sighandler &
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact/sighandler$ jobs
+[1]+  Interrupt               ./sighandler
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/sigact/sighandler$ jobs

@@ -1,0 +1,6 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/pipes/server$ ./server
+Using default file name ../test.txt
+Read: Line 1
+Line 2
+Line 3
+End

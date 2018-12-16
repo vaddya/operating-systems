@@ -1,0 +1,11 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/pipe$ ./pipe
+father: using default fileNames 'from.txt','to.txt'
+father: pipe is successfully created
+son: writing to pipe: Line 1
+Line 2
+Line 3
+End
+father: read from pipe: Line 1
+Line 2
+Line 3
+End

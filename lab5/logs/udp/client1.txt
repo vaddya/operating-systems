@@ -1,0 +1,11 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/udp/client$ ./udp_client
+Using default port 8888
+Input request (empty to exit):
+request from 1 client
+Server's response: request from 1 client
+Input request (empty to exit):
+bye
+Server's response: bye
+Input request (empty to exit):
+
+Bye-bye

@@ -4,65 +4,64 @@
 #include <strings.h>
 #include <string.h>
 
-#define DEF_F_R "from.txt"
-#define DEF_F_W "to.txt"
+const char *DEF_FROM = "from.txt";
+const char *DEF_TO = "to.txt";
+const int BUFFER_SIZE = 100;
 
 int main(int argc, char **argv) {
     char fileToRead[32];
     char fileToWrite[32];
     if (argc < 3) {
-        printf("Using default fileNames '%s','%s'\n", DEF_F_R, DEF_F_W);
-        strcpy(fileToRead, DEF_F_R);
-        strcpy(fileToWrite, DEF_F_W);
+        printf("father: using default fileNames '%s','%s'\n", DEF_FROM, DEF_TO);
+        strcpy(fileToRead, DEF_FROM);
+        strcpy(fileToWrite, DEF_TO);
     } else {
         strcpy(fileToRead, argv[1]);
         strcpy(fileToWrite, argv[2]);
     }
-    int filedes[2];
-    if (pipe(filedes) < 0) {
-        printf("Father: can't create pipe\n");
+    int fds[2];
+    if (pipe(fds) < 0) {
+        printf("father: can't create pipe\n");
         exit(1);
     }
-    printf("pipe is successfully created\n");
+    printf("father: pipe is successfully created\n");
     if (fork() == 0) {
-// процесс сын
-// закрывает пайп для чтения
-        close(filedes[0]);
-        FILE *f = fopen(fileToRead, "r");
-        if (!f) {
-            printf("Son: cant open file %s\n", fileToRead);
+        close(fds[0]);
+        FILE *fd = fopen(fileToRead, "r");
+        if (!fd) {
+            printf("son: cant open file %s\n", fileToRead);
             exit(1);
         }
-        char buf[100];
-        int res;
-        while (!feof(f)) {
-// читаем данные из файла
-            res = fread(buf, sizeof(char), 100, f);
-            write(filedes[1], buf, res); // пишем их в пайп
+        char buf[BUFFER_SIZE];
+        size_t res;
+        while (!feof(fd)) {
+            bzero(buf, BUFFER_SIZE);
+            res = fread(buf, sizeof(char), BUFFER_SIZE, fd);
+            printf("son: writing to pipe: %s\n", buf);
+            write(fds[1], buf, res);
         }
-        close(f);
-        close(filedes[1]);
+        fclose(fd);
+        close(fds[1]);
         return 0;
     }
-// процесс отец
-// закрывает пайп для записи
-    close(filedes[1]);
+    close(fds[1]);
     FILE *f = fopen(fileToWrite, "w");
     if (!f) {
-        printf("Father: cant open file %s\n", fileToWrite);
+        printf("father: cant open file %s\n", fileToWrite);
         exit(1);
     }
-    char buf[100];
-    int res;
+    char buf[BUFFER_SIZE];
+    size_t res;
     while (1) {
-        bzero(buf, 100);
-        res = read(filedes[0], buf, 100);
-        if (!res)
+        bzero(buf, BUFFER_SIZE);
+        res = read(fds[0], buf, BUFFER_SIZE);
+        if (!res) {
             break;
-        printf("Read from pipe: %s\n", buf);
+        }
+        printf("father: read from pipe: %s\n", buf);
         fwrite(buf, sizeof(char), res, f);
     }
     fclose(f);
-    close(filedes[0]);
+    close(fds[0]);
     return 0;
 }
