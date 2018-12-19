@@ -1,0 +1,7 @@
+vaddya@virtualbox:~/Shared/lab5/src/cmake-build-debug/tcp/server$ ./tcp_server
+Using default port 8888
+Some client sent: Hello from host OS!
+Some client sent: Another hello from host OS!
+Can't recv data from client, ending thread: Success
+Can't recv data from client, ending thread: Success
+^C

@@ -1,0 +1,7 @@
+vaddya@turing:~/Git/os/lab5/src/cmake-build-debug/tcp/client$ ./tcp_client 192.168.1.102 8888
+Input request (empty to exit):
+Another hello from host OS!
+Server's response: Another hello from host OS!
+Input request (empty to exit):
+
+Bye-bye

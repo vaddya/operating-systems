@@ -1,0 +1,13 @@
+vaddya@turing:~/Git/os/lab5/logs/remote$ uname -a
+Linux turing 4.15.0-42-generic #45-Ubuntu SMP Thu Nov 15 19:32:57 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+vaddya@turing:~/Git/os/lab5/logs/remote$ ifconfig
+...
+wlp3s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.104  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::6fc5:7ded:23d3:5001  prefixlen 64  scopeid 0x20<link>
+        ether 3c:a9:f4:8c:29:2c  txqueuelen 1000  (Ethernet)
+        RX packets 2052528  bytes 2608280486 (2.6 GB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1006531  bytes 287596122 (287.5 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+

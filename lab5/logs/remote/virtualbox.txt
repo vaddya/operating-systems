@@ -1,0 +1,12 @@
+vaddya@virtualbox:~/Shared/lab5/src/cmake-build-debug/tcp/server$ uname -a
+Linux virtualbox 4.18.0-10-generic #11-Ubuntu SMP Thu Oct 11 15:13:55 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+vaddya@virtualbox:~/Shared/lab5/src/cmake-build-debug/tcp/server$ ifconfig
+...
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.102  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::368b:5b75:affe:b71c  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:80:00:3a  txqueuelen 1000  (Ethernet)
+        RX packets 479  bytes 360255 (360.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 270  bytes 34634 (34.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
