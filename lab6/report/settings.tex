@@ -1,0 +1,104 @@
+\documentclass[a4paper,14pt]{extarticle}
+
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage{here}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{chngcntr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{cmap}
+\usepackage{titlesec}
+
+\definecolor{green}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{purple}{rgb}{0.58,0,0.82}
+
+\lstdefinelanguage{none}{}
+
+\lstset{
+	language={C++},
+	inputpath={../},
+	backgroundcolor=\color{white},
+	commentstyle=\color{green},
+	keywordstyle=\color{blue},
+	numberstyle=\color{gray}\scriptsize\ttfamily,
+	stringstyle=\color{purple},
+	basicstyle=\footnotesize\ttfamily,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=4,
+	frame=single,
+	morekeywords={vaddya@turing},
+	deletekeywords={error},
+	extendedchars=false,
+	columns=fullflexible,
+	literate=%
+		{~}{{\raise.25ex\hbox{$\mathtt{\sim}$}}}{1}%
+		{-}{-}{1}
+}
+
+\makeatletter
+\def\lst@outputspace{{\ }}
+\makeatother
+
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\renewcommand{\thefigure}{\arabic{figure}}
+\def\code#1{\texttt{\small #1}}
+\def\tcode#1{\texttt{#1}}
+\newcommand{\caret}{\^{}}
+\newcommand{\ctrl}[1]{\^{}{#1}}
+\newcommand{\listingwithoutput}[1]{
+	\lstinputlisting[caption=\code{#1.cpp}]{src/#1/#1.cpp}
+	Выполним программу \code{#1.exe}:
+	\lstinputlisting[language=none]{logs/#1/#1.txt}
+}
+
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries}
+\titleformat*{\subsubsection}{\normalsize\bfseries}
+\titleformat*{\paragraph}{\normalsize\bfseries}
+\titleformat*{\subparagraph}{\normalsize\bfseries}
+
+\titlespacing{\section}{0em}{0.8em}{0.8em}
+
+\counterwithin{figure}{section}
+\counterwithin{equation}{section}
+\counterwithin{table}{section}
+\newcommand{\sign}[1][5cm]{\makebox[#1]{\hrulefill}}
+\newcommand{\equipollence}{\quad\Leftrightarrow\quad}
+\newcommand{\no}[1]{\overline{#1}}
+\graphicspath{{../pics/}}
+\captionsetup{justification=centering,margin=1cm}
+\def\arraystretch{1.3}
+\setlength\parindent{5ex}
+\titlelabel{\thetitle.\quad}
+
+\setitemize{topsep=0em, itemsep=0em}
+\setenumerate{topsep=0em, itemsep=0em}
