@@ -1,0 +1,11 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\named_pipe\echo\client> .\named_pipe_echo_client.exe
+Named pipe client demo
+Syntax: pipec [servername]
+Connected. Type 'exit' to terminate
+$ 123
+Received back: <123>
+$ Named pipe example
+Received back: <Named pipe example>
+$ exit
+Received back: <exit>
+PS D:\Git\os\lab6\src\cmake-build-debug\named_pipe\echo\client>

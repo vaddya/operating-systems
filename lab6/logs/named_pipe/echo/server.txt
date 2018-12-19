@@ -1,0 +1,8 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\named_pipe\echo\server> .\named_pipe_echo_server.exe
+Named pipe was created
+Waiting for connect...
+Connected. Waiting for command...
+Received: <123>
+Received: <Named pipe example>
+Received: <exit>
+PS D:\Git\os\lab6\src\cmake-build-debug\named_pipe\echo\server>

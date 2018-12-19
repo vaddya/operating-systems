@@ -25,7 +25,7 @@
 
 \noindent Информация о сети (вывод утилиты \code{ipconfig})
 
-\lstinputlisting{logs/ipconfig.txt}
+\lstinputlisting[language=none]{logs/ipconfig.txt}
 
 \newpage
 
@@ -33,15 +33,67 @@
 
 \paragraph{Задание.} Создать клиент-серверное приложение, позволяющее набираемые символы в терминальном окне командной строки (сервер) отображать их в окно процесса-потомка (клиент).
 
+\lstinputlisting[caption=\code{pipe_terminal_master.cpp}]{src/pipe/terminal/master/master.cpp}
+
+\lstinputlisting[caption=\code{pipe_terminal_slave.cpp}]{src/pipe/terminal/slave/slave.cpp}
+
+Запустим \code{pipe_terminal_master.exe}:
+
+\lstinputlisting[language=none]{logs/pipe/terminal/master.txt}
+
+\lstinputlisting[language=none]{logs/pipe/terminal/slave.txt}
+
+Видно, что запуске сервера создается канал, после чего порождается процесс \code{pipe_terminal_slave.exe} в новом окне. Любые символы, которые пишем в окне сервера, моментально появляются в окне клиента. Это достигается за счет того, что при порождении процесса в структуре \code{STARTUPINFO} поле \code{hStdInput} было заменено на читающий дескриптор канала.
+
 \paragraph{Задание.} Создать эхо-сервер, взаимодействующий с клиентом посредством pipe.
+
+В программе используется передача дескрипторов через наследование. По причине того, что анонимный канал является полудуплексным, для организации эхо-сервера необходимо создавать 2 канала (для передачи от клиента-серверу и обратно). При этом ненужные дескрипторы каналов закрываются только на стороне сервера (т.к. клиент наследует 4 дескриптора, а явно мы передаем только 2 дескриптора).
+
+\lstinputlisting[caption=\code{pipe_echo_server.cpp}]{src/pipe/echo/server/server.cpp}
+
+\lstinputlisting[caption=\code{pipe_echo_client.cpp}]{src/pipe/echo/client/client.cpp}
+
+Запустим \code{pipe_echo_server.exe}:
+
+\lstinputlisting[language=none]{logs/pipe/echo/server.txt}
+
+\lstinputlisting[language=none]{logs/pipe/echo/client.txt}
+
+Сервер создает два набора каналов чтобы обеспечить дуплексный обмен данными. После этого порождает процесс \code{pipe_echo_client.exe} и ожидает запрос от клиента. Приняв запрос, сервер фиксирует событие и отправляет это же сообщение обратно клиенту. Обмен происходит 10 раз, после чего процесс завершается.
 
 \section{Именованные каналы}
 
+Именованные каналы являются дуплексными, ориентированы на обмен сообщениями и обеспечивают взаимодействие через сеть. Кроме того, один именованный канал может иметь несколько открытых дескрипторов. В сочетании с удобными, ориентированными на выполнение транзакций функциями эти возможности делают именованные каналы пригодными для создания клиент-серверных систем. Обмен данными может быть синхронным и асинхронным.
+
 \paragraph{Задание.} Реализовать между одним клиентом и сервером обмен данными, вводимыми с консоли на стороне клиента и возвращаемыми сервером обратно до получения команды exit.
 
-\paragraph{Задание.} Реализовать между сервером и множеством клиентов обмен данными, вводимыми с консоли на стороне клиента и возвращаемыми сервером обратно до получения команды exit.
+Программа-сервер (\code{named_pipe_echo_server}) создает именованый канал для двунаправленного использования и ожидает подключения программы-клиента (\code{named_pipe_terminal_slave}).
 
-\paragraph{Задание.} Модифицировать приложение из предыдущего примера для сетевого обмена информацией.
+\lstinputlisting[caption=\code{named_pipe_echo_server.cpp}]{src/named_pipe/echo/server/server.cpp}
+
+\lstinputlisting[caption=\code{named_pipe_echo_client.cpp}]{src/named_pipe/echo/client/client.cpp}
+
+Запустим сначала программу-сервер, а затем с помощью программы-клиента подключимся к созданному каналу и отправим несколько сообщений.
+
+\lstinputlisting[language=none]{logs/named_pipe/echo/server.txt}
+
+\lstinputlisting[language=none]{logs/named_pipe/echo/client.txt}
+
+Из результатов видно, что сервер успешно создал канал, к которому после этого подключился клиент. Клиент отправляет сообщения в именованный канал, а сервер читает их оттуда и отправляет обратно. При получении команды exit сервер завершает свою работу.
+
+\paragraph{Задание.} Реализовать между сервером и множеством клиентов обмен данными, вводимыми с консоли на стороне клиента и возвращаемыми сервером обратно до получения команды exit. Обеспечить возможность сетевого обмена информацией.
+
+Для того, чтобы реализовать возможность обмена данными сервером с несколькими клиентами, воспользуемся механизмом потоков. В цикле будет создаваться экземпляр именованного канала, после чего ожидать подключения клиента. После подключения очередного клиента будет создан поток для взаимодействия с клиентом. Основная программа перейдет к ожиданию нового клиента.
+
+Для возможности сетевого обмена предусмотрим в клиентской программе возможность задания IP-адреса сервера с помощью параметром командной строки (при отсутствии параметров клиент будет подключаться к локальному серверу).
+
+\lstinputlisting[caption=\code{named_pipe_multiecho_server.cpp}]{src/named_pipe/multiecho/server/server.cpp}
+
+\lstinputlisting[caption=\code{named_pipe_multiecho_client.cpp}]{src/named_pipe/multiecho/client/client.cpp}
+
+Для тестирования взаимодействия по сети будем использовать виртуальную машину с Windows 10. Выведем на ней информацию о сети:
+
+\lstinputlisting[language=none]{logs/named_pipe/multiecho/ipconfig.txt}
 
 \section{Сокеты}
 
@@ -89,8 +141,10 @@
 \begin{enumerate}
 	\item Душутина Е.В. - Системное программное обеспечение. Практические вопросы разработки системных приложений [Текст] -- 2016.
 	\item Таненбаум Э. - Современные операционные системы [Текст] -- 2015.
-	\item Handle Inheritance / Microsoft Docs [Электронный ресурс]:\\
-		{\small\url{https://docs.microsoft.com/en-us/windows/desktop/sysinfo/handle-inheritance}} 
+	\item Named Pipe Instances / Microsoft Docs [Электронный ресурс]:\\
+		{\small\url{https://docs.microsoft.com/en-us/windows/desktop/ipc/named-pipe-instances}} 
+	\item Multithreaded Pipe Server / Microsoft Docs [Электронный ресурс]:\\
+		{\small\url{https://docs.microsoft.com/en-us/windows/desktop/ipc/multithreaded-pipe-server}} 
 \end{enumerate}
 
 \end{document}

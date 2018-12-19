@@ -1,0 +1,4 @@
+STD INPUT HANDLE = 0xe0
+STD OUTPUT HANDLE = 0x50
+hello from master!
+end of session

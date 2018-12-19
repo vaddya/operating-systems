@@ -19,6 +19,7 @@
 \usepackage{multirow}
 \usepackage{titlesec}
 \usepackage{listings}
+\usepackage{listingsutf8}
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{cmap}
@@ -38,7 +39,7 @@
 	keywordstyle=\color{blue},
 	numberstyle=\color{gray}\scriptsize\ttfamily,
 	stringstyle=\color{purple},
-	basicstyle=\footnotesize\ttfamily,
+	basicstyle=\lst@ifdisplaystyle\footnotesize\fi\ttfamily,
 	breakatwhitespace=false,
 	breaklines=true,
 	captionpos=b,
@@ -54,6 +55,7 @@
 	deletekeywords={error},
 	extendedchars=false,
 	columns=fullflexible,
+	inputencoding=utf8/cp1251,
 	literate=%
 		{~}{{\raise.25ex\hbox{$\mathtt{\sim}$}}}{1}%
 		{-}{-}{1}
@@ -70,8 +72,7 @@
 \renewcommand{\epsilon}{\ensuremath{\varepsilon}}
 \renewcommand{\phi}{\ensuremath{\varphi}}
 \renewcommand{\thefigure}{\arabic{figure}}
-\def\code#1{\texttt{\small #1}}
-\def\tcode#1{\texttt{#1}}
+\newcommand{\code}[1]{\lstinline|#1|}
 \newcommand{\caret}{\^{}}
 \newcommand{\ctrl}[1]{\^{}{#1}}
 \newcommand{\listingwithoutput}[1]{

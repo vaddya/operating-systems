@@ -1,0 +1,12 @@
+PS E:\lab6\src\named_pipe\multiecho\client> ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::f1d4:2435:313e:f224%3
+   IPv4 Address. . . . . . . . . . . : 192.168.1.107
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.1.1

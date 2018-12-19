@@ -1,0 +1,12 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\pipe\echo\server> .\pipe_echo_server.exe
+get from client: "message num 1"
+get from client: "message num 2"
+get from client: "message num 3"
+get from client: "message num 4"
+get from client: "message num 5"
+get from client: "message num 6"
+get from client: "message num 7"
+get from client: "message num 8"
+get from client: "message num 9"
+get from client: "message num 10"
+Press any key to continue . . .

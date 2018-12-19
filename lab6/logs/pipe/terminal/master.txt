@@ -1,0 +1,9 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\pipe\terminal\master> .\pipe_terminal_master.exe
+Pipe is created!
+The read HANDLE of PIPE = 0xe0
+Process is created
+STD INPUT HANDLE = 0x4c
+STD OUTPUT HANDLE = 0x50
+hello from master!
+end of session
+Press any key to continue . . .
