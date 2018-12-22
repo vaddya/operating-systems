@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(pipe)
 add_subdirectory(named_pipe)
+add_subdirectory(socket)
