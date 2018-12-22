@@ -1,6 +1,5 @@
 #include <iostream>
 #include <winsock2.h>
-#include "utils.h"
 
 const int BUF_SIZE = 100;
 const int DEF_PORT = 7500;
@@ -11,7 +10,7 @@ int main(int argc, char *argv[]) {
         printf("WSAStartup failed with error: %ld\n", GetLastError());
         return 1;
     }
-    SOCKET serverSocket = socket(AF_INET, SOCK_STREAM, 0);
+    SOCKET serverSocket = socket(AF_INET, SOCK_DGRAM, 0);
     printf("Server is started\n");
     printf("Try to create socket\n");
     if (serverSocket == INVALID_SOCKET) {
@@ -31,37 +30,21 @@ int main(int argc, char *argv[]) {
         printf("Error with bind socket. GetLasterror = %ld\n", GetLastError());
         return 1;
     }
-    printf("Try to set socket listening\n");
-    if (listen(serverSocket, 5) != 0) {
-        printf("error with listen socket. GetLasterror= %ld\n", GetLastError());
-        return 1;
-    }
-    printf("Server starts listening at port %d\n", port);
-    struct sockaddr_in from{};
-    int fromlen = sizeof(from);
-    SOCKET clientSocket = accept(serverSocket, (struct sockaddr *) &from, &fromlen);
-    if (clientSocket == INVALID_SOCKET) {
-        printf("Error with accept socket. GetLasterror= %ld\n", GetLastError());
-        return 1;
-    }
-    printf("Get client with IP = %s, port = %d\n", inet_ntoa(from.sin_addr), ntohs(from.sin_port));
+    printf("Server starts at port %d\n", port);
     char buf[BUF_SIZE];
     int readbytes;
+    struct sockaddr_in from{};
+    int fromlen = sizeof(from);
     while (true) {
-        if ((readbytes = recvLine(clientSocket, buf, BUF_SIZE)) == 0) {
-            printf("Connection refused\n");
-            break;
-        } else if (readbytes == -1) {
-            printf("Read error: %ld\n", GetLastError());
-            break;
-        }
-        printf("Got msg from client \"%s\" with size = %d\n", buf, readbytes);
-        sendLine(clientSocket, buf);
+        memset(buf, 0, BUF_SIZE);
+        readbytes = recvfrom(serverSocket, buf, BUF_SIZE, 0, (struct sockaddr *) &from, &fromlen);
+        printf("Got msg from client with IP = %s, port = %d, size = %d\n",
+               inet_ntoa(from.sin_addr), ntohs(from.sin_port), readbytes);
+        sendto(serverSocket, buf, strlen(buf), 0, (struct sockaddr *) &from, fromlen);
         if (strncmp(buf, "exit", 4) == 0) {
             break;
         }
     }
-    closesocket(clientSocket);
     closesocket(serverSocket);
     return 0;
 }

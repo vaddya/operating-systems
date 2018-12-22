@@ -1,6 +1,5 @@
 #include <iostream>
 #include <winsock2.h>
-#include "utils.h"
 
 const int BUF_SIZE = 100;
 const char *DEF_ADDR = "127.0.0.1";
@@ -14,7 +13,7 @@ int main(int argc, char *argv[]) {
     }
     printf("Client is started.\n");
     printf("Try to create socket\n");
-    SOCKET client_socket = socket(AF_INET, SOCK_STREAM, 0);
+    SOCKET clientSocket = socket(AF_INET, SOCK_DGRAM, 0);
     printf("Socket created successfully\n");
     const char *addr = DEF_ADDR;
     int port = DEF_PORT;
@@ -26,21 +25,18 @@ int main(int argc, char *argv[]) {
     sin.sin_addr.s_addr = inet_addr(addr);
     sin.sin_port = htons(port);
     sin.sin_family = AF_INET;
-    printf("Try to connect to server: %s:%d\n", addr, port);
-    if (connect(client_socket, (struct sockaddr *) &sin, sizeof(sin)) != 0) {
-        printf("Connect failed with error: %ld\n", GetLastError());
-        return 1;
-    }
-    printf("Client connected successfully\n");
+    printf("Will send messages to server: %s:%d\n", addr, port);
     char buf[BUF_SIZE];
+    int sinlen = sizeof(sin);
     while (true) {
         printf("Enter msg to send:\n");
         fgets(buf, BUF_SIZE, stdin);
         printf("Client sent msg: %s", buf);
-        sendLine(client_socket, buf);
-        recvLine(client_socket, buf, BUF_SIZE);
-        printf("Got reply from server: %s\n", buf);
+        sendto(clientSocket, buf, strlen(buf), 0, (struct sockaddr *) &sin, sinlen);
+        memset(buf, 0, BUF_SIZE);
+        recvfrom(clientSocket, buf, BUF_SIZE, 0, (struct sockaddr *) &sin, &sinlen);
+        printf("Got reply from server: %s", buf);
     }
-    closesocket(client_socket);
+    closesocket(clientSocket);
     return 0;
 }
