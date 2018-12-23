@@ -1,0 +1,18 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\echo\client> .\socket_echo_client.exe 192.168.0.102 7500
+Client is started
+Try to create socket
+Socket created successfully
+Try to connect to server: 192.168.0.102:7500
+Client connected successfully
+Enter msg to send:
+Hi from remote client!
+Client sent msg: Hi from remote client!
+Got reply from server: "Hi from remote client!"
+Enter msg to send:
+See you later!
+Client sent msg: See you later!
+Got reply from server: "See you later!"
+Enter msg to send:
+exit
+Client sent msg: exit
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\echo\client>

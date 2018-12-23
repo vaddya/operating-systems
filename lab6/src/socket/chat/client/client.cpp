@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
         addr = argv[1];
         port = atoi(argv[2]);
     }
-    struct sockaddr_in sin{};
+    sockaddr_in sin{};
     sin.sin_addr.s_addr = inet_addr(addr);
     sin.sin_port = htons(port);
     sin.sin_family = AF_INET;
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
         printf("Client sent msg: %s", buf);
         sendLine(client_socket, buf);
         recvLine(client_socket, buf, BUF_SIZE);
-        printf("Got reply from server: %s\n", buf);
+        printf("Got reply from server: \"%s\"\n", buf);
     }
     closesocket(client_socket);
     return 0;

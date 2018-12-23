@@ -1,8 +1,8 @@
 #ifndef SRC_UTILS_H
 #define SRC_UTILS_H
 
-#include <windows.h>
 #include <winsock2.h>
+#include <windows.h>
 
 int sendn(SOCKET s, char *buf, int len, int flags);
 

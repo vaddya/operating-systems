@@ -1,0 +1,9 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\mailslot\client> .\mailslot_client.exe
+Connected to MailSlot: \\.\mailslot\MailSlot
+Enter msg to send:
+Hello from local client!
+Sent 26 bytes: Hello from local client!
+Enter msg to send:
+exit
+Sent 6 bytes: exit
+PS D:\Git\os\lab6\src\cmake-build-debug\mailslot\client>

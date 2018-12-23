@@ -1,0 +1,9 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\signal\handler> .\signal_handler.exe
+The Control Handler is installed.
+Now try pressing Ctrl+C or Ctrl+Break, ortry logging off or closing the console...
+(...waiting in a loop for events...)
+
+Ctrl-C event
+Ctrl-C event
+Ctrl-Break event
+PS D:\Git\os\lab6\src\cmake-build-debug\signal\handler>

@@ -2,7 +2,7 @@
 #include <iostream>
 
 const int BUF_SIZE = 100;
-const char *pipeTemplate = "../client/pipe_echo_client.exe";
+const char *pipeName = "../client/pipe_echo_client.exe";
 
 int main(int argc, char *argv[]) {
     HANDLE hReadPipeFromServerToClient, hWritePipeFromServerToClient;
@@ -23,7 +23,7 @@ int main(int argc, char *argv[]) {
     startupInfo.hStdOutput = hWritePipeFromClientToServer;
     startupInfo.hStdError = GetStdHandle(STD_ERROR_HANDLE);
     startupInfo.dwFlags = STARTF_USESTDHANDLES;
-    CreateProcess(NULL, (LPSTR) pipeTemplate, NULL, NULL, TRUE, CREATE_NEW_CONSOLE, NULL, NULL, &startupInfo, &processInfo);
+    CreateProcess(NULL, (LPSTR) pipeName, NULL, NULL, TRUE, CREATE_NEW_CONSOLE, NULL, NULL, &startupInfo, &processInfo);
     CloseHandle(processInfo.hThread);
     CloseHandle(processInfo.hProcess);
     CloseHandle(hReadPipeFromServerToClient);

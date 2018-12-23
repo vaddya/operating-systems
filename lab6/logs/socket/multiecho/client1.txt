@@ -1,0 +1,15 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\echo\client> .\socket_echo_client.exe
+Client is started.
+Try to create socket
+Socket created successfully
+Try to connect to server: 127.0.0.1:7500
+Client connected successfully
+Enter msg to send:
+Hi from client 1!
+Client sent msg: Hi from client 1!
+Got reply from server: "Hi from client 1!"
+Enter msg to send:
+exit
+Client sent msg: exit
+Got reply from server: "exit"
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\multiecho\client>

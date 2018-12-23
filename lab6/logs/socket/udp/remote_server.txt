@@ -1,0 +1,10 @@
+PS E:\lab6\src\cmake-build-debug\socket\udp\server> .\socket_udp_server.exe
+Server is started
+Try to create socket
+Try to bind socket
+Server starts at port 7500
+Got msg from client with IP = 192.168.0.101, port = 57918, size = 25
+"Sending hello using UDP!"
+Got msg from client with IP = 192.168.0.101, port = 57918, size = 5
+"exit"
+PS E:\lab6\src\cmake-build-debug\socket\udp\server>

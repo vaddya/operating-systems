@@ -1,0 +1,13 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\named_pipe\multiecho\client> .\named_pipe_multiecho_client.exe
+Client is started
+Using pipe name: \\.\pipe\$MyPipe$
+Trying to use WaitNamedPipe
+Successfully connected
+ Input message:
+$ Hello from another client!
+Received from server: Hello from another client!
+$ bye!
+Received from server: bye!
+$ exit
+Received from server: exit
+Press any key to continue . . .

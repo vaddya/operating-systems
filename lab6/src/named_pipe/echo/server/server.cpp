@@ -3,7 +3,7 @@
 #include <conio.h>
 
 const char *pipeTemplate = R"(\\.\pipe\$MyPipe$)";
-const int BUFFER_SIZE = 512;
+const int BUF_SIZE = 512;
 
 int main(int argc, char *argv[]) {
     DWORD pipeMode = PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT;
@@ -38,11 +38,11 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     printf("Connected. Waiting for command...\n");
-    char buf[BUFFER_SIZE];
+    char buf[BUF_SIZE];
     DWORD cbRead;
     DWORD cbWritten;
     while (true) {
-        if (!ReadFile(hNamedPipe, buf, BUFFER_SIZE, &cbRead, NULL)) {
+        if (!ReadFile(hNamedPipe, buf, BUF_SIZE, &cbRead, NULL)) {
             printf("ReadFile: Error %ld\n", GetLastError());
             getch();
             break;

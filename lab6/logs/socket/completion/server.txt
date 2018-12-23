@@ -1,0 +1,16 @@
+PS E:\lab6\src\cmake-build-debug\socket\completion\server> .\socket_completion_server.exe
+Server is started successfully
+List of clients sockets:
+- 344
+Client 1 connected
+Got msg from client 1: Hi from remote client!
+List of clients sockets:
+- 344
+- 356
+Client 2 connected
+Got msg from client 2: Hello from another remote client!
+Got msg from client 2: exit
+Client 2 disconnected
+Got msg from client 1: See you later!
+Got msg from client 1: exit
+Client 1 disconnected

@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     if (argc >= 2) {
         port = atoi(argv[1]);
     }
-    struct sockaddr_in sin{};
+    sockaddr_in sin{};
     sin.sin_family = AF_INET;
     sin.sin_port = htons(port);
     sin.sin_addr.s_addr = INADDR_ANY;
@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     printf("Server starts listening at port %d\n", port);
-    struct sockaddr_in from{};
+    sockaddr_in from{};
     int fromlen = sizeof(from);
     SOCKET clientSocket = accept(serverSocket, (struct sockaddr *) &from, &fromlen);
     if (clientSocket == INVALID_SOCKET) {

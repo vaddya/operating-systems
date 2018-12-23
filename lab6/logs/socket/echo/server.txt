@@ -1,0 +1,11 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\echo\server> .\socket_echo_server.exe
+Server is started
+Try to create socket
+Try to bind socket
+Try to set socket listening
+Server starts listening at port 7500
+Get client with IP = 127.0.0.1, port = 51894
+Get msg from client "Hello from client!" with size = 18
+Get msg from client "Bye!" with size = 4
+Get msg from client "exit" with size = 4
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\echo\server>

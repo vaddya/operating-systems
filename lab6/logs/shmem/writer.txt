@@ -1,0 +1,9 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\shmem\writer> .\shmem_writer.exe
+Write message: 41
+Write message: 18467
+Write message: 6334
+Write message: 26500
+Write message: 19169
+Write message: 15724
+Write message: 11478
+PS D:\Git\os\lab6\src\cmake-build-debug\shmem\writer>

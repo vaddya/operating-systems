@@ -1,0 +1,9 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\shmem\reader> .\shmem_reader.exe
+OpenMutex successfully opened the mutex.
+Read message: 41
+Read message: 18467
+Read message: 6334
+Read message: 26500
+Read message: 19169
+Read message: 15724
+Read message: 11478

@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
     }
     cout << "Pipe is created!" << endl;
     cout << "The read HANDLE of PIPE = " << newstdread << endl;
-    ZeroMemory(&si, sizeof(STARTUPINFO));
+    memset(&si, 0, sizeof(STARTUPINFO));
     si.cb = sizeof(STARTUPINFO);
     si.dwFlags = STARTF_USESTDHANDLES | STARTF_USESHOWWINDOW;
     si.wShowWindow = SW_NORMAL;

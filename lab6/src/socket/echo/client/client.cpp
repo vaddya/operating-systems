@@ -1,5 +1,4 @@
 #include <iostream>
-#include <winsock2.h>
 #include "utils.h"
 
 const int BUF_SIZE = 100;
@@ -12,7 +11,7 @@ int main(int argc, char *argv[]) {
         printf("WSAStartup failed with error: %ld\n", GetLastError());
         return 1;
     }
-    printf("Client is started.\n");
+    printf("Client is started\n");
     printf("Try to create socket\n");
     SOCKET client_socket = socket(AF_INET, SOCK_STREAM, 0);
     printf("Socket created successfully\n");
@@ -22,7 +21,7 @@ int main(int argc, char *argv[]) {
         addr = argv[1];
         port = atoi(argv[2]);
     }
-    struct sockaddr_in sin{};
+    sockaddr_in sin{};
     sin.sin_addr.s_addr = inet_addr(addr);
     sin.sin_port = htons(port);
     sin.sin_family = AF_INET;
@@ -35,11 +34,16 @@ int main(int argc, char *argv[]) {
     char buf[BUF_SIZE];
     while (true) {
         printf("Enter msg to send:\n");
+        memset(buf, 0, BUF_SIZE);
         fgets(buf, BUF_SIZE, stdin);
         printf("Client sent msg: %s", buf);
         sendLine(client_socket, buf);
+        if (strncmp(buf, "exit", 4) == 0) {
+            break;
+        }
+        memset(buf, 0, BUF_SIZE);
         recvLine(client_socket, buf, BUF_SIZE);
-        printf("Got reply from server: %s\n", buf);
+        printf("Got reply from server: \"%s\"\n", buf);
     }
     closesocket(client_socket);
     return 0;

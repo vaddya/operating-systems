@@ -1,6 +1,6 @@
-project(socket_multiecho_client)
+project(socket_completion_server)
 
-add_executable(${PROJECT_NAME} client.cpp)
+add_executable(${PROJECT_NAME} server.cpp)
 
 target_link_libraries(${PROJECT_NAME} socket_utils libws2_32.a)
 

@@ -3,7 +3,7 @@
 #include <conio.h>
 
 const char *pipeTemplate = R"(\\.\pipe\$MyPipe$)";
-const int BUFFER_SIZE = 256;
+const int BUF_SIZE = 256;
 
 int main(int argc, char *argv[]) {
     printf("Named pipe client demo\n");
@@ -16,17 +16,17 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     printf("Connected. Type 'exit' to terminate\n");
-    char buf[BUFFER_SIZE];
+    char buf[BUF_SIZE];
     DWORD cbWritten;
     DWORD cbRead;
     while (true) {
         printf(">");
-        gets(buf);
+        fgets(buf, BUF_SIZE, stdin);
         if (!WriteFile(hNamedPipe, buf, strlen(buf) + 1, &cbWritten, NULL)) {
             printf("WriteFile: Error %ld\n", GetLastError());
             break;
         }
-        if (!ReadFile(hNamedPipe, buf, BUFFER_SIZE, &cbRead, NULL)) {
+        if (!ReadFile(hNamedPipe, buf, BUF_SIZE, &cbRead, NULL)) {
             printf("ReadFile: Error %ld\n", GetLastError());
             break;
         }

@@ -3,16 +3,16 @@
 const int BUF_SIZE = 100;
 
 int sendn(SOCKET s, char *buf, int len, int flags) {
-    int bytesSended = 0;
+    int sent = 0;
     int n = -1;
-    while (bytesSended < len) {
-        n = send(s, buf + bytesSended, len - bytesSended, flags);
+    while (sent < len) {
+        n = send(s, buf + sent, len - sent, flags);
         if (n < 0) {
             break;
         }
-        bytesSended += n;
+        sent += n;
     }
-    return (n == -1 ? -1 : bytesSended);
+    return (n == -1 ? -1 : sent);
 }
 
 int recvLine(SOCKET s, char *buf, int len) {

@@ -1,0 +1,16 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\named_pipe\multiecho\server> .\named_pipe_multiecho_server.exe
+Server is started. Trying to create named pipe
+Named pipe was created
+Waiting for connect...
+Client connected
+Named pipe was created
+Waiting for connect...
+Get client msg: Hello from client 1!
+Client connected
+Named pipe was created
+Waiting for connect...
+Get client msg: Hello from another client!
+Get client msg: Bye from client 1!
+Get client msg: exit
+Get client msg: bye!
+Get client msg: exit

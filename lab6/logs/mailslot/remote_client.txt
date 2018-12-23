@@ -1,0 +1,9 @@
+PS E:\lab6\src\cmake-build-debug\mailslot\client> .\mailslot_client.exe alan-turing
+Connected to MailSlot: \\alan-turing\mailslot\MailSlot
+Enter msg to send:
+Hello from remote client!
+Sent 27 bytes: Hello from remote client!
+Enter msg to send:
+exit
+Sent 6 bytes: exit
+PS E:\lab6\src\cmake-build-debug\mailslot\client>

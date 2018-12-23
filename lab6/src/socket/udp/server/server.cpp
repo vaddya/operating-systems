@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
     if (argc >= 2) {
         port = atoi(argv[1]);
     }
-    struct sockaddr_in sin{};
+    sockaddr_in sin{};
     sin.sin_family = AF_INET;
     sin.sin_port = htons(port);
     sin.sin_addr.s_addr = INADDR_ANY;
@@ -33,13 +33,14 @@ int main(int argc, char *argv[]) {
     printf("Server starts at port %d\n", port);
     char buf[BUF_SIZE];
     int readbytes;
-    struct sockaddr_in from{};
+    sockaddr_in from{};
     int fromlen = sizeof(from);
     while (true) {
         memset(buf, 0, BUF_SIZE);
         readbytes = recvfrom(serverSocket, buf, BUF_SIZE, 0, (struct sockaddr *) &from, &fromlen);
         printf("Got msg from client with IP = %s, port = %d, size = %d\n",
                inet_ntoa(from.sin_addr), ntohs(from.sin_port), readbytes);
+        printf("\"%s\"", buf);
         sendto(serverSocket, buf, strlen(buf), 0, (struct sockaddr *) &from, fromlen);
         if (strncmp(buf, "exit", 4) == 0) {
             break;

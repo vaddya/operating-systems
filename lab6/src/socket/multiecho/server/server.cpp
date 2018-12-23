@@ -19,7 +19,7 @@ DWORD WINAPI threadHandler(LPVOID param) {
             printf("Connection refused\n");
             break;
         } else if (readbytes == -1) {
-            printf("Buf is too small\n");
+            printf("Reading error\n");
             WaitForSingleObject(mutex, INFINITE);
             for (auto it = sockets.begin(); it != sockets.end(); it++) {
                 if (*it == clientSocket) {
@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
     if (argc >= 2) {
         port = atoi(argv[1]);
     }
-    struct sockaddr_in sin{};
+    sockaddr_in sin{};
     sin.sin_family = AF_INET;
     sin.sin_port = htons(port);
     sin.sin_addr.s_addr = INADDR_ANY;
@@ -82,7 +82,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     printf("Server starts listening at port %d\n", port);
-    struct sockaddr_in from{};
+    sockaddr_in from{};
     int fromlen = sizeof(from);
     while (true) {
         SOCKET clientSocket = accept(serverSocket, (struct sockaddr *) &from, &fromlen);

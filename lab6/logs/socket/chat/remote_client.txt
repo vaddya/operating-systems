@@ -1,0 +1,18 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\chat\client> .\socket_chat_client.exe 192.168.0.102 8888
+Client is started.
+Try to create socket
+Socket created successfully
+Try to connect to server: 192.168.0.102:8888
+Client connected sucessfully
+Enter msg to send:
+Hi, remote server!
+Client sent msg: Hi, remote server!
+Get msg from server: "Hello, remote client!"
+Enter msg to send:
+See you soon, bye!
+Client sent msg: See you soon, bye!
+Get msg from server: "Bye!"
+Enter msg to send:
+exit
+Client sent msg: exit
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\chat\client>

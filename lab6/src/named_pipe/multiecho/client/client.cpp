@@ -1,7 +1,7 @@
 #include <windows.h>
 #include <iostream>
 
-const char *pipeTemplate = R"(\\%s\pipe\LOCAL)";
+const char *pipeTemplate = R"(\\%s\pipe\$MyPipe$)";
 const int BUF_SIZE = 1000;
 
 int main(int argc, char *argv[]) {

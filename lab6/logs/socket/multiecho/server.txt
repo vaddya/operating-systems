@@ -1,0 +1,20 @@
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\multiecho\server> .\socket_multiecho_server.exe
+Server is started
+Try to create socket
+Try to bind socket
+Try to set socket listening
+Server starts listening at port 7500
+Get client with IP = 127.0.0.1, port = 54626
+List of clients sockets:
+- 284
+Get msg from client 284: "Hi from client 1!" with size = 17
+Get client with IP = 127.0.0.1, port = 54637
+List of clients sockets:
+- 284
+- 288
+Get msg from client 288: "Hello from 2nd client!" with size = 22
+Get msg from client 288: "exit" with size = 4
+Reading error
+Get msg from client 288: "exit" with size = 4
+Reading error
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\multiecho\server>

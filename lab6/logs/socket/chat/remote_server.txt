@@ -1,0 +1,19 @@
+PS E:\lab6\src\cmake-build-debug\socket\chat\server> .\socket_chat_server.exe 8888
+Server is started
+Try to create socket
+Try to bind socket
+Try to set socket listening
+Server starts listening at port 8888
+Get client with IP = 192.168.0.101, port = 55785
+List of clients sockets:
+- 284
+Get msg from client 284: "Hi, remote server!" with size = 18
+Enter answer to client:
+Hello, remote client!
+Get msg from client 284: "See you soon, bye!" with size = 18
+Enter answer to client:
+Bye!
+Get msg from client 284: "exit" with size = 4
+Enter answer to client:
+bye
+PS E:\lab6\src\cmake-build-debug\socket\chat\server>

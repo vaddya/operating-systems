@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
         addr = argv[1];
         port = atoi(argv[2]);
     }
-    struct sockaddr_in sin{};
+    sockaddr_in sin{};
     sin.sin_addr.s_addr = inet_addr(addr);
     sin.sin_port = htons(port);
     sin.sin_family = AF_INET;
@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
         sendto(clientSocket, buf, strlen(buf), 0, (struct sockaddr *) &sin, sinlen);
         memset(buf, 0, BUF_SIZE);
         recvfrom(clientSocket, buf, BUF_SIZE, 0, (struct sockaddr *) &sin, &sinlen);
-        printf("Got reply from server: %s", buf);
+        printf("Got reply from server: \"%s\"", buf);
     }
     closesocket(clientSocket);
     return 0;
