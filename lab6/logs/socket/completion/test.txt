@@ -1,0 +1,28 @@
+PS E:\lab6\src\cmake-build-debug\socket\completion_server> .\socket_completion_server.exe
+Server is started successfully
+Client 1 connected
+Active clients: 1
+Got msg from client 1: Message from 1
+Client 2 connected
+Active clients: 2
+Got msg from client 2: Message from 2
+Client 3 connected
+Active clients: 3
+Got msg from client 3: Message from 3
+Client 4 connected
+Active clients: 4
+Got msg from client 4: Message from 4
+Client 5 connected
+Active clients: 5
+Got msg from client 5: Message from 5
+Got msg from client 1: Message from 1
+Got msg from client 2: Message from 2
+Got msg from client 3: Message from 3
+Got msg from client 4: Message from 4
+Got msg from client 5: Message from 5
+Got msg from client 1: Message from 1
+Got msg from client 2: Message from 2
+Got msg from client 3: Message from 3
+Got msg from client 4: Message from 4
+Got msg from client 5: Message from 5
+...

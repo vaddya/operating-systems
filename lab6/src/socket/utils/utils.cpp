@@ -44,7 +44,7 @@ int recvLine(SOCKET s, char *buf, int len) {
 }
 
 int recvn(SOCKET fd, char *buf, size_t len) {
-    return recv(fd, buf, len, MSG_WAITALL);
+    return recv(fd, buf, len, 0x8);
 }
 
 int sendLine(SOCKET s, char *buf) {

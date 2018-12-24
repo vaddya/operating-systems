@@ -7,15 +7,14 @@ const int BUF_SIZE = 512;
 
 int main(int argc, char *argv[]) {
     DWORD pipeMode = PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT;
-    HANDLE hNamedPipe = CreateNamedPipe(pipeTemplate, PIPE_ACCESS_DUPLEX, pipeMode, PIPE_UNLIMITED_INSTANCES, 512, 512, 0, NULL);
-    if (hNamedPipe == INVALID_HANDLE_VALUE) {
-        fprintf(stdout, "CreateNamedPipe: Error %ld\n", GetLastError());
-        getch();
+    HANDLE namedPipe = CreateNamedPipe(pipeTemplate, PIPE_ACCESS_DUPLEX, pipeMode, PIPE_UNLIMITED_INSTANCES, 512, 512, 0, NULL);
+    if (namedPipe == INVALID_HANDLE_VALUE) {
+        printf("CreateNamedPipe: Error %ld\n", GetLastError());
         return 1;
     }
     printf("Named pipe was created\n");
     printf("Waiting for connect...\n");
-    if (!ConnectNamedPipe(hNamedPipe, NULL)) {
+    if (!ConnectNamedPipe(namedPipe, NULL)) {
         switch (GetLastError()) {
             case ERROR_NO_DATA:
                 printf("ConnectNamedPipe: ERROR_NO_DATA\n");
@@ -33,8 +32,7 @@ int main(int argc, char *argv[]) {
                 printf("ConnectNamedPipe: Error %ld\n", GetLastError());
                 break;
         }
-        CloseHandle(hNamedPipe);
-        getch();
+        CloseHandle(namedPipe);
         return 1;
     }
     printf("Connected. Waiting for command...\n");
@@ -42,13 +40,12 @@ int main(int argc, char *argv[]) {
     DWORD cbRead;
     DWORD cbWritten;
     while (true) {
-        if (!ReadFile(hNamedPipe, buf, BUF_SIZE, &cbRead, NULL)) {
+        if (!ReadFile(namedPipe, buf, BUF_SIZE, &cbRead, NULL)) {
             printf("ReadFile: Error %ld\n", GetLastError());
-            getch();
             break;
         }
         printf("Received: <%s>\n", buf);
-        if (!WriteFile(hNamedPipe, buf, strlen(buf) + 1, &cbWritten, NULL)) {
+        if (!WriteFile(namedPipe, buf, strlen(buf) + 1, &cbWritten, NULL)) {
             printf("WriteFile: Error %ld\n", GetLastError());
             break;
         }
@@ -56,6 +53,6 @@ int main(int argc, char *argv[]) {
             break;
         }
     }
-    CloseHandle(hNamedPipe);
+    CloseHandle(namedPipe);
     return 0;
 }

@@ -35,20 +35,20 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     cout << "Process is created" << endl;
-    memset(buf, '\0', sizeof(buf));
+    memset(buf, 0, sizeof(buf));
     cout << buf;
-    unsigned long bread;
+    DWORD read;
     cout << "STD INPUT HANDLE = " << GetStdHandle(STD_INPUT_HANDLE) << endl;
     cout << "STD OUTPUT HANDLE = " << GetStdHandle(STD_OUTPUT_HANDLE) << endl;
     while (true) {
-        memset(buf, '\0', sizeof(buf));
+        memset(buf, 0, sizeof(buf));
         *buf = (char) getch();
         cout.put(*buf);
         if (*buf == 13) {
             *buf = '\n';
             cout.put(*buf);
         }
-        WriteFile(newstdwrite, buf, 1, &bread, NULL);
+        WriteFile(newstdwrite, buf, 1, &read, NULL);
         if (*buf == 27) {
             break;
         }

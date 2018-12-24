@@ -9,10 +9,9 @@ int main(int argc, char *argv[]) {
     printf("Named pipe client demo\n");
     printf("Syntax: pipec [servername]\n");
     DWORD accessMode = GENERIC_READ | GENERIC_WRITE;
-    HANDLE hNamedPipe = CreateFile(pipeTemplate, accessMode, 0, NULL, OPEN_EXISTING, 0, NULL);
-    if (hNamedPipe == INVALID_HANDLE_VALUE) {
+    HANDLE namedPipe = CreateFile(pipeTemplate, accessMode, 0, NULL, OPEN_EXISTING, 0, NULL);
+    if (namedPipe == INVALID_HANDLE_VALUE) {
         printf("CreateFile: Error %ld\n", GetLastError());
-        getch();
         return 1;
     }
     printf("Connected. Type 'exit' to terminate\n");
@@ -22,11 +21,11 @@ int main(int argc, char *argv[]) {
     while (true) {
         printf(">");
         fgets(buf, BUF_SIZE, stdin);
-        if (!WriteFile(hNamedPipe, buf, strlen(buf) + 1, &cbWritten, NULL)) {
+        if (!WriteFile(namedPipe, buf, strlen(buf) + 1, &cbWritten, NULL)) {
             printf("WriteFile: Error %ld\n", GetLastError());
             break;
         }
-        if (!ReadFile(hNamedPipe, buf, BUF_SIZE, &cbRead, NULL)) {
+        if (!ReadFile(namedPipe, buf, BUF_SIZE, &cbRead, NULL)) {
             printf("ReadFile: Error %ld\n", GetLastError());
             break;
         }
@@ -35,6 +34,6 @@ int main(int argc, char *argv[]) {
             break;
         }
     }
-    CloseHandle(hNamedPipe);
+    CloseHandle(namedPipe);
     return 0;
 }

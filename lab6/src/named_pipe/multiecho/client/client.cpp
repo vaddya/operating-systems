@@ -15,24 +15,23 @@ int main(int argc, char *argv[]) {
         printf("Pipe wasn't created\n GetLastError = %ld", GetLastError());
         return 1;
     }
-    HANDLE hNamedPipe = CreateFile(pipeName, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
-    if (hNamedPipe == INVALID_HANDLE_VALUE) {
+    HANDLE namedPipe = CreateFile(pipeName, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
+    if (namedPipe == INVALID_HANDLE_VALUE) {
         printf("CreateFile: Error %ld\n", GetLastError());
         return 1;
     }
-    printf("Successfully connected\n Input message:\n");
+    printf("Successfully connected\nInput message:\n");
     char buf[BUF_SIZE];
     DWORD readbytes, writebytes;
     while (true) {
         printf("$ ");
         fgets(buf, BUF_SIZE, stdin);
-        if (!WriteFile(hNamedPipe, buf, strlen(buf) + 1, &writebytes, NULL)) {
+        if (!WriteFile(namedPipe, buf, strlen(buf) + 1, &writebytes, NULL)) {
             printf("WriteFile: Error %ld\n", GetLastError());
             break;
         }
-        if (!ReadFile(hNamedPipe, buf, BUF_SIZE, &readbytes, NULL)) {
+        if (!ReadFile(namedPipe, buf, BUF_SIZE, &readbytes, NULL)) {
             printf("ReadFile: Error %ld\n", GetLastError());
-            getchar();
             break;
         }
         printf("Received from server: %s", buf);
@@ -40,7 +39,6 @@ int main(int argc, char *argv[]) {
             break;
         }
     }
-    CloseHandle(hNamedPipe);
-    system("pause");
+    CloseHandle(namedPipe);
     return 0;
 }

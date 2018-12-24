@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
     }
     printf("Try to set socket listening\n");
     if (listen(serverSocket, 5) != 0) {
-        printf("error with listen socket. GetLasterror= %ld\n", GetLastError());
+        printf("Error with listen socket. GetLasterror= %ld\n", GetLastError());
         return 1;
     }
     printf("Server starts listening at port %d\n", port);

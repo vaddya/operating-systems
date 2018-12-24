@@ -31,8 +31,6 @@ DWORD WINAPI threadHandler(LPVOID param) {
             break;
         }
         printf("Got msg from client %d: \"%s\" with size = %d\n", clientSocket, buf, readbytes);
-        printf("Enter answer to client:\n");
-        fgets(buf, BUF_SIZE, stdin);
         sendLine(clientSocket, buf);
     }
     closesocket(clientSocket);
@@ -80,7 +78,7 @@ int main(int argc, char *argv[]) {
     }
     printf("Try to set socket listening\n");
     if (listen(serverSocket, 5) != 0) {
-        printf("error with listen socket. GetLasterror= %ld\n", GetLastError());
+        printf("Error with listen socket. GetLastError= %ld\n", GetLastError());
         return 1;
     }
     printf("Server starts listening at port %d\n", port);
@@ -96,6 +94,7 @@ int main(int argc, char *argv[]) {
         WaitForSingleObject(mutex, INFINITE);
         HANDLE t = CreateThread(NULL, 0, threadHandler, (LPVOID) clientSocket, 0, NULL);
         sockets.push_back(clientSocket);
+        printf("Active clients: %d\n", sockets.size());
         printf("List of clients sockets:\n");
         for (auto socket : sockets) {
             printf("- %d\n", socket);

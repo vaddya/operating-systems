@@ -7,15 +7,15 @@ TCHAR szMsg[] = TEXT("Message from first process");
 HANDLE mutex;
 
 int main(int argc, char *argv[]) {
-    HANDLE hMapFile;
+    HANDLE mapFile;
     LPCTSTR pBuf;
     mutex = CreateMutex(NULL, false, TEXT("SyncMutex"));
-    hMapFile = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, BUF_SIZE, szName);
-    if (hMapFile == NULL || hMapFile == INVALID_HANDLE_VALUE) {
+    mapFile = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, BUF_SIZE, szName);
+    if (mapFile == NULL || mapFile == INVALID_HANDLE_VALUE) {
         printf("Cannot create file mapping. GetLastError = %ld\n", GetLastError());
         return 1;
     }
-    pBuf = (LPTSTR) MapViewOfFile(hMapFile, FILE_MAP_ALL_ACCESS, 0, 0, BUF_SIZE);
+    pBuf = (LPTSTR) MapViewOfFile(mapFile, FILE_MAP_ALL_ACCESS, 0, 0, BUF_SIZE);
     if (pBuf == NULL) {
         printf("Cannot map view of file. GetLastError = %ld\n", GetLastError());
         return 1;
@@ -31,6 +31,6 @@ int main(int argc, char *argv[]) {
         ReleaseMutex(mutex);
     }
     UnmapViewOfFile(pBuf);
-    CloseHandle(hMapFile);
+    CloseHandle(mapFile);
     CloseHandle(mutex);
 }

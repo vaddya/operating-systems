@@ -1,5 +1,5 @@
-PS D:\Git\os\lab6\src\cmake-build-debug\socket\echo\client> .\socket_echo_client.exe 192.168.0.102 7500
-Client is started.
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\tcp_client> .\socket_tcp_client.exe 192.168.0.102 7500
+Client is started
 Try to create socket
 Socket created successfully
 Try to connect to server: 192.168.0.102:7500
@@ -14,4 +14,4 @@ Client sent msg: exit
 Got reply from server: exit
 Enter msg to send:
 Client sent msg: "exit"
-PS D:\Git\os\lab6\src\cmake-build-debug\socket\multiecho\client>
+PS D:\Git\os\lab6\src\cmake-build-debug\socket\tcp_client>

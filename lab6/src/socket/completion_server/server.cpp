@@ -97,7 +97,7 @@ int main(int argc, char *argv[]) {
         printf("Error with CreateMutex, GetLastError = %ld\n", GetLastError());
         return 1;
     }
-    SOCKET serverSocket = socket(AF_INET, SOCK_STREAM, 0);
+    SOCKET serverSocket = WSASocket(AF_INET, SOCK_STREAM, IPPROTO_TCP, NULL, 0, WSA_FLAG_OVERLAPPED);
     if (serverSocket == INVALID_SOCKET) {
         printf("Error on WSASocket, WSAGetLastError = %d\n", WSAGetLastError());
         return 1;
@@ -137,6 +137,7 @@ int main(int argc, char *argv[]) {
         CreateIoCompletionPort((HANDLE) clientSocket, completionPort, 0, 0);
         WaitForSingleObject(mutex, INFINITE);
         sockets.push_back(clientSocket);
+        printf("Active clients: %d\n", sockets.size());
         printf("List of clients sockets:\n");
         for (auto socket : sockets) {
             printf("- %d\n", socket);

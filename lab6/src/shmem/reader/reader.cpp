@@ -7,7 +7,7 @@ TCHAR szName[] = TEXT("MyFileMappingObject");
 HANDLE mutex;
 
 int main(int argc, char *argv[]) {
-    HANDLE hMapFile;
+    HANDLE mapFile;
     LPCTSTR pBuf;
     mutex = OpenMutex(MUTEX_ALL_ACCESS, FALSE, TEXT("SyncMutex"));
     if (mutex == NULL) {
@@ -15,12 +15,12 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     printf("OpenMutex successfully opened the mutex.\n");
-    hMapFile = OpenFileMapping(FILE_MAP_ALL_ACCESS, FALSE, szName);
-    if (hMapFile == NULL) {
+    mapFile = OpenFileMapping(FILE_MAP_ALL_ACCESS, FALSE, szName);
+    if (mapFile == NULL) {
         printf("Cannot open file mapping. GetLastError = %ld\n", GetLastError());
         return 1;
     }
-    pBuf = (LPTSTR) MapViewOfFile(hMapFile, FILE_MAP_ALL_ACCESS, 0, 0, BUF_SIZE);
+    pBuf = (LPTSTR) MapViewOfFile(mapFile, FILE_MAP_ALL_ACCESS, 0, 0, BUF_SIZE);
     if (pBuf == NULL) {
         printf("Cannot map view of file. GetLastError = %ld\n", GetLastError());
         return 1;
@@ -31,6 +31,6 @@ int main(int argc, char *argv[]) {
         ReleaseMutex(mutex);
     }
     UnmapViewOfFile(pBuf);
-    CloseHandle(hMapFile);
+    CloseHandle(mapFile);
     return 0;
 }

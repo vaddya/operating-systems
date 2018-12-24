@@ -2,47 +2,47 @@
 #include <iostream>
 
 const int BUF_SIZE = 100;
-const char *pipeName = "../client/pipe_echo_client.exe";
+const char *clientName = "../tcp_client/pipe_echo_client.exe";
 
 int main(int argc, char *argv[]) {
-    HANDLE hReadPipeFromServerToClient, hWritePipeFromServerToClient;
-    HANDLE hReadPipeFromClientToServer, hWritePipeFromClientToServer;
+    HANDLE readPipeFromServerToClient, writePipeFromServerToClient;
+    HANDLE readPipeFromClientToServer, writePipeFromClientToServer;
     SECURITY_ATTRIBUTES pipeSecAttr = {sizeof(SECURITY_ATTRIBUTES), NULL, TRUE};
-    if (CreatePipe(&hReadPipeFromServerToClient, &hWritePipeFromServerToClient, &pipeSecAttr, 0) == 0) {
-        printf("impossible to create anonymous pipe from server to client\n");
+    if (CreatePipe(&readPipeFromServerToClient, &writePipeFromServerToClient, &pipeSecAttr, 0) == 0) {
+        printf("Impossible to create anonymous pipe from server to client\n");
         return 1;
     }
-    if (CreatePipe(&hReadPipeFromClientToServer, &hWritePipeFromClientToServer, &pipeSecAttr, 0) == 0) {
-        printf("impossible to create anonymous pipe from client to serv\n");
+    if (CreatePipe(&readPipeFromClientToServer, &writePipeFromClientToServer, &pipeSecAttr, 0) == 0) {
+        printf("Impossible to create anonymous pipe from client to server\n");
         return 1;
     }
     PROCESS_INFORMATION processInfo;
     STARTUPINFO startupInfo;
     GetStartupInfo(&startupInfo);
-    startupInfo.hStdInput = hReadPipeFromServerToClient;
-    startupInfo.hStdOutput = hWritePipeFromClientToServer;
+    startupInfo.hStdInput = readPipeFromServerToClient;
+    startupInfo.hStdOutput = writePipeFromClientToServer;
     startupInfo.hStdError = GetStdHandle(STD_ERROR_HANDLE);
     startupInfo.dwFlags = STARTF_USESTDHANDLES;
-    CreateProcess(NULL, (LPSTR) pipeName, NULL, NULL, TRUE, CREATE_NEW_CONSOLE, NULL, NULL, &startupInfo, &processInfo);
+    CreateProcess(NULL, (LPSTR) clientName, NULL, NULL, TRUE, CREATE_NEW_CONSOLE, NULL, NULL, &startupInfo, &processInfo);
     CloseHandle(processInfo.hThread);
     CloseHandle(processInfo.hProcess);
-    CloseHandle(hReadPipeFromServerToClient);
-    CloseHandle(hWritePipeFromClientToServer);
+    CloseHandle(readPipeFromServerToClient);
+    CloseHandle(writePipeFromClientToServer);
     BYTE buf[BUF_SIZE];
     DWORD readbytes, writebytes;
     for (int i = 0; i < 10; i++) {
-        if (!ReadFile(hReadPipeFromClientToServer, buf, BUF_SIZE, &readbytes, NULL)) {
-            printf("impossible to use readfile\n GetLastError= %d\n", GetLastError());
+        if (!ReadFile(readPipeFromClientToServer, buf, BUF_SIZE, &readbytes, NULL)) {
+            printf("Impossible to use readfile\n GetLastError= %ld\n", GetLastError());
             break;
         }
-        printf("get from client: \"%s\"\n", buf);
-        if (!WriteFile(hWritePipeFromServerToClient, buf, readbytes, &writebytes, NULL)) {
-            printf("impossible to use writefile\n GetLastError= %d\n", GetLastError());
+        printf("Got msg from client: \"%s\"\n", buf);
+        if (!WriteFile(writePipeFromServerToClient, buf, readbytes, &writebytes, NULL)) {
+            printf("Impossible to use writefile\n GetLastError= %ld\n", GetLastError());
             break;
         }
     }
-    CloseHandle(hReadPipeFromClientToServer);
-    CloseHandle(hWritePipeFromServerToClient);
+    CloseHandle(readPipeFromClientToServer);
+    CloseHandle(writePipeFromServerToClient);
     system("pause");
     return 0;
 }

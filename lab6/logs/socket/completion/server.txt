@@ -1,4 +1,4 @@
-PS E:\lab6\src\cmake-build-debug\socket\completion\server> .\socket_completion_server.exe
+PS E:\lab6\src\cmake-build-debug\socket\completion_server> .\socket_completion_server.exe
 Server is started successfully
 List of clients sockets:
 - 344
@@ -14,3 +14,4 @@ Client 2 disconnected
 Got msg from client 1: See you later!
 Got msg from client 1: exit
 Client 1 disconnected
+PS E:\lab6\src\cmake-build-debug\socket\completion_server>

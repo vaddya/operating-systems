@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     if (SetConsoleCtrlHandler((PHANDLER_ROUTINE) CtrlHandler, TRUE)) {
         printf("The Control Handler is installed.\n");
         printf("Now try pressing Ctrl+C or Ctrl+Break, or");
-        printf("try logging off or closing the console...\n");
+        printf("Try logging off or closing the console...\n");
         printf("(...waiting in a loop for events...)\n\n");
         while (true);
         return 0;
