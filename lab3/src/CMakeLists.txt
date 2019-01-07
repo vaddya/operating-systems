@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(logs)
+project(lab3)
 
 set(CMAKE_C_STANDRD 11)
 
