@@ -12,3 +12,9 @@
 build
 *.zip
 *cmake-build-debug
+
+# Visual Studio
+*.user
+*.opendb
+**/x64/
+**/.vs/
