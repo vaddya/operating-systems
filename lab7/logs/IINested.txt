@@ -1,0 +1,4 @@
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\ExceptionHandling.exe
+2: Caught using filter: EXCEPTION_ILLEGAL_INSTRUCTION
+3: Caught using filter: EXCEPTION_ILLEGAL_INSTRUCTION
+After try-except 3

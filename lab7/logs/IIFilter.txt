@@ -1,0 +1,3 @@
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\IIFilter.exe
+Caught using filter: EXCEPTION_ILLEGAL_INSTRUCTION
+After try-except

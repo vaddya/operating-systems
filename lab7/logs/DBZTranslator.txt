@@ -1,0 +1,4 @@
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\DBZTranslator.exe
+Translator
+Caught using C++ try-catch: Exception code=0xc0000094
+After try-catch

@@ -1,0 +1,9 @@
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\DBZRaise.exe
+Caught using filter: EXCEPTION_INT_DIVIDE_BY_ZERO
+Expetcted exception code=0xc0000094
+Exception information:
+ExceptionCode=0xc0000094
+NumberParameters=0x0
+ExceptionFlags=0x0
+ContextFlags=0x10004f
+After try-except

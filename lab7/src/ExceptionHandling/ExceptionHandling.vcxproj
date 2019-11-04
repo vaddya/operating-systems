@@ -106,6 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/EHa %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,7 +152,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ExceptionHandling.cpp" />
+    <ClCompile Include="DBZAbnormalTermination.cpp" />
+    <ClCompile Include="DBZFinally.cpp" />
+    <ClCompile Include="DBZGotoLeave.cpp" />
+    <ClCompile Include="DBZNested.cpp" />
+    <ClCompile Include="DBZRaise.cpp" />
+    <ClCompile Include="DBZTranslator.cpp" />
+    <ClCompile Include="DBZUnhandle.cpp" />
+    <ClCompile Include="DBZWinAPI.cpp" />
+    <ClCompile Include="DBZFilter.cpp" />
+    <ClCompile Include="ExceptionHandlingUtils.cpp" />
+    <ClCompile Include="IIFilter.cpp" />
+    <ClCompile Include="IINested.cpp" />
+    <ClCompile Include="IIRaise.cpp" />
+    <ClCompile Include="IIUnhandle.cpp" />
+    <ClCompile Include="IIWinAPI.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ExceptionHandlingUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

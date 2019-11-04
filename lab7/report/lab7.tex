@@ -1,0 +1,129 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Цели работы}
+
+Изучение видов межпроцессного взаимодействия в ОС Windows.
+
+\section{Программа работы}
+
+\input{workprogram}
+
+\section{Используемое окружение}
+
+\begin{itemize}
+	\item ОС: Windows 10 Pro
+	\item Версия ОС: 1803 (сборка 17134.1069)
+	\item Процессор: Intel® Core™ i7-8550U CPU @ 1.80GHz × 8
+	\item ОЗУ: 16 Гб
+	\item Компилятор: MSVC 14.23.28105, C/C++ Optimizing Compiler Version 19.23.28105.4 for x64
+\end{itemize}
+
+\section{Ошибка деления на ноль}
+
+Общие функции:
+
+\lstinputlisting[caption=\code{ExceptionHandlingUtils.h}]{src/ExceptionHandling/ExceptionHandlingUtils.h}
+
+\lstinputlisting[caption=\code{ExceptionHandlingUtils.cpp}]{src/ExceptionHandling/ExceptionHandlingUtils.cpp}
+
+\subsection{Обработка исключения при помощи функций WinAPI}
+
+\listingwithoutput{DBZWinAPI}
+
+\subsection{Обработка исключения при помощи функции-фильтра}
+
+\listingwithoutput{DBZFilter}
+
+\subsection{Генерация исключения при помощи \code{RaiseException}}
+
+\listingwithoutput{DBZRaise}
+
+\subsection{Функции для обработки необработанных исключений}
+
+\listingwithoutput{DBZUnhandle}
+
+\subsection{Обработка вложенных исключений}
+
+\listingwithoutput{DBZNested}
+
+\subsection{Использование операторов \code{goto} и \code{__leave} для выхода из блока \code{__try}}
+\label{sec:gotoleave}
+
+\listingwithoutput{DBZGotoLeave}
+
+\subsection{Преобразование в исключение языка \code{C++}}
+
+\listingwithoutput{DBZTranslator}
+
+\subsection{Использование финального обработчика \code{__finally}}
+
+\listingwithoutput{DBZFinally}
+
+\subsection{Использование \code{AbnormalTermination} в блоке \code{__finally}}
+
+\listingwithoutput{DBZAbnormalTermination}
+
+\newpage
+
+\section{Выполнение несуществующий операции}
+
+\subsection{Обработка исключения при помощи функций WinAPI}
+
+\listingwithoutput{IIWinAPI}
+
+\subsection{Обработка исключения при помощи функции-фильтра}
+
+\listingwithoutput{IIFilter}
+
+\subsection{Генерация исключения при помощи \code{RaiseException}}
+
+\listingwithoutput{IIRaise}
+
+\subsection{Функции для обработки необработанных исключений}
+
+\listingwithoutput{IIUnhandle}
+
+\subsection{Обработка вложенных исключений}
+
+\listingwithoutput{IINested}
+
+\subsection{Использование операторов \code{goto} и \code{__leave} для выхода из блока \code{__try}}
+
+Аналогично разделу с ошибкой деления на ноль (см. \ref{sec:gotoleave}).
+
+\subsection{Преобразование в исключение языка \code{C++}}
+
+\subsection{Использование финального обработчика \code{__finally}}
+
+\subsection{Использование \code{AbnormalTermination} в блоке \code{__finally}}
+
+\newpage
+
+\section{Выводы}
+
+В процессе выполнения данной работы:
+
+\begin{itemize}
+	\item 1
+	\item 2
+\end{itemize}
+
+\section*{Список использованных источников}
+
+\begin{enumerate}
+	\item Душутина Е.В. - Системное программное обеспечение. Практические вопросы разработки системных приложений [Текст] -- 2016.
+	\item Таненбаум Э. - Современные операционные системы [Текст] -- 2015.
+	\item Structured Exception Handling / Microsoft Docs [Электронный ресурс]:\\
+		{\small\url{https://docs.microsoft.com/en-us/cpp/cpp/structured-exception-handling-c-cpp}}
+	\item \_\_ud2 / Microsoft Docs [Электронный ресурс]:\\
+		{\small\url{https://docs.microsoft.com/en-us/cpp/intrinsics/ud2}}
+\end{enumerate}
+
+\end{document}

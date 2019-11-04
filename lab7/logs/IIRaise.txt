@@ -1,0 +1,9 @@
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\IIRaise.exe
+Caught using filter: EXCEPTION_ILLEGAL_INSTRUCTION
+Expetcted exception code=0xc000001d
+Exception information:
+ExceptionCode=0xc000001d
+NumberParameters=0x0
+ExceptionFlags=0x0
+ContextFlags=0x10004f
+After try-except
