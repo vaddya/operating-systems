@@ -25,13 +25,13 @@
 	\item Компилятор: MSVC 14.23.28105, C/C++ Optimizing Compiler Version 19.23.28105.4 for x64
 \end{itemize}
 
-\section{Ошибка деления на ноль}
-
-Общие функции:
+\section{Функции для работы с исключениями}
 
 \lstinputlisting[caption=\code{ExceptionHandlingUtils.h}]{src/ExceptionHandling/ExceptionHandlingUtils.h}
 
 \lstinputlisting[caption=\code{ExceptionHandlingUtils.cpp}]{src/ExceptionHandling/ExceptionHandlingUtils.cpp}
+
+\section{Ошибка деления на ноль}
 
 \subsection{Обработка исключения при помощи функций WinAPI}
 
@@ -100,9 +100,15 @@
 
 \subsection{Преобразование в исключение языка \code{C++}}
 
+\listingwithoutput{IITranslator}
+
 \subsection{Использование финального обработчика \code{__finally}}
 
+\listingwithoutput{IIFinally}
+
 \subsection{Использование \code{AbnormalTermination} в блоке \code{__finally}}
+
+\listingwithoutput{IIAbnormalTermination}
 
 \newpage
 
@@ -118,8 +124,8 @@
 \section*{Список использованных источников}
 
 \begin{enumerate}
-	\item Душутина Е.В. - Системное программное обеспечение. Практические вопросы разработки системных приложений [Текст] -- 2016.
-	\item Таненбаум Э. - Современные операционные системы [Текст] -- 2015.
+	\item Душутина Е.В. -- Системное программное обеспечение. Практические вопросы разработки системных приложений [Текст] -- 2016.
+	\item Таненбаум Э. -- Современные операционные системы [Текст] -- 2015.
 	\item Structured Exception Handling / Microsoft Docs [Электронный ресурс]:\\
 		{\small\url{https://docs.microsoft.com/en-us/cpp/cpp/structured-exception-handling-c-cpp}}
 	\item \_\_ud2 / Microsoft Docs [Электронный ресурс]:\\

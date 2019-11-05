@@ -1,17 +1,17 @@
 #include "ExceptionHandlingUtils.h"
 
+#define GENERATE_EXCEPTION __ud2()
+
 using namespace std;
 
-int main17()
+int main27()
 {
     _set_se_translator(MyTranslator);
     try
     {
-        int a = 0;
-        cout << 1 / a << endl;
-        cout << "After division" << endl;
+        GENERATE_EXCEPTION;
     }
-    catch (const exception &e)
+    catch (const exception & e)
     {
         cout << "Caught using C++ try-catch: " << e.what() << endl;
     }

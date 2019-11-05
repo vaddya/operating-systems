@@ -12,7 +12,7 @@ int main11()
     } 
     __except (GetExceptionCode() == EXCEPTION_INT_DIVIDE_BY_ZERO ? EXCEPTION_EXECUTE_HANDLER : EXCEPTION_CONTINUE_SEARCH)
     {
-        cout << "Caught using WinAPI: EXCEPTION_INT_DIVIDE_BY_ZERO" << endl;
+        cout << "Caught using WinAPI: " << GetExceptionName(GetExceptionCode()) << endl;
     }
     cout << "After try-except" << endl;
     return 0;

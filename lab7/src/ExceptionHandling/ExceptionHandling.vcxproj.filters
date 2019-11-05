@@ -45,9 +45,6 @@
     <ClCompile Include="DBZFinally.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DBZAbnormalTermination.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="IIWinAPI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -58,6 +55,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IINested.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IIFinally.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DBZAbnormalTermination.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IIAbnormalTermination.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IITranslator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IIGotoLeave.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

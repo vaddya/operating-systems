@@ -5,16 +5,24 @@
 
 using namespace std;
 
-int main22()
+int main28()
 {
     __try
     {
-        GENERATE_EXCEPTION;
+        __try
+        {
+            GENERATE_EXCEPTION;
+            cout << "After ud" << endl;
+        }
+        __finally
+        {
+            cout << "Finally" << endl;
+        }
     }
     __except (FilterException(GetExceptionCode(), EXCEPTION_TYPE))
     {
         cout << "Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
     }
-    cout << "After try-except" << endl;
+    cout << "After try-except-finally" << endl;
     return 0;
 }

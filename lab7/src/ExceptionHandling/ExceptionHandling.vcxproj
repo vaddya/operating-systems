@@ -162,9 +162,13 @@
     <ClCompile Include="DBZWinAPI.cpp" />
     <ClCompile Include="DBZFilter.cpp" />
     <ClCompile Include="ExceptionHandlingUtils.cpp" />
+    <ClCompile Include="IIAbnormalTermination.cpp" />
     <ClCompile Include="IIFilter.cpp" />
+    <ClCompile Include="IIFinally.cpp" />
+    <ClCompile Include="IIGotoLeave.cpp" />
     <ClCompile Include="IINested.cpp" />
     <ClCompile Include="IIRaise.cpp" />
+    <ClCompile Include="IITranslator.cpp" />
     <ClCompile Include="IIUnhandle.cpp" />
     <ClCompile Include="IIWinAPI.cpp" />
   </ItemGroup>

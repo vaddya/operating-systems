@@ -12,7 +12,7 @@ int main12()
     }
     __except (FilterException(GetExceptionCode(), EXCEPTION_INT_DIVIDE_BY_ZERO))
     {
-        cout << "Caught using filter: EXCEPTION_INT_DIVIDE_BY_ZERO" << endl;
+        cout << "Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
     }
     cout << "After try-except" << endl;
     return 0;

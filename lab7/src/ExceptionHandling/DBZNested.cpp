@@ -16,13 +16,13 @@ int main15()
             }
             __except (FilterException(GetExceptionCode(), EXCEPTION_INT_OVERFLOW))
             {
-                cout << "1: Caught using filter: EXCEPTION_INT_OVERFLOW" << endl;
+                cout << "1: Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
             }
             cout << "After try-except 1" << endl;
         }
         __except (FilterException(GetExceptionCode(), EXCEPTION_INT_DIVIDE_BY_ZERO))
         {
-            cout << "2: Caught using filter: EXCEPTION_INT_DIVIDE_BY_ZERO" << endl;
+            cout << "2: Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
             int b = 0;
             cout << 2 / b << endl;
         }
@@ -30,7 +30,7 @@ int main15()
     }
     __except (FilterException(GetExceptionCode(), EXCEPTION_INT_DIVIDE_BY_ZERO))
     {
-        cout << "3: Caught using filter: EXCEPTION_INT_DIVIDE_BY_ZERO" << endl;
+        cout << "3: Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
     }
     cout << "After try-except 3" << endl;
     return 0;

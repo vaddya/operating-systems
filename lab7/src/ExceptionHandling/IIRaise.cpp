@@ -1,5 +1,7 @@
 #include "ExceptionHandlingUtils.h"
 
+#define EXCEPTION_TYPE EXCEPTION_ILLEGAL_INSTRUCTION
+
 using namespace std;
 
 int main23()
@@ -8,16 +10,16 @@ int main23()
     CONTEXT ctx;
     __try
     {
-        RaiseException(EXCEPTION_ILLEGAL_INSTRUCTION, 0, 0, NULL);
+        RaiseException(EXCEPTION_TYPE, 0, 0, NULL);
         cout << "After raise" << endl;
     }
     __except (
         excRec = *(GetExceptionInformation())->ExceptionRecord,
         ctx = *(GetExceptionInformation())->ContextRecord,
-        FilterException(GetExceptionCode(), EXCEPTION_ILLEGAL_INSTRUCTION))
+        FilterException(GetExceptionCode(), EXCEPTION_TYPE))
     {
-        cout << hex << "Caught using filter: EXCEPTION_ILLEGAL_INSTRUCTION" << endl
-            << "Expetcted exception code=0x" << EXCEPTION_ILLEGAL_INSTRUCTION << endl;
+        cout << hex << "Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl
+            << "Expetcted exception code=0x" << EXCEPTION_TYPE << endl;
         PrintExceptionInfo(excRec, ctx);
     }
     cout << "After try-except" << endl;

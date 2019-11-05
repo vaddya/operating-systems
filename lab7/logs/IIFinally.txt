@@ -1,0 +1,4 @@
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\ExceptionHandling.exe
+Finally
+Caught using filter: EXCEPTION_ILLEGAL_INSTRUCTION
+After try-except-finally

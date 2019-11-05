@@ -13,7 +13,7 @@ int main16()
     }
     __except (FilterException(GetExceptionCode(), EXCEPTION_INT_DIVIDE_BY_ZERO))
     {
-        cout << "1 Caught using filter: EXCEPTION_INT_DIVIDE_BY_ZERO" << endl;
+        cout << "1 Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
     }
     cout << "After try-except 1" << endl;
 lbl:
@@ -28,7 +28,7 @@ lbl:
     }
     __except (FilterException(GetExceptionCode(), EXCEPTION_INT_DIVIDE_BY_ZERO))
     {
-        cout << "2 Caught using filter: EXCEPTION_INT_DIVIDE_BY_ZERO" << endl;
+        cout << "2 Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
     }
     cout << "After try-except 2" << endl;
 

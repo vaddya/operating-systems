@@ -16,7 +16,7 @@ int main13()
         ctx = *(GetExceptionInformation())->ContextRecord,
         FilterException(GetExceptionCode(), EXCEPTION_INT_DIVIDE_BY_ZERO))
     {
-        cout << hex << "Caught using filter: EXCEPTION_INT_DIVIDE_BY_ZERO" << endl
+        cout << hex << "Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl
             << "Expetcted exception code=0x" << EXCEPTION_INT_DIVIDE_BY_ZERO << endl;
         PrintExceptionInfo(excRec, ctx);
     }

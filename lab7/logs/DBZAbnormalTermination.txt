@@ -1,16 +1,16 @@
-PS C:\Git\operating-systems\lab7\src\x64\Debug> .\ExceptionHandling.exe
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\DBZAbnormalTermination.exe
 Illegal arguments! Use: ok | exception | goto | leave
-PS C:\Git\operating-systems\lab7\src\x64\Debug> .\ExceptionHandling.exe ok
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\DBZAbnormalTermination.exe ok
 1 + 0 = 1
 Finally AbnormalTermination=0
 After try-except-finally
 After label
-PS C:\Git\operating-systems\lab7\src\x64\Debug> .\ExceptionHandling.exe exception
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\DBZAbnormalTermination.exe exception
 Finally AbnormalTermination=1
-PS C:\Git\operating-systems\lab7\src\x64\Debug> .\ExceptionHandling.exe goto
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\DBZAbnormalTermination.exe goto
 Finally AbnormalTermination=1
 After label
-PS C:\Git\operating-systems\lab7\src\x64\Debug> .\ExceptionHandling.exe leave
+PS C:\Git\operating-systems\lab7\src\x64\Debug> .\DBZAbnormalTermination.exe leave
 Finally AbnormalTermination=0
 After try-except-finally
 After label

@@ -1,8 +1,10 @@
 #include "ExceptionHandlingUtils.h"
 
+#define GENERATE_EXCEPTION __ud2()
+
 using namespace std;
 
-int main19(int argc, char* argv[])
+int main29(int argc, char* argv[])
 {
     if (argc < 2)
     {
@@ -10,15 +12,14 @@ int main19(int argc, char* argv[])
         return 1;
     }
     Type type = ParseType(argv[1]);
-    int a = 1, b = 0;
     __try
     {
-        switch (type) 
+        switch (type)
         {
         case Type::OK:
-            cout << a << " + " << b << " = " << a + b << endl; break;
+            cout << "It's OK!" << endl; break;
         case Type::EXCEPTION:
-            cout << a << " / " << b << " = " << a / b << endl; break;
+            GENERATE_EXCEPTION; break;
         case Type::GOTO:
             goto lbl; break;
         case Type::LEAVE:

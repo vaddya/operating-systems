@@ -1,8 +1,11 @@
 #include "ExceptionHandlingUtils.h"
 
+#define GENERATE_EXCEPTION __ud2()
+#define EXCEPTION_TYPE EXCEPTION_ILLEGAL_INSTRUCTION
+
 using namespace std;
 
-int main()
+int main25()
 {
     __try
     {
@@ -10,25 +13,25 @@ int main()
         {
             __try
             {
-                __ud2();
+                GENERATE_EXCEPTION;
                 cout << "After ud" << endl;
             }
             __except (FilterException(GetExceptionCode(), EXCEPTION_INT_OVERFLOW))
             {
-                cout << "1: Caught using filter: EXCEPTION_INT_OVERFLOW" << endl;
+                cout << "1: Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
             }
             cout << "After try-except 1" << endl;
         }
-        __except (FilterException(GetExceptionCode(), EXCEPTION_ILLEGAL_INSTRUCTION))
+        __except (FilterException(GetExceptionCode(), EXCEPTION_TYPE))
         {
-            cout << "2: Caught using filter: EXCEPTION_ILLEGAL_INSTRUCTION" << endl;
-            __ud2();
+            cout << "2: Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
+            GENERATE_EXCEPTION;
         }
         cout << "After try-except 2" << endl;
     }
-    __except (FilterException(GetExceptionCode(), EXCEPTION_ILLEGAL_INSTRUCTION))
+    __except (FilterException(GetExceptionCode(), EXCEPTION_TYPE))
     {
-        cout << "3: Caught using filter: EXCEPTION_ILLEGAL_INSTRUCTION" << endl;
+        cout << "3: Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
     }
     cout << "After try-except 3" << endl;
     return 0;
