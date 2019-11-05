@@ -1,7 +1,5 @@
 #include "ExceptionHandlingUtils.h"
 
-using namespace std;
-
 int main17()
 {
     _set_se_translator(MyTranslator);

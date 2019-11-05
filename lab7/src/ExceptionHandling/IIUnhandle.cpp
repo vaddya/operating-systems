@@ -2,8 +2,6 @@
 
 #define GENERATE_EXCEPTION __ud2()
 
-using namespace std;
-
 int main24()
 {
     SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)MyUnhandledExceptionFilter);

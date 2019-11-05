@@ -1,7 +1,5 @@
 #include "ExceptionHandlingUtils.h"
 
-using namespace std;
-
 int main15()
 {
     __try

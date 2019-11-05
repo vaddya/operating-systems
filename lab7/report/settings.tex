@@ -51,7 +51,7 @@
 	showtabs=false,
 	tabsize=4,
 	frame=single,
-	morekeywords={NULL, LONG, VOID, DWORD, WINAPI, HANDLE, STARTUPINFO, BYTE, LPSTR, SOCKET, WSADATA, TCHAR, LPCTSTR, LPOVERLAPPED, WSABUF, SECURITY_ATTRIBUTES, SECURITY_DESCRIPTOR, TRUE, FALSE, PROCESS_INFORMATION, PIPE_UNLIMITED_INSTANCES, LPVOID, sockaddr_in, __try, __except, __leave, __finally},
+	morekeywords={NULL, LONG, VOID, DWORD, WINAPI, HANDLE, STARTUPINFO, BYTE, LPSTR, SOCKET, WSADATA, TCHAR, LPCTSTR, LPOVERLAPPED, WSABUF, SECURITY_ATTRIBUTES, SECURITY_DESCRIPTOR, TRUE, FALSE, PROCESS_INFORMATION, LPEXCEPTION_POINTERS, EXCEPTION_POINTERS, PIPE_UNLIMITED_INSTANCES, LPVOID, sockaddr_in, __try, __except, __leave, __finally},
 	deletekeywords={error},
 	alsoletter={_},
 	sensitive=true,
@@ -74,7 +74,8 @@
 \renewcommand{\epsilon}{\ensuremath{\varepsilon}}
 \renewcommand{\phi}{\ensuremath{\varphi}}
 \renewcommand{\thefigure}{\arabic{figure}}
-\newcommand{\code}[1]{\lstinline|#1|}
+\newcommand{\code}[1]{\lstinline[language=none]|#1|}
+\newcommand{\cpp}[1]{\lstinline|#1|}
 \newcommand{\caret}{\^{}}
 \newcommand{\ctrl}[1]{\^{}{#1}}
 \newcommand{\listingwithoutput}[1]{

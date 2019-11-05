@@ -1,7 +1,5 @@
 #include "ExceptionHandlingUtils.h"
 
-using namespace std;
-
 DWORD FilterException(DWORD actual, DWORD expected)
 {
     return actual == expected
@@ -58,14 +56,12 @@ void MyTranslator(unsigned code, EXCEPTION_POINTERS* excInfo) {
 }
 
 Type ParseType(const char* str) {
-    if (!strcmp(str, "ok"))
-        return Type::OK;
-    else if (!strcmp(str, "exception"))
+    if (!strcmp(str, "exception"))
         return Type::EXCEPTION;
     else if (!strcmp(str, "goto"))
         return Type::GOTO;
     else if (!strcmp(str, "leave"))
         return Type::LEAVE;
     else
-        throw new exception("Unknown type");
+        return Type::OK;
 }

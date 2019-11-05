@@ -3,8 +3,6 @@
 #define GENERATE_EXCEPTION __ud2()
 #define EXCEPTION_TYPE EXCEPTION_ILLEGAL_INSTRUCTION
 
-using namespace std;
-
 int main25()
 {
     __try

@@ -6,6 +6,8 @@
 #include <iostream>
 #include <sstream>
 
+using namespace std;
+
 DWORD FilterException(DWORD actual, DWORD expected);
 
 const char* GetExceptionName(unsigned code);

@@ -2,8 +2,6 @@
 
 #define GENERATE_EXCEPTION __ud2()
 
-using namespace std;
-
 int main29(int argc, char* argv[])
 {
     if (argc < 2)

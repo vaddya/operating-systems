@@ -1,7 +1,5 @@
 #include "ExceptionHandlingUtils.h"
 
-using namespace std;
-
 int main14()
 {
     SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER) MyUnhandledExceptionFilter);

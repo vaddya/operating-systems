@@ -1,7 +1,5 @@
 #include "ExceptionHandlingUtils.h"
 
-using namespace std;
-
 int main19(int argc, char* argv[])
 {
     if (argc < 2)

@@ -2,8 +2,6 @@
 
 #define GENERATE_EXCEPTION __ud2()
 
-using namespace std;
-
 int main27()
 {
     _set_se_translator(MyTranslator);
@@ -11,7 +9,7 @@ int main27()
     {
         GENERATE_EXCEPTION;
     }
-    catch (const exception & e)
+    catch (const exception &e)
     {
         cout << "Caught using C++ try-catch: " << e.what() << endl;
     }
