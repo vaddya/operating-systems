@@ -4,8 +4,8 @@ int main16()
 {
     __try
     {
-        goto lbl;
         int a = 0;
+        goto lbl;
         cout << 1 / a << endl;
         cout << "After division" << endl;
     }
