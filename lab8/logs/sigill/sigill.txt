@@ -1,0 +1,5 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/sigill$ ./sigill 
+Generating SIGILL
+Illegal instruction (core dumped)
+Process finished with exit code 132 (interrupted by signal 4: SIGILL)
+

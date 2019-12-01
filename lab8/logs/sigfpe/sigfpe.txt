@@ -1,0 +1,5 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/sigfpe$ ./sigfpe
+Generating SIGFPE
+Floating point exception (core dumped)
+Process finished with exit code 136 (interrupted by signal 8: SIGFPE)
+
