@@ -11,6 +11,15 @@ add_subdirectory(sigill_signal)
 add_subdirectory(sigfpe_sigaction)
 add_subdirectory(sigill_sigaction)
 
+add_subdirectory(signal_nested)
+add_subdirectory(sigaction_nested)
+
 add_subdirectory(exceptions)
 add_subdirectory(exception_try_catch)
 add_subdirectory(exception_signal)
+add_subdirectory(exception_unwind)
+add_subdirectory(exception_nested)
+add_subdirectory(exception_goto)
+
+add_subdirectory(logsys)
+add_subdirectory(ioport)

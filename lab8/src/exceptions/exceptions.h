@@ -14,3 +14,5 @@ private:
 };
 
 void throwException(int sig, std::string label);
+
+void throwStdException(std::string message);

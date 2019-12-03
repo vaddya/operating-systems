@@ -1,0 +1,48 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/exception_unwind$ gdb ./exception_unwind
+(gdb) start
+Temporary breakpoint 1 at 0x1349: file /home/vaddya/Git/operating-systems/lab8/src/exception_unwind/exception_unwind.cpp, line 3.
+Starting program: /home/vaddya/Git/operating-systems/lab8/src/cmake-build-debug/exception_unwind/exception_unwind
+
+Temporary breakpoint 1, main ()
+    at /home/vaddya/Git/operating-systems/lab8/src/exception_unwind/exception_unwind.cpp:3
+3	int main() {
+(gdb) rbreak Unwind
+Breakpoint 2 at 0x7ffff7be24d0: file ../sysdeps/gnu/unwind-resume.c, line 60.
+void _Unwind_Resume(struct _Unwind_Exception *);
+Breakpoint 3 at 0x555555555230 (2 locations)
+...
+Breakpoint 41 at 0x7ffff7dbd650
+<function, no debug info> _Unwind_Backtrace;
+Breakpoint 42 at 0x7ffff7dbf060
+<function, no debug info> _Unwind_Find_FDE;
+(gdb) c
+Continuing.
+
+Breakpoint 10, 0x00007ffff7e619b0 in _Unwind_RaiseException@plt ()
+   from /lib/x86_64-linux-gnu/libstdc++.so.6
+(gdb)
+Continuing.
+
+Breakpoint 36, 0x00007ffff7dbcf00 in _Unwind_RaiseException ()
+   from /lib/x86_64-linux-gnu/libgcc_s.so.1
+(gdb)
+Continuing.
+
+Breakpoint 22, 0x00007ffff7daf510 in _Unwind_Find_FDE@plt ()
+   from /lib/x86_64-linux-gnu/libgcc_s.so.1
+(gdb)
+Continuing.
+
+Breakpoint 42, 0x00007ffff7dbf060 in _Unwind_Find_FDE ()
+   from /lib/x86_64-linux-gnu/libgcc_s.so.1
+...
+(gdb)
+Continuing.
+
+Breakpoint 30, 0x00007ffff7dbae60 in _Unwind_SetIP ()
+   from /lib/x86_64-linux-gnu/libgcc_s.so.1
+(gdb)
+Continuing.
+
+Program terminated with signal SIGABRT, Aborted.
+The program no longer exists.

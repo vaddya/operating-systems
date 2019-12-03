@@ -1,0 +1,29 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/signal_nested$ strace ./signal_nested
+execve("./signal_nested", ["./signal_nested"], 0x7ffe60821ef0 /* 72 vars */) = 0
+...
+write(1, "Setting signal handler: 4 Illega"..., 46Setting signal handler: 4 Illegal instruction
+) = 46
+rt_sigaction(SIGILL, {sa_handler=0x5633ed128349, sa_mask=[ILL], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7ff1fda7a470}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+write(1, "Setting signal handler: 8 Floati"..., 51Setting signal handler: 8 Floating point exception
+) = 51
+rt_sigaction(SIGFPE, {sa_handler=0x5633ed128405, sa_mask=[FPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7ff1fda7a470}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, ~[RTMIN RT_1], [], 8) = 0
+getpid()                                = 10471
+gettid()                                = 10471
+tgkill(10471, 10471, SIGILL)            = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGILL {si_signo=SIGILL, si_code=SI_TKILL, si_pid=10471, si_uid=1000} ---
+write(1, "Caught 4 Illegal instruction\n", 29Caught 4 Illegal instruction
+) = 29
+rt_sigprocmask(SIG_BLOCK, ~[RTMIN RT_1], [ILL], 8) = 0
+getpid()                                = 10471
+gettid()                                = 10471
+tgkill(10471, 10471, SIGFPE)            = 0
+rt_sigprocmask(SIG_SETMASK, [ILL], NULL, 8) = 0
+--- SIGFPE {si_signo=SIGFPE, si_code=SI_TKILL, si_pid=10471, si_uid=1000} ---
+write(1, "Caught 8 Floating point exceptio"..., 34Caught 8 Floating point exception
+) = 34
+rt_sigreturn({mask=[ILL]})              = 0
+rt_sigreturn({mask=[]})                 = 0
+exit_group(0)                           = ?
++++ exited with 0 +++

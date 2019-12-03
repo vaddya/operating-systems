@@ -1,0 +1,4 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/ioport$ ./ioport
+Unable to access port
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/ioport$ sudo ./ioport
+Read from port 888: � (255)

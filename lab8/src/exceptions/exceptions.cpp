@@ -7,3 +7,8 @@ std::ostream &operator<<(std::ostream &out, const Exception &e) {
 void throwException(int sig, std::string label) {
     throw Exception(sig, label);
 }
+
+
+void throwStdException(std::string message) {
+    throw std::runtime_error(message);
+}

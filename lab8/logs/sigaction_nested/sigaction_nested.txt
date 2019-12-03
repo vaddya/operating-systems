@@ -1,0 +1,6 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/sigaction_nested$ ./sigaction_nested
+Setting sigaction handler: 4 Illegal instruction
+Setting sigaction handler: 8 Floating point exception
+Caught 4 Illegal instruction
+Caught 8 Floating point exception
+Process finished with exit code 0

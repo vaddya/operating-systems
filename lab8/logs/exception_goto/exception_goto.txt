@@ -1,0 +1,4 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/exception_goto$ ./exception_goto
+Before goto
+After label
+Process finished with exit code 0

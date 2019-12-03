@@ -1,0 +1,7 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/logsys$ ./logsys
+Setting signal handler: 8 Floating point exception
+Generating SIGFPE
+Floating point exception (core dumped)
+Process finished with exit code 136 (interrupted by signal 8: SIGFPE)
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/ioport$ tail -1 /var/log/syslog
+Dec  3 22:05:16 vaddya logsys: Handling signal 8 Floating point exception

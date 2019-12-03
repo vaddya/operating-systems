@@ -1,0 +1,25 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/exception_goto$ gdb ./exception_goto
+(gdb) start
+Temporary breakpoint 1 at 0x13a9: file /home/vaddya/Git/operating-systems/lab8/src/exception_goto/exception_goto.cpp, line 3.
+Starting program: /home/vaddya/Git/operating-systems/lab8/src/cmake-build-debug/exception_goto/exception_goto
+
+Temporary breakpoint 1, main ()
+    at /home/vaddya/Git/operating-systems/lab8/src/exception_goto/exception_goto.cpp:3
+3	int main() {
+(gdb) rbreak Unwind
+Breakpoint 2 at 0x7ffff7be24d0: file ../sysdeps/gnu/unwind-resume.c, line 60.
+void _Unwind_Resume(struct _Unwind_Exception *);
+Breakpoint 3 at 0x555555555290 (2 locations)
+<function, no debug info> _Unwind_Resume@plt;
+...
+Breakpoint 41 at 0x7ffff7dbd650
+<function, no debug info> _Unwind_Backtrace;
+Breakpoint 42 at 0x7ffff7dbf060
+<function, no debug info> _Unwind_Find_FDE;
+(gdb) c
+Continuing.
+Before goto
+After label
+[Inferior 1 (process 14992) exited normally]
+(gdb) c
+The program is not being run.

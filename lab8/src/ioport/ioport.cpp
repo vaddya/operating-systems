@@ -1,7 +1,5 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <asm/io.h>
 #include <iostream>
+#include <sys/io.h>
 
 #define BASEPORT 0x378
 
@@ -15,12 +13,10 @@ int main() {
     // output byte to port
     outb(0, BASEPORT);
 
-    // delay
-    usleep(100000);
-
     // read from port
-    byte value = inb(BASEPORT);
-    std::cout << "Read from port " << BASEPORT << ": " << value << std::endl;
+    unsigned char value = inb(BASEPORT);
+    std::cout << "Read from port " << BASEPORT << ": "
+        << value << " (" << (int) value << ")" << std::endl;
 
     return 0;
 }

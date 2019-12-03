@@ -1,0 +1,9 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/ioport$ sudo strace ./ioport
+execve("./ioport", ["./ioport"], 0x7ffd992fee40 /* 25 vars */) = 0
+...
+ioperm(0x378, 0x1, 1)                   = 0
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+write(1, "Read from port 888: \377 (255)\n", 28Read from port 888: � (255)
+) = 28
+exit_group(0)                           = ?
++++ exited with 0 +++

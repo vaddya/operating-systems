@@ -1,0 +1,5 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/exception_nested$ ./exception_nested 
+Caught exception: Exception #1: 8 Floating point exception
+Caught std::runtime_error 2
+After outer try-catch
+Process finished with exit code 0
