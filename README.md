@@ -7,3 +7,5 @@
 5. Inter-Process Communication (IPC) in Linux `lab5`
 6. Inter-Process Communication (IPC) in Windows `lab6`
 7. Structured Exception Handling in Windows `lab7`
+8. Exception handling in Linux `lab8`
+
