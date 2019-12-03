@@ -1,6 +1,6 @@
 #include "ExceptionHandlingUtils.h"
 
-int main15()
+int main()
 {
     __try
     {

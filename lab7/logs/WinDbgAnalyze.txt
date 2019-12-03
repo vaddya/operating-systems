@@ -1,0 +1,113 @@
+(233c.3f9c): Integer divide-by-zero - code c0000094 (first chance)
+First chance exceptions are reported before any exception handling.
+This exception may be expected and handled.
+*** WARNING: Unable to verify checksum for ExceptionHandling.exe
+ExceptionHandling!main+0x38:
+00007ff7`b02f3288 f77d04          idiv    eax,dword ptr [rbp+4] ss:000000cb`c1b3f984=00000000
+0:000> !analyze -v
+*******************************************************************************
+*                                                                             *
+*                        Exception Analysis                                   *
+*                                                                             *
+*******************************************************************************
+
+
+KEY_VALUES_STRING: 1
+
+    Key  : Analysis.CPU.Sec
+    Value: 0
+
+    Key  : Analysis.DebugAnalysisProvider.CPP
+    Value: Create: 8007007e on VADDYA-WIN
+
+    Key  : Analysis.DebugData
+    Value: CreateObject
+
+    Key  : Analysis.DebugModel
+    Value: CreateObject
+
+    Key  : Analysis.Elapsed.Sec
+    Value: 14
+
+    Key  : Analysis.Memory.CommitPeak.Mb
+    Value: 62
+
+    Key  : Analysis.System
+    Value: CreateObject
+
+    Key  : Timeline.OS.Boot.DeltaSec
+    Value: 631310
+
+    Key  : Timeline.Process.Start.DeltaSec
+    Value: 52
+
+
+NTGLOBALFLAG:  70
+
+APPLICATION_VERIFIER_FLAGS:  0
+
+EXCEPTION_RECORD:  (.exr -1)
+ExceptionAddress: 00007ff7b02f3288 (ExceptionHandling!main+0x0000000000000038)
+   ExceptionCode: c0000094 (Integer divide-by-zero)
+  ExceptionFlags: 00000000
+NumberParameters: 0
+
+FAULTING_THREAD:  00003f9c
+
+PROCESS_NAME:  ExceptionHandling.exe
+
+ERROR_CODE: (NTSTATUS) 0xc0000094 - {EXCEPTION}  Integer division by zero.
+
+EXCEPTION_CODE_STR:  c0000094
+
+STACK_TEXT:  
+000000cb`c1b3f960 00007ff7`b02fb199 : 00001482`00000001 00007ff8`a3574a49 00000000`00000000 00007ff7`b02fc95d : ExceptionHandling!main+0x38
+000000cb`c1b3fb60 00007ff7`b02fb03e : 00007ff7`b0304000 00007ff7`b0304220 00000000`00000000 00000000`00000000 : ExceptionHandling!invoke_main+0x39
+000000cb`c1b3fbb0 00007ff7`b02faefe : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ExceptionHandling!__scrt_common_main_seh+0x12e
+000000cb`c1b3fc20 00007ff7`b02fb229 : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ExceptionHandling!__scrt_common_main+0xe
+000000cb`c1b3fc50 00007ff8`de877bd4 : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ExceptionHandling!mainCRTStartup+0x9
+000000cb`c1b3fc80 00007ff8`df2cced1 : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : KERNEL32!BaseThreadInitThunk+0x14
+000000cb`c1b3fcb0 00000000`00000000 : 00000000`00000000 00000000`00000000 00000000`00000000 00000000`00000000 : ntdll!RtlUserThreadStart+0x21
+
+
+STACK_COMMAND:  ~0s ; .cxr ; kb
+
+FAULTING_SOURCE_LINE:  C:\Git\operating-systems\lab7\src\ExceptionHandling\DBZNested.cpp
+
+FAULTING_SOURCE_FILE:  C:\Git\operating-systems\lab7\src\ExceptionHandling\DBZNested.cpp
+
+FAULTING_SOURCE_LINE_NUMBER:  12
+
+FAULTING_SOURCE_CODE:  
+     8:         {
+     9:             int a = 0;
+    10:             __try
+    11:             {
+>   12:                 cout << 1 / a << endl;
+    13:                 cout << "After division" << endl;
+    14:             }
+    15:             __except (FilterException(GetExceptionCode(), EXCEPTION_INT_OVERFLOW))
+    16:             {
+    17:                 cout << "1: Caught using filter: " << GetExceptionName(GetExceptionCode()) << endl;
+
+
+SYMBOL_NAME:  ExceptionHandling!main+38
+
+MODULE_NAME: ExceptionHandling
+
+IMAGE_NAME:  ExceptionHandling.exe
+
+FAILURE_BUCKET_ID:  INTEGER_DIVIDE_BY_ZERO_c0000094_ExceptionHandling.exe!main
+
+OS_VERSION:  10.0.18362.1
+
+BUILDLAB_STR:  19h1_release
+
+OSPLATFORM_TYPE:  x64
+
+OSNAME:  Windows 10
+
+FAILURE_ID_HASH:  {beb13266-16ee-5c29-970e-5d9c98ba9bf6}
+
+Followup:     MachineOwner
+---------
