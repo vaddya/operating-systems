@@ -1,7 +1,7 @@
 #include "utils.h"
 
 int main() {
-    signalHandler(SIGILL, printingHandler);
+    sigactionHandler(SIGILL, printingHandler);
     generateSigill();
     return 0;
 }

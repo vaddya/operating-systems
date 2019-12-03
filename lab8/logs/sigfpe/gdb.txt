@@ -1,0 +1,21 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/sigfpe$ gdb ./sigfpe
+(gdb) start
+Temporary breakpoint 1 at 0x1329: file /home/vaddya/Git/operating-systems/lab8/src/sigfpe/sigfpe.cpp, line 3.
+Starting program: /home/vaddya/Git/operating-systems/lab8/src/cmake-build-debug/sigfpe/sigfpe
+
+Temporary breakpoint 1, main ()
+    at /home/vaddya/Git/operating-systems/lab8/src/sigfpe/sigfpe.cpp:3
+3	int main() {
+(gdb) c
+Continuing.
+Generating SIGFPE
+
+Program received signal SIGFPE, Arithmetic exception.
+0x00005555555553e9 in generateSigfpe ()
+    at /home/vaddya/Git/operating-systems/lab8/src/utils/utils.cpp:7
+7	    std::cout << a / b << std::endl;
+(gdb) c
+Continuing.
+
+Program terminated with signal SIGFPE, Arithmetic exception.
+The program no longer exists.

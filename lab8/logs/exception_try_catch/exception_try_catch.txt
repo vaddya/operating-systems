@@ -1,0 +1,6 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/exception_try_catch$ ./exception_try_catch
+Caught exception: Exception #1: 8 Floating point exception
+After try-catch
+terminate called after throwing an instance of 'Exception'
+Aborted (core dumped)
+Process finished with exit code 134 (interrupted by signal 6: SIGABRT)

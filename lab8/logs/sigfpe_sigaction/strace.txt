@@ -1,0 +1,16 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/sigfpe_sigaction$ strace ./sigfpe_sigaction
+execve("./sigfpe_sigaction", ["./sigfpe_sigaction"], 0x7fff22f395b0 /* 72 vars */) = 0
+...
+write(1, "Setting sigaction handler: 8 Flo"..., 54Setting sigaction handler: 8 Floating point exception
+) = 54
+rt_sigaction(SIGFPE, {sa_handler=0x559a5c73867c, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb85b6bb470}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+write(1, "Generating SIGFPE\n", 18Generating SIGFPE
+)     = 18
+--- SIGFPE {si_signo=SIGFPE, si_code=FPE_INTDIV, si_addr=0x559a5c7383fd} ---
+write(1, "Caught signal: 8 Floating point "..., 42Caught signal: 8 Floating point exception
+) = 42
+rt_sigaction(SIGFPE, {sa_handler=SIG_DFL, sa_mask=[FPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fb85b6bb470}, {sa_handler=0x559a5c73867c, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fb85b6bb470}, 8) = 0
+rt_sigreturn({mask=[]})                 = 5
+--- SIGFPE {si_signo=SIGFPE, si_code=FPE_INTDIV, si_addr=0x559a5c7383fd} ---
++++ killed by SIGFPE (core dumped) +++
+Floating point exception (core dumped)

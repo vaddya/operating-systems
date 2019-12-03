@@ -1,0 +1,30 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/exception_signal$ strace ./exception_signal
+execve("./exception_signal", ["./exception_signal"], 0x7ffedf17f860 /* 72 vars */) = 0
+...
+write(1, "Setting signal handler: 6 Aborte"..., 34Setting signal handler: 6 Aborted
+) = 34
+rt_sigaction(SIGABRT, {sa_handler=0x563d94a74a16, sa_mask=[ABRT], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa8b7cad470}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+write(2, "terminate called after throwing "..., 48terminate called after throwing an instance of ') = 48
+write(2, "Exception", 9Exception)                = 9
+write(2, "'\n", 2'
+)                      = 2
+rt_sigprocmask(SIG_UNBLOCK, [ABRT], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, ~[RTMIN RT_1], [], 8) = 0
+getpid()                                = 18457
+gettid()                                = 18457
+tgkill(18457, 18457, SIGABRT)           = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGABRT {si_signo=SIGABRT, si_code=SI_TKILL, si_pid=18457, si_uid=1000} ---
+write(1, "Caught signal: 6 Aborted\n", 25Caught signal: 6 Aborted
+) = 25
+rt_sigaction(SIGABRT, {sa_handler=SIG_DFL, sa_mask=[ABRT], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa8b7cad470}, {sa_handler=0x563d94a74a16, sa_mask=[ABRT], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fa8b7cad470}, 8) = 0
+rt_sigreturn({mask=[]})                 = 0
+rt_sigaction(SIGABRT, {sa_handler=SIG_DFL, sa_mask=~[], sa_flags=SA_RESTORER, sa_restorer=0x7fa8b7cad470}, NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, ~[RTMIN RT_1], [], 8) = 0
+getpid()                                = 18457
+gettid()                                = 18457
+tgkill(18457, 18457, SIGABRT)           = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGABRT {si_signo=SIGABRT, si_code=SI_TKILL, si_pid=18457, si_uid=1000} ---
++++ killed by SIGABRT (core dumped) +++
+Aborted (core dumped)

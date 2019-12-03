@@ -1,0 +1,28 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/exception_signal$ ltrace -S ./exception_signal
+...
+SYS_write(1, "Setting signal handler: 6 Aborte"..., 34Setting signal handler: 6 Aborted
+) = 34
+SYS_rt_sigaction(6, 0x7fff6d771060, 0x7fff6d771100, 8) = 0
+SYS_write(2, "terminate called after throwing "..., 48terminate called after throwing an instance of ') = 48
+SYS_write(2, "Exception", 9Exception)                     = 9
+SYS_write(2, "'\n", 2'
+)                           = 2
+SYS_rt_sigprocmask(1, 0x7fff6d771160, 0, 8)      = 0
+SYS_rt_sigprocmask(0, 0x7fff6d7710c0, 0x7fff6d771040, 8) = 0
+SYS_getpid()                                     = 19324
+SYS_gettid(0x4b7c, 0x7fff6d7710c0, 0x7fff6d771040, 8) = 0x4b7c
+SYS_tgkill(0x4b7c, 0x4b7c, 6, 8)                 = 0
+SYS_rt_sigprocmask(2, 0x7fff6d771040, 0, 8)      = 0
+--- SIGABRT (Aborted) ---
+SYS_write(1, "Caught signal: 6 Aborted\n", 25Caught signal: 6 Aborted
+)   = 25
+SYS_rt_sigaction(6, 0x7fff6d770680, 0x7fff6d770720, 8) = 0
+SYS_rt_sigreturn(6, 0x7fff6d770680, 0x7fff6d770720, 8) = 0
+SYS_rt_sigaction(6, 0x7fff6d771010, 0, 8)        = 0
+SYS_rt_sigprocmask(0, 0x7fff6d7710c0, 0x7fff6d771040, 8) = 0
+SYS_getpid()                                     = 19324
+SYS_gettid(0x4b7c, 0x7fff6d7710c0, 0x7fff6d771040, 8) = 0x4b7c
+SYS_tgkill(0x4b7c, 0x4b7c, 6, 8)                 = 0
+SYS_rt_sigprocmask(2, 0x7fff6d771040, 0, 8)      = 0
+--- SIGABRT (Aborted) ---
++++ killed by SIGABRT +++

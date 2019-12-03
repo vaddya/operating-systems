@@ -1,0 +1,30 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/sigill_signal$ gdb ./sigill_signal
+(gdb) start
+Temporary breakpoint 1 at 0x1329: file /home/vaddya/Git/operating-systems/lab8/src/sigill_signal/sigill_signal.cpp, line 3.
+Starting program: /home/vaddya/Git/operating-systems/lab8/src/cmake-build-debug/sigill_signal/sigill_signal
+
+Temporary breakpoint 1, main ()
+    at /home/vaddya/Git/operating-systems/lab8/src/sigill_signal/sigill_signal.cpp:3
+3	int main() {
+(gdb) c
+Continuing.
+Setting signal handler: 4 Illegal instruction
+Generating SIGILL
+
+Program received signal SIGILL, Illegal instruction.
+generateSigill ()
+    at /home/vaddya/Git/operating-systems/lab8/src/utils/utils.cpp:12
+12	    __builtin_trap();
+(gdb) c
+Continuing.
+Caught signal: 4 Illegal instruction
+
+Program received signal SIGILL, Illegal instruction.
+generateSigill ()
+    at /home/vaddya/Git/operating-systems/lab8/src/utils/utils.cpp:12
+12	    __builtin_trap();
+(gdb) c
+Continuing.
+
+Program terminated with signal SIGILL, Illegal instruction.
+The program no longer exists.

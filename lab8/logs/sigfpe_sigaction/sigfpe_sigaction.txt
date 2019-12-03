@@ -1,5 +1,5 @@
-vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/sigfpe_signal$ ./sigfpe_signal 
-Setting signal handler: 8 Floating point exception
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/sigfpe_sigaction$ ./sigfpe_sigaction 
+Setting sigaction handler: 8 Floating point exception
 Generating SIGFPE
 Caught signal: 8 Floating point exception
 Floating point exception (core dumped)

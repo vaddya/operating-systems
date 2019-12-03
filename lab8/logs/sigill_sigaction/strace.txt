@@ -1,0 +1,16 @@
+vaddya@vaddya:~/Git/operating-systems/lab8/src/cmake-build-debug/sigill_sigaction$ strace ./sigill_sigaction
+execve("./sigill_sigaction", ["./sigill_sigaction"], 0x7ffea3e538f0 /* 72 vars */) = 0
+...
+write(1, "Setting sigaction handler: 4 Ill"..., 49Setting sigaction handler: 4 Illegal instruction
+) = 49
+rt_sigaction(SIGILL, {sa_handler=0x55d461eb367c, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f8cc85d5470}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+write(1, "Generating SIGILL\n", 18Generating SIGILL
+)     = 18
+--- SIGILL {si_signo=SIGILL, si_code=ILL_ILLOPN, si_addr=0x55d461eb3456} ---
+write(1, "Caught signal: 4 Illegal instruc"..., 37Caught signal: 4 Illegal instruction
+) = 37
+rt_sigaction(SIGILL, {sa_handler=SIG_DFL, sa_mask=[ILL], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f8cc85d5470}, {sa_handler=0x55d461eb367c, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f8cc85d5470}, 8) = 0
+rt_sigreturn({mask=[]})                 = 94370664243232
+--- SIGILL {si_signo=SIGILL, si_code=ILL_ILLOPN, si_addr=0x55d461eb3456} ---
++++ killed by SIGILL (core dumped) +++
+Illegal instruction (core dumped)
