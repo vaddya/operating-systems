@@ -18,3 +18,4 @@ build
 *.opendb
 **/x64/
 **/.vs/
+**/Debug
