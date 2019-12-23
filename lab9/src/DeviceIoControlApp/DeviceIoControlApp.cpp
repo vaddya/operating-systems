@@ -19,14 +19,18 @@ ULONGLONG DiskSizeInBytes(DISK_GEOMETRY* pdg) {
 
 int wmain(int argc, wchar_t* argv[])
 {
+    const wchar_t* driveName;
     if (argc < 2)
     {
-        wprintf(L"Usage: ./DeviceControlIoApp DRIVENAME\n");
-        return 1;
+        driveName = L"C:";
+    }
+    else
+    {
+        driveName = argv[1];
     }
 
     LPWSTR drive = new WCHAR[100];
-    wsprintfW(drive, L"\\\\.\\%s", argv[1]);
+    wsprintfW(drive, L"\\\\.\\%s", driveName);
     HANDLE device = CreateFileW(
         drive,                                  // drive to open
         0,                                      // no access to the drive
