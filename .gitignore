@@ -19,3 +19,10 @@ build
 **/x64/
 **/.vs/
 **/Debug
+
+# Linux module
+*.o*
+*.ko*
+*.mod*
+*.symvers
+*.order

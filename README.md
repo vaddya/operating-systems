@@ -8,4 +8,7 @@
 6. Inter-Process Communication (IPC) in Windows `lab6`
 7. Structured Exception Handling in Windows `lab7`
 8. Exception Handling in Linux `lab8`
+9. API Hooking in Windows `lab9`
+10. File Tracking Programm in Windows `lab10`
+11. Kernel Modules in Linux `lab11`
 
