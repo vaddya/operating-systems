@@ -16,7 +16,7 @@ print:
 	dmesg
 
 mknod:
-	sudo mknod /dev/chardev c 127 0 -m 777
+	sudo mknod /dev/chardev c 126 0 -m 777
 
 rmnod:
 	sudo rm /dev/chardev

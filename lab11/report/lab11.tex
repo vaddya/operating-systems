@@ -1,0 +1,62 @@
+\include{settings}
+
+\begin{document}
+
+\include{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Цели работы}
+
+Изучение работы ядра ОС Linux путем встраивания модуля драйвера символьного устройства в ядро операционной системы.
+
+\section{Программа работы}
+
+\input{workprogram}
+
+\section{Используемое окружение}
+
+\begin{itemize}
+	\item ОС: Ubuntu
+	\item Версия ОС: 19.10
+	\item Процессор: Intel® Core™ i7-8550U CPU @ 1.80GHz × 8
+	\item ОЗУ: 16 Гб
+	\item Компилятор: gcc (Ubuntu 9.2.1-9ubuntu2) 9.2.1 20191008
+	\item Отладчик: GNU gdb (Ubuntu 8.3-0ubuntu1) 8.3
+\end{itemize}
+
+\section{Модуль ядра}
+
+\lstinputlisting[caption=\code{driver.c}]{src/driver/driver.c}
+
+\lstinputlisting[caption=\code{Makefile}, language={[gnu] make}]{src/driver/Makefile}
+
+
+\section{Обращение к символьному устройству}
+
+\lstinputlisting[caption=\code{app.c}]{src/app/app.c}
+
+\lstinputlisting[caption=\code{Makefile}, language={[gnu] make}]{src/app/Makefile}
+
+\section{Выводы}
+
+В процессе выполнения данной работы:
+
+\begin{itemize}
+	\item 1
+	\item 2
+\end{itemize}
+
+\newpage
+
+\section*{Список использованных источников}
+
+\begin{enumerate}
+	\item Душутина Е.В. -- Системное программное обеспечение. Практические вопросы разработки системных приложений [Текст] -- 2016.
+	\item Таненбаум Э. -- Современные операционные системы [Текст] -- 2015.
+	\item Linux processes and signals / BogoToBogo [Электронный ресурс]:\\
+		{\small\url{https://www.bogotobogo.com/Linux/linux_process_and_signals.php}}
+\end{enumerate}
+
+\end{document}

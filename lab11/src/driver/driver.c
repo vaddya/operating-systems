@@ -7,8 +7,8 @@
 
 #define MODULE_NAME "TestModule"
 #define DEVICE_NAME "chardev"
-#define MAJOR_NUMBER 127
-#define BUF_LENGTH 80
+#define MAJOR_NUMBER 126
+#define BUF_LENGTH 128
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION(MODULE_NAME);
@@ -19,17 +19,19 @@ void device_exit(void);
 static int device_open(struct inode *, struct file *);
 static int device_release(struct inode *, struct file *);
 static ssize_t device_read(struct file *, char *, size_t, loff_t *);
+static ssize_t device_write(struct file *, const char *, size_t, loff_t *);
 
 module_init(device_init);
 module_exit(device_exit);
 
 static int major;
-static char message[BUF_LENGTH];
-static char *pmessage;
+static char driver_buffer[BUF_LENGTH];
+static int cursor = 0;
 static struct file_operations fops = {
-        .read = device_read,
-        .open = device_open,
-        .release = device_release
+    .read = device_read,
+    .write = device_write,
+    .open = device_open,
+    .release = device_release
 };
 
 int device_init(void) {
@@ -53,15 +55,12 @@ void device_exit(void) {
 static int device_open(struct inode *inode, struct file *file) {
     printk(KERN_INFO
     "%s: opening character device /dev/%s\n", MODULE_NAME, DEVICE_NAME);
-    pmessage = message;
     return 0;
 }
 
 static int device_release(struct inode *inode, struct file *file) {
     printk(KERN_INFO
     "%s: releasing character device /dev/%s\n", MODULE_NAME, DEVICE_NAME);
-
-    module_put(THIS_MODULE);
     return 0;
 }
 
@@ -69,15 +68,29 @@ static ssize_t device_read(struct file *fd, char *buffer, size_t length, loff_t 
     ssize_t bytes = 0;
 
     printk(KERN_INFO
-    "%s: reading character device /dev/%s\n", MODULE_NAME, DEVICE_NAME);
-    while (length && *pmessage) {
-        put_user(*(pmessage++), buffer++);
-        length--;
-        bytes++;
+    "%s: reading from character device /dev/%s\n", MODULE_NAME, DEVICE_NAME);
+    for (; length && cursor > 0; length--, bytes++) {
+        put_user(driver_buffer[--cursor], buffer++);
     }
 
     printk(KERN_INFO
     "%s: %ld bytes were read from /dev/%s'.\n", MODULE_NAME, bytes, DEVICE_NAME);
+
+    return bytes;
+}
+
+static ssize_t device_write(struct file *fd, const char *buffer, size_t length, loff_t *offset) {
+    ssize_t bytes = 0;
+
+    printk(KERN_INFO
+    "%s: writing to character device /dev/%s\n", MODULE_NAME, DEVICE_NAME);
+
+    for (; length && cursor < BUF_LENGTH; cursor++, length--, bytes++) {
+        get_user(driver_buffer[cursor], buffer++);
+    }
+
+    printk(KERN_INFO
+    "%s: %ld bytes were written to /dev/%s'.\n", MODULE_NAME, bytes, DEVICE_NAME);
 
     return bytes;
 }
