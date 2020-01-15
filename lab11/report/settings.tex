@@ -78,11 +78,6 @@
 \newcommand{\cpp}[1]{\lstinline|#1|}
 \newcommand{\caret}{\^{}}
 \newcommand{\ctrl}[1]{\^{}{#1}}
-\newcommand{\listingwithoutput}[1]{
-	\lstinputlisting[caption=\code{#1.cpp}]{src/#1/#1.cpp}
-	Выполним программу \code{#1}:
-	\lstinputlisting[language=none]{logs/#1/#1.txt}
-}
 
 \newcommand{\logs}[1]{
 	\lstinputlisting[language=none]{logs/#1.txt}

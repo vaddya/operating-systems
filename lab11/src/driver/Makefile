@@ -12,14 +12,14 @@ insmod:
 rmmod:
 	sudo rmmod driver.ko
 
-print:
-	dmesg
-
 mknod:
 	sudo mknod /dev/chardev c 126 0 -m 777
 
 rmnod:
 	sudo rm /dev/chardev
+
+print:
+	dmesg
 
 log:
 	tail -f /var/log/syslog

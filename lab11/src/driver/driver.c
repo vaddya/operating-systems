@@ -55,12 +55,14 @@ void device_exit(void) {
 static int device_open(struct inode *inode, struct file *file) {
     printk(KERN_INFO
     "%s: opening character device /dev/%s\n", MODULE_NAME, DEVICE_NAME);
+    try_module_get(THIS_MODULE);
     return 0;
 }
 
 static int device_release(struct inode *inode, struct file *file) {
     printk(KERN_INFO
     "%s: releasing character device /dev/%s\n", MODULE_NAME, DEVICE_NAME);
+    module_put(THIS_MODULE);
     return 0;
 }
 

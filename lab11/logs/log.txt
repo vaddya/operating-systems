@@ -1,0 +1,51 @@
+vaddya@vaddya:~/Git/operating-systems/lab11/src/driver$ make mknod
+sudo mknod /dev/chardev c 126 0 -m 777
+
+vaddya@vaddya:~/Git/operating-systems/lab11/src/driver$ make
+sudo make -C /lib/modules/5.3.0-26-generic/build M=/home/vaddya/Git/operating-systems/lab11/src/driver modules
+make: Entering directory '/usr/src/linux-headers-5.3.0-26-generic'
+  CC [M]  /home/vaddya/Git/operating-systems/lab11/src/driver/driver.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/vaddya/Git/operating-systems/lab11/src/driver/driver.mod.o
+  LD [M]  /home/vaddya/Git/operating-systems/lab11/src/driver/driver.ko
+make: Leaving directory '/usr/src/linux-headers-5.3.0-26-generic'
+
+vaddya@vaddya:~/Git/operating-systems/lab11/src/driver$ make insmod
+sudo insmod driver.ko
+
+vaddya@vaddya:~/Git/operating-systems/lab11/src/driver$ make print
+...
+[17676.697294] TestModule: major number 0. Use mknod /dev/chardev c 0 0
+
+vaddya@vaddya:~/Git/operating-systems/lab11/src/driver$ ../app/app.out "Hello, driver!"
+Opening device: /dev/chardev
+Device was opened
+Writing to device
+Read 14 bytes
+!revird ,olleH
+Closing device
+
+vaddya@vaddya:~/Git/operating-systems/lab11/src/driver$ make print
+...
+[  112.086370] TestModule: major number 0. Use mknod /dev/chardev c 0 0
+[  136.686673] TestModule: opening character device /dev/chardev
+[  136.686694] TestModule: writing to character device /dev/chardev
+[  136.686699] TestModule: 14 bytes were written to /dev/chardev'.
+[  136.686704] TestModule: reading from character device /dev/chardev
+[  136.686707] TestModule: 14 bytes were read from /dev/chardev'.
+[  136.686756] TestModule: releasing character device /dev/chardev
+
+vaddya@vaddya:~/Git/operating-systems/lab11/src/driver$ make rmmod
+sudo rmmod driver.ko
+
+vaddya@vaddya:~/Git/operating-systems/lab11/src/driver$ ../app/app.out "123"
+Opening device: /dev/chardev
+Killed
+
+vaddya@vaddya:~/Git/operating-systems/lab11/src/driver$ make rmnod
+sudo rm /dev/chardev
+
+vaddya@vaddya:~/Git/operating-systems/lab11/src/driver$ ../app/app.out "123"
+Opening device: /dev/chardev
+Opening failed
