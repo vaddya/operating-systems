@@ -13,57 +13,51 @@ extern ssize_t generate_output(int sum, short *arr, size_t size, char *buf);
 
 static void fill_random(short *arr, size_t n)
 {
-    size_t i;
-    for (i = 0; i < n; i++)
-    {
-	arr[i] = (short) get_random_int();
-    }
+        size_t i;
+        for (i = 0; i < n; i++) {
+                arr[i] = (short) get_random_int();
+        }
 }
 
-static ssize_t real_array_sum(short *arr, size_t n)
+static ssize_t real_array_sum(const short *arr, size_t n)
 {
-    size_t sum = 0;
-    size_t i;
-    for (i = 0; i < n; i++)
-    {
-        sum += arr[i];
-    }
-    return sum;
+        size_t sum = 0;
+        size_t i;
+        for (i = 0; i < n; i++) {
+                sum += arr[i];
+        }
+        return sum;
 }
 
-int __init init_mod(void)
+static int __init init_mod(void)
 {
-    short arr[ARR_SIZE];
-    ssize_t sum;
-    ssize_t real_sum;
-    char output_buffer[BUFFER_SIZE];
-    size_t i;
-    
-    CHECKER_MACRO;
-    
-    for (i = 0; i < ITER_COUNT; i++)
-    {
-	fill_random(arr, ARR_SIZE);
-        sum = array_sum(arr, ARR_SIZE);
-	real_sum = real_array_sum(arr, ARR_SIZE);
-	memset(output_buffer, 0, BUFFER_SIZE);
-	generate_output(sum, arr, ARR_SIZE, output_buffer);
-	if (sum == real_sum)
-	{
-	    printk(KERN_INFO "%s\n", output_buffer);
-	}
-	else
-	{
-	    printk(KERN_ERR "%s\n", output_buffer);
-	}
-    }
-    return 0;
+        CHECKER_MACRO;
+
+        short arr[ARR_SIZE];
+        ssize_t sum;
+        ssize_t real_sum;
+        char output_buffer[BUFFER_SIZE];
+        size_t i;
+        for (i = 0; i < ITER_COUNT; i++) {
+                fill_random(arr, ARR_SIZE);
+                sum = array_sum(arr, ARR_SIZE);
+                real_sum = real_array_sum(arr, ARR_SIZE);
+                memset(output_buffer, 0, BUFFER_SIZE);
+                generate_output(sum, arr, ARR_SIZE, output_buffer);
+                if (sum == real_sum) {
+                        pr_info("%s\n", output_buffer);
+                } else {
+                        pr_err("%s\n", output_buffer);
+                }
+        }
+
+        return 0;
 }
 
-void __exit exit_mod(void)
+static void __exit exit_mod(void)
 {
-    CHECKER_MACRO;
-    return;
+        CHECKER_MACRO;
+        return;
 }
 
 module_init(init_mod);
@@ -72,4 +66,3 @@ module_exit(exit_mod);
 MODULE_DESCRIPTION("Task3");
 MODULE_AUTHOR("Vadim Dyachkov <mail@vaddya.com>");
 MODULE_LICENSE("GPL");
-
