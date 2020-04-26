@@ -42,7 +42,7 @@ static void __exit exit_mod(void)
 module_init(init_mod);
 module_exit(exit_mod);
 
-MODULE_DESCRIPTION("Task4");
+MODULE_DESCRIPTION("Module1Task4");
 MODULE_AUTHOR("Vadim Dyachkov <mail@vaddya.com>");
 MODULE_LICENSE("GPL");
 

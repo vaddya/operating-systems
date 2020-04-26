@@ -58,7 +58,7 @@ static struct file_operations fops = {
         .release = device_release
 };
 
-int __init init_mod(void)
+static int __init init_mod(void)
 {
         dev = MKDEV(MY_MAJOR, MY_MINOR);
         int res = register_chrdev_region(dev, cnt, DEVICE_NAME);
@@ -76,7 +76,7 @@ int __init init_mod(void)
         return 0;
 }
 
-void __exit exit_mod(void)
+static void __exit exit_mod(void)
 {
         cdev_del(&my_cdev);
         unregister_chrdev_region(MKDEV(MY_MAJOR, MY_MINOR), cnt);
@@ -85,6 +85,6 @@ void __exit exit_mod(void)
 module_init(init_mod);
 module_exit(exit_mod);
 
-MODULE_DESCRIPTION("Task3");
+MODULE_DESCRIPTION("Module2Task3");
 MODULE_AUTHOR("Vadim Dyachkov <mail@vaddya.com>");
 MODULE_LICENSE("GPL");

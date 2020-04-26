@@ -22,7 +22,7 @@ static ssize_t my_sys_store(struct kobject *kobj, struct kobj_attribute *attr, c
 
 static struct kobj_attribute my_attribute = __ATTR(my_sys, 0755, my_sys_show, my_sys_store);
 
-int __init init_mod(void)
+static int __init init_mod(void)
 {
         my_kobj = kobject_create_and_add("my_kobject", kernel_kobj);
         if (!my_kobj) {
@@ -35,7 +35,7 @@ int __init init_mod(void)
         return res;
 }
 
-void __exit exit_mod(void)
+static void __exit exit_mod(void)
 {
         kobject_put(my_kobj);
 }
@@ -43,6 +43,6 @@ void __exit exit_mod(void)
 module_init(init_mod);
 module_exit(exit_mod);
 
-MODULE_DESCRIPTION("Task1");
+MODULE_DESCRIPTION("Module2Task1");
 MODULE_AUTHOR("Vadim Dyachkov <mail@vaddya.com>");
 MODULE_LICENSE("GPL");

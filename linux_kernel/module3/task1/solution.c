@@ -96,6 +96,6 @@ static void __exit exit_mod(void)
 module_init(init_mod);
 module_exit(exit_mod);
 
-MODULE_DESCRIPTION("Task1");
+MODULE_DESCRIPTION("Module3Task1");
 MODULE_AUTHOR("Vadim Dyachkov <mail@vaddya.com>");
 MODULE_LICENSE("GPL");

@@ -84,10 +84,10 @@ static loff_t device_llseek(struct file *filp, loff_t offset, int origin)
 }
 
 static struct file_operations fops = {
-        .open    = device_open,
-        .release = device_release,
         .read    = device_read,
         .write   = device_write,
+        .open    = device_open,
+        .release = device_release,
         .llseek  = device_llseek
 };
 
@@ -119,6 +119,6 @@ static void __exit exit_mod(void)
 module_init(init_mod);
 module_exit(exit_mod);
 
-MODULE_DESCRIPTION("Task2");
+MODULE_DESCRIPTION("Module3Task2");
 MODULE_AUTHOR("Vadim Dyachkov <mail@vaddya.com>");
 MODULE_LICENSE("GPL");
