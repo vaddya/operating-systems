@@ -13,22 +13,20 @@ static struct cdev my_cdev;
 static int cnt = 1;
 
 static int open_cnt = 0;
-static char msg_buf[80];
-static char *msg_ptr;
 static unsigned int char_cnt = 0;
+static char msg_buf[16];
+static char *msg_ptr;
 
 static int device_open(struct inode *inode, struct file *filp)
 {
         open_cnt++;
         sprintf(msg_buf, "%u %u\n", open_cnt, char_cnt);
         msg_ptr = msg_buf;
-        try_module_get(THIS_MODULE);
         return 0;
 }
 
 static int device_release(struct inode *inode, struct file *filp)
 {
-        module_put(THIS_MODULE);
         return 0;
 }
 
