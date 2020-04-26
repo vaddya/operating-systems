@@ -83,8 +83,7 @@ static loff_t device_llseek(struct file *filp, loff_t offset, int origin)
 
 }
 
-static const struct file_operations slt_fops = {
-        .owner   = THIS_MODULE,
+static struct file_operations fops = {
         .open    = device_open,
         .release = device_release,
         .read    = device_read,
@@ -100,7 +99,7 @@ static int __init init_mod(void)
                 pr_err("Can't register char device region\n");
                 return res;
         }
-        cdev_init(&hcdev, &slt_fops);
+        cdev_init(&hcdev, &fops);
         hcdev.owner = THIS_MODULE;
         res = cdev_add(&hcdev, dev, 1);
         if (res < 0) {
@@ -120,6 +119,6 @@ static void __exit exit_mod(void)
 module_init(init_mod);
 module_exit(exit_mod);
 
-MODULE_DESCRIPTION("Task1");
+MODULE_DESCRIPTION("Task2");
 MODULE_AUTHOR("Vadim Dyachkov <mail@vaddya.com>");
 MODULE_LICENSE("GPL");
