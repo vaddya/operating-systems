@@ -25,17 +25,38 @@
 	\item Компилятор: MSVC 14.23.28105, C/C++ Optimizing Compiler Version 19.23.28105.4 for x64
 \end{itemize}
 
-\section{Перехват системных вызовов}
+%\section{Перехват системных вызовов}
 
-\section{Обзор библиотек, предназначенных для перехвата системных вызовов}
+%\section{Обзор библиотек, предназначенных для перехвата системных вызовов}
 
 \section{Реализация индивидуального задания}
 
+В качестве индивидуального задания необходимо реализовать программу перехвата обращения к устройству. Для перехвата используется библиотека Detours\footnote{\url{https://github.com/microsoft/Detours}}. 
+
 \subsection{Программа обращения к устройству}
+
+Для начала реализуем программу, которая получает и выводит информацию о размере диска, имя которого получает из передаваемых аргументов командной строки.
 
 \lstinputlisting[caption=\code{DeviceIoControlApp.cpp}]{src/DeviceIoControlApp/DeviceIoControlApp.cpp}
 
+Рассмотрим программу построчно:
+\begin{itemize}
+	\item [5-14] Функция, которая по передаваемому указателю на диск возвращает информацию о его конфигурации;
+	\item [16-18] Функция, которая по информации о диске возвращает его размер в байтах;
+	\item [22-30] Обработка входных параметров;
+	\item [32-47] Открытие устройства и получения указателя на него;
+	\item [49-68] Запрос информации о диске и вывод информации о нем.
+\end{itemize}
+
+Запустим программу и получим размер диска \code{C:}
+
+\lstinputlisting[caption=\code{oringinal.txt}]{logs/original.txt}
+
+Из вывода видно, что размер диска составляет 238 ГБ.
+
 \subsection{Программа перехвата обращения к устройству}
+
+Теперь при помощи библиотеки Detours реализуем перехват обращения к устройству. В случае успешного перехвата будем выводить информацию в консоль.
 
 \lstinputlisting[caption=\code{HooksLib/dllmain.cpp}]{src/HooksLib/dllmain.cpp}
 
@@ -43,17 +64,25 @@
 
 \subsection{Программа внедрения перехватчика в приложение}
 
+Наконец реализуем программу, которая внедряет разработанную программу-перехватчик в приложение. Для этого также используются функциональные возможности Detours, а именно функция \code{DetoursCreateProcessWithDllA}.
+
 \lstinputlisting[caption=\code{InjectDll.cpp}]{src/InjectDll/InjectDll.cpp}
 
-\newpage
+В случае успеха, программа ожидает завершения порожденного процесса и выводит информацию о состоянии в консоль.
+
+Запустим программу и получим размер диска \code{C:}
+
+\lstinputlisting[caption=\code{hooked.txt}]{logs/hooked.txt}
+
+Из вывода видно, что вызов системой функции был перехвачен при помощи разработанной программы и выедено соответствующее сообщение в консоль (строка 10). Изученный механизм можно использовать для построения более сложных программ.
 
 \section{Выводы}
 
 В процессе выполнения данной работы:
 
 \begin{itemize}
-	\item 1
-	\item 2
+	\item Изучена библиотека Detours, позволяющая перехватывать вызов системных функций;
+	\item Реализован и продемонстрирован перехват вызова системной функции.
 \end{itemize}
 
 \newpage
@@ -63,12 +92,8 @@
 \begin{enumerate}
 	\item Душутина Е.В. -- Системное программное обеспечение. Практические вопросы разработки системных приложений [Текст] -- 2016.
 	\item Таненбаум Э. -- Современные операционные системы [Текст] -- 2015.
-	\item Structured Exception Handling / Microsoft Docs [Электронный ресурс]:\\
-		{\small\url{https://docs.microsoft.com/en-us/cpp/cpp/structured-exception-handling-c-cpp}}
-	\item \_\_ud2 / Microsoft Docs [Электронный ресурс]:\\
-		{\small\url{https://docs.microsoft.com/en-us/cpp/intrinsics/ud2}}
-	\item Microsoft-specific exception handling mechanisms / Википедия [Электронный ресурс]:\\
-		{\small\url{https://en.wikipedia.org/wiki/Microsoft-specific_exception_handling_mechanisms}}
+	\item Detours / Microsoft Research [Электронный ресурс]:\\
+		{\small\url{https://www.microsoft.com/en-us/research/project/detours/}}
 \end{enumerate}
 
 \end{document}

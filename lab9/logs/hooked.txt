@@ -1,0 +1,11 @@
+PS C:\Git\operating-systems\lab9\src\InjectDll\Debug> .\InjectDll.exe "C:\Git\operating-systems\lab9\src\DeviceIoControlApp\Debug\DeviceIoControlApp.exe" "C:\Git\operating-systems\lab9\src\HooksLib\Debug\HooksLib.dll"
+Hooked DeviceIoControl: hDevice=000000F8
+Drive path      = \\.\C:
+Cylinders       = 31130
+Tracks/cylinder = 255
+Sectors/track   = 63
+Bytes/sector    = 512
+Disk size       = 256052966400 (Bytes)
+                = 238.47 (Gb)
+Hooked DeviceIoControl: hDevice=00000100
+Process created, PID: 16232
